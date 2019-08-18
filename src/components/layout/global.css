@@ -1,13 +1,8 @@
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
+body{
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.2rem;
 }
+
 article,
 aside,
 details,
@@ -22,6 +17,61 @@ section,
 summary {
   display: block;
 }
+
+img{
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+img{
+  padding: 0;
+  margin: 0 0 1.45rem 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2{
+  font-size: 1.45rem;
+}
+
+h3{
+  font-size: 1.38rem;
+}
+
+h4{
+  font-size: 1rem;
+}
+
+h5{
+  font-size: .85rem;
+}
+
+h6{
+  font-size: .78rem;
+}
+
+
+/* html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 audio,
 canvas,
 progress,
@@ -619,4 +669,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} */
