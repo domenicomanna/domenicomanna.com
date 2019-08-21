@@ -7,10 +7,11 @@
 
 import React, {Component} from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import Header from './header/header';
+import Footer from './footer/footer';
 import Wrapper from '../wrapper/wrapper'
 import "./global.css"
+import styles from './layout.module.css';
 
 class Layout extends Component {
 
@@ -29,10 +30,10 @@ class Layout extends Component {
       <>
         <Header toggleHamburgerLinks = {this.toggleHamburgerLinks} 
         hamburgerLinksShouldShow = {this.state.hamburgerLinksShouldShow}/>
-        <main>
+        <main className = {styles.mainContent}>
           <Wrapper> {this.props.children} </Wrapper>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </>
     );
   }

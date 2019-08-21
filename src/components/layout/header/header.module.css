@@ -2,8 +2,9 @@
   position: sticky;
   z-index: 11;
   top: 0;
-  background: #fefefe;
-  padding: 1rem 0;
+  padding: .6rem 0;
+  margin-bottom: 1rem;
+  background: var(--grey-200);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -11,8 +12,7 @@
   position: relative;
 }
 
-.title{
-  visibility: hidden;
+.title {
   margin: 0;
 }
 
@@ -23,22 +23,41 @@
   list-style: none;
   margin: 0;
   text-align: center;
-  transition: .35s;
+  transition: .4s;
 }
 
-.linkItem > * {
+.link{
   display: inline-block;
   padding: 1rem 0;
   width: 100%;
   text-decoration: none;
-  color: black;
   cursor: pointer;
+  color: inherit;
+  transition: .4s;
+}
+
+.titleLink{
+  /* hide title link but keep it visible so header does not collapse. */
+  visibility: hidden;
+
+  /* undo padding set from the link class above ^^. The extra padding makes the header too big. */
+  padding: 0;
+}
+
+.active{
+  color: var(--blue-500);
+}
+
+@media(any-hover: hover){
+  .link:hover {
+    color: var(--blue-500);
+  }
 }
 
 .hamburger{
   position: absolute;
-  top: 5px;
-  right: 0;
+  top: 11px;
+  right: 5px;
 }
 
 .hamburgerLinks{
@@ -48,7 +67,7 @@
 }
 
 .download{
-  padding-left: .2rem;
+  padding-left: .5rem;
 }
 
 @media(min-width: 400px){
@@ -57,7 +76,8 @@
     justify-content: center;
   }
 
-  .title{
+  .titleLink{
+    /* remove the title link and show all other nav links */
     display: none;
   }
 
@@ -67,16 +87,11 @@
 
   .links{
     display: flex;
-    height: auto;;
   }
 
-  .linkItem > * {
+  .link {
     padding: .4rem 1rem;
     width: auto;
-  }
-
-  .download{
-    padding-left: .5rem;
   }
 }
 
@@ -86,8 +101,8 @@
     align-items: center;
   }
 
-  .title{
-    display: block;
+  .titleLink{
+    display: inline-block;
     visibility: visible;
   }
 }

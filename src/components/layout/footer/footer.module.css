@@ -1,0 +1,41 @@
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 1.6rem 0; 
+}
+
+.copyright{
+  margin-bottom: .8rem;
+}
+
+.footerLinks{
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.linkItem > * {
+  padding: 0 .2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: .3s;
+}
+
+@media(any-hover: hover){
+  .link:hover {
+    color: var(--blue-500);
+  }
+}
+
+@media(min-width: 450px){
+  .footer{
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .copyright{
+    margin-bottom: 0;
+  }
+}

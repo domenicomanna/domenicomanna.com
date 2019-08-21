@@ -1,0 +1,11 @@
+.tags{
+  display: flex;
+  list-style: none;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+
+}
+
+.tags > * {
+  margin: 0 1rem 1rem 0rem;
+}
