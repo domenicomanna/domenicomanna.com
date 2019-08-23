@@ -7,7 +7,7 @@ export default [
   {
     imageFileName: "beerHub.png",
     title: "BeerHub",
-    description: description,
+    description: `A React app that utilizes the <a href = "https://punkapi.com/" target = "_blank" rel="noopener noreferrer"> Punk API </a> to retrieve information about BrewDog's massive beer catalog. This app enables users to search for any BrewDog beer, and save their favorite ones. Favorites are persisted through local storage.`,
     technologiesUsed: ["React", "CSS3"],
     websiteLink: "https://domenicomanna.github.io/beerHub/",
     repositoryLink: "https://github.com/domenicomanna/beerHub"
@@ -15,7 +15,7 @@ export default [
   {
     imageFileName: "giphy.png",
     title: "GifFun",
-    description: description,
+    description: `A basic recreation of the Giphy website. Displays the latest trending GIF's and allows users to search for any GIF. All GIF'S are retrieved from the <a href = "https://developers.giphy.com/" target = "_blank" rel="noopener noreferrer"> Giphy API </a>`,
     technologiesUsed: ["Javascript", "CSS3", "HTML5"],
     websiteLink: "https://domenicomanna.github.io/gifFun/",
     repositoryLink: "https://github.com/domenicomanna/gifFun"
@@ -23,7 +23,7 @@ export default [
   {
     imageFileName: "titanFitness.png",
     title: "Titan Fitness",
-    description: description,
+    description: `A responsive, multipage website for a fictional gym. This project was created to practice fundamental CSS layouts such as flexbox and grid.`,
     technologiesUsed: ["Javascript", "CSS3", "HTML5"],
     websiteLink: "https://domenicomanna.github.io/titanFitness/",
     repositoryLink: "https://github.com/domenicomanna/titanFitness"

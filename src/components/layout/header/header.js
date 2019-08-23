@@ -7,11 +7,17 @@ import { faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
 import styles from './header.module.css';
 import pdf from '../../../assets/test.pdf';
 
+const pageLinks = [
+  { to: "/", text: "Home" },
+  { to: "/blog", text: "Blog" },
+  { to: "/contact", text: "Contact" },
+]
+
 const Header = (props) => {
   const { hamburgerLinksShouldShow, toggleHamburgerLinks } = props;
 
-  let classesForLinks = [styles.links];
-  if (hamburgerLinksShouldShow) classesForLinks.push(styles.hamburgerLinks);
+  let classesForListOfLinks = [styles.listOfLinks];
+  if (hamburgerLinksShouldShow) classesForListOfLinks.push(styles.hamburgerLinks);
 
   return (
     <>
@@ -21,17 +27,9 @@ const Header = (props) => {
             <Link className={`${styles.link} ${styles.titleLink}`} to="/">
               <h2 className={styles.title}>Domenico Manna</h2>
             </Link>
-            <ul className={classesForLinks.join(' ')}>
-              <li className={styles.linkItem}>
-                <Link className={styles.link} activeClassName={styles.active} to="/"> Home </Link>
-              </li>
-              <li className={styles.linkItem}>
-                <Link className={styles.link} activeClassName={styles.active} to="/blog"> Blog </Link>
-              </li>
-              <li className={styles.linkItem}>
-                <Link className={styles.link} activeClassName={styles.active} to="/contact"> Contact </Link>
-              </li>
-              <li className={styles.linkItem}>
+            <ul className={classesForListOfLinks.join(' ')}>
+              {transformPageLinks()}
+              <li>
                 <a className={styles.link} href={pdf} download="resume.pdf"> Resume
                   <FontAwesomeIcon className={styles.download} icon={faDownload} />
                 </a>
@@ -47,3 +45,13 @@ const Header = (props) => {
 }
 
 export default Header;
+
+const transformPageLinks = () => {
+  return pageLinks.map((pageLink, index) => (
+    <li key = {index}>
+      <Link className={styles.link} activeClassName = {styles.active} to={pageLink.to}>
+        {pageLink.text}
+      </Link>
+    </li>
+  ))
+}

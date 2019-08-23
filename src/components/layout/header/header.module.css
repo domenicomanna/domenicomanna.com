@@ -3,7 +3,6 @@
   z-index: 11;
   top: 0;
   padding: .6rem 0;
-  margin-bottom: 1rem;
   background: var(--grey-200);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -16,7 +15,7 @@
   margin: 0;
 }
 
-.links{
+.listOfLinks{
   display: none;
   /* height: 0;
   overflow: hidden; */
@@ -29,6 +28,7 @@
 .link{
   display: inline-block;
   padding: 1rem 0;
+  /* so link is clickable anywhere on the viewport. This is only for the hamburger menu */
   width: 100%;
   text-decoration: none;
   cursor: pointer;
@@ -37,10 +37,10 @@
 }
 
 .titleLink{
-  /* hide title link but keep it visible so header does not collapse. */
+  /* hide title link but allow it to occupy space so the header does not collapse. */
   visibility: hidden;
 
-  /* undo padding set from the link class above ^^. The extra padding makes the header too big. */
+  /* undo padding set from the link class. The extra padding makes the header too big. */
   padding: 0;
 }
 
@@ -77,16 +77,16 @@
   }
 
   .titleLink{
-    /* remove the title link and show all other nav links */
+    /* remove the title link and show all other nav links instead */
     display: none;
+  }
+
+  .listOfLinks{
+    display: flex;
   }
 
   .hamburger{
     display: none;
-  }
-
-  .links{
-    display: flex;
   }
 
   .link {

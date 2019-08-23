@@ -1,19 +1,18 @@
 import React from 'react';
-import socialMediaLinks from '../../../constants/socialMedia';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import socialNetworks from '../../../constants/socialNetworks';
 import styles from './footer.module.css';
 import Wrapper from '../../wrapper/wrapper';
-import socialMedia from '../../../constants/socialMedia';
 
 const Footer = () => {
-  console.log(socialMediaLinks);
   const currentYear = new Date().getFullYear();
 
   return (
     <Wrapper>
       <footer className={styles.footer}>
         <span className={styles.copyright}>&copy; {currentYear} Domenico Manna</span>
-        <ul className = {styles.footerLinks}>
-          {transformSocialMediaLinks(socialMediaLinks)}
+        <ul className={styles.footerLinks}>
+          {transformSocialNetworks(socialNetworks)}
         </ul>
       </footer>
     </Wrapper>
@@ -22,15 +21,27 @@ const Footer = () => {
 
 export default Footer;
 
-const transformSocialMediaLinks = (socialMediaLinks) => {
-  return socialMediaLinks.map((socialMedia, index) => {
-    const trailingSlash = index === socialMediaLinks.length - 1 ? `` : `/`;
-    console.log(trailingSlash);
-    return (
-      <li className = {styles.linkItem} key = {index}>
-        <a className = {styles.link} href = {socialMedia.url} target = "_blank">{socialMedia.displayText}</a>
-        <span>{trailingSlash}</span>
-      </li>
-    )
-  })
+const transformSocialNetworks = (socialNetworks) => {
+  return socialNetworks.map((socialNetwork, index) => (
+    <li className={styles.linkItem} key={index}>
+      {createLink(socialNetwork)}
+    </li>
+  ));
+}
+
+const createLink = (socialNetwork) => {
+  if (socialNetwork.identifier.toLowerCase().includes("email")) {
+    return;
+    // return (
+    //   <a className={styles.link} href={`mailto: ${socialNetwork.url}`}>
+    //     <FontAwesomeIcon icon={socialNetwork.icon} />
+    //   </a>
+    // );
+  }
+
+  return (
+    <a className={styles.link} href={socialNetwork.url} target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={socialNetwork.icon} />
+    </a>
+  );
 }
