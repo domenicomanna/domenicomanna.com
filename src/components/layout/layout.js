@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import PropTypes from "prop-types"
 import Header from './header/header';
 import Footer from './footer/footer';
@@ -21,14 +21,14 @@ class Layout extends Component {
 
   render() {
     return (
-      <>
-        <Header toggleHamburgerLinks = {this.toggleHamburgerLinks} 
-        hamburgerLinksShouldShow = {this.state.hamburgerLinksShouldShow}/>
-        <main className = {styles.mainContent}>
+      <div className={styles.site}>
+        <Header toggleHamburgerLinks={this.toggleHamburgerLinks}
+          hamburgerLinksShouldShow={this.state.hamburgerLinksShouldShow} />
+        <main className={styles.mainContent}>
           <Wrapper> {this.props.children} </Wrapper>
         </main>
         <Footer />
-      </>
+      </div>
     );
   }
 }

@@ -10,6 +10,7 @@ import pdf from '../../../assets/test.pdf';
 const pageLinks = [
   { to: "/", text: "Home" },
   { to: "/blog", text: "Blog" },
+  { to: "/about", text: "About" },
   { to: "/contact", text: "Contact" },
 ]
 
@@ -30,7 +31,8 @@ const Header = (props) => {
             <ul className={classesForListOfLinks.join(' ')}>
               {transformPageLinks()}
               <li>
-                <a className={styles.link} href={pdf} download="resume.pdf"> Resume
+                <a className={`${styles.link} ${styles.lastLink}`} href={pdf} download="resume.pdf"> 
+                  Resume
                   <FontAwesomeIcon className={styles.download} icon={faDownload} />
                 </a>
               </li>

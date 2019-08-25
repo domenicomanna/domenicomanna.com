@@ -1,0 +1,26 @@
+.posts{
+  list-style: none;
+  margin: 0;
+}
+
+.posts > *{
+  cursor: pointer;
+  border-top: 1px solid var(--grey-500);
+  transition: .3s;
+}
+
+.posts > *:first-child{
+  border-top: none;
+}
+
+@media(any-hover: hover){
+  /* Make border of the hovered element and the element directly after it blend in with the hovered background color */
+  .posts > *:hover, .posts > *:hover +*{
+    border-color: var(--grey-300);
+  }
+
+  .posts > *:hover{
+    background: var(--grey-300);
+    border-radius: 5px;
+  }
+}

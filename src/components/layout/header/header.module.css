@@ -16,9 +16,9 @@
 }
 
 .listOfLinks{
-  display: none;
-  /* height: 0;
-  overflow: hidden; */
+  /* display: none; */
+  height: 0;
+  overflow: hidden;
   list-style: none;
   margin: 0;
   text-align: center;
@@ -40,7 +40,7 @@
   /* hide title link but allow it to occupy space so the header does not collapse. */
   visibility: hidden;
 
-  /* undo padding set from the link class. The extra padding makes the header too big. */
+  /* undo padding set from the link class. The extra padding makes the header too big for just the hamburger menu */
   padding: 0;
 }
 
@@ -64,13 +64,14 @@
   /* The exact height is calculated by first changing the display property to block and
   checking the height of the ul using the browser's developer tools */
   display: block;
+  height: auto;
 }
 
 .download{
   padding-left: .5rem;
 }
 
-@media(min-width: 400px){
+@media(min-width: 360px){
   .nav{
     display: flex;
     justify-content: center;
@@ -83,6 +84,7 @@
 
   .listOfLinks{
     display: flex;
+    height: auto;;
   }
 
   .hamburger{
@@ -90,8 +92,20 @@
   }
 
   .link {
-    padding: .4rem 1rem;
+    padding: .4rem .9rem;
     width: auto;
+  }
+  
+  .lastLink{
+    display: none;
+  }
+  
+}
+
+@media(min-width: 480px){
+  .lastLink{
+    display: inline-block;
+    padding-right: 0;
   }
 }
 
@@ -104,5 +118,6 @@
   .titleLink{
     display: inline-block;
     visibility: visible;
+    padding-left: 0;
   }
 }

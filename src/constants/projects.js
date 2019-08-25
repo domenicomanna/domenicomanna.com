@@ -1,8 +1,3 @@
-let description = `an amazing project that makes absolutely no senese  
-i do not know what to write anymore an amazing project that makes absolutely no senese  
-i do not know what to write anymore an amazing project that makes absolutely no senese  
-i do not know what to write anymore`
-
 export default [
   {
     imageFileName: "beerHub.png",

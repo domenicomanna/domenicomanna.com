@@ -1,0 +1,26 @@
+.postHighlight {
+  padding: 2rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+}
+
+.metadata {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.date {
+  font-size: 1.2rem;
+}
+
+.metadata > * {
+  margin-right: 0.5rem;
+}
+
+.metadata > *:first-child {
+  margin-right: 1rem;
+}

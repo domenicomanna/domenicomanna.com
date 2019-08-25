@@ -1,23 +1,24 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-export default [
+const socialNetworks = [
   {
-    identifier: "github",
-    displayText: "GitHub",
+    network : "Github",
     url: "https://github.com/domenicomanna",
+    username: "domenicomanna",
     icon: faGithub
   },
   {
-    identifier: "email",
-    displayText: "Gmail",
-    url: "mannadomenico2849@gmail.com",
-    icon: faEnvelope
-  },
-  {
-    identifier: "twitter",
-    displayText: "Twitter",
+    network: "Twitter",
     url: "https://twitter.com/domenicoLmanna",
+    username: "domenicoLmanna",
     icon: faTwitter
   }
 ]
+
+const email = {
+  address: "mannadomenico2849@gmail.com",
+  icon: faEnvelope
+}
+
+export {socialNetworks, email};
