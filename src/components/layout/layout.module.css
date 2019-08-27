@@ -6,5 +6,5 @@
 .mainContent{
   margin: 2rem 0;
                  /* header height - footer height - margin of main content */
-  min-height: calc(100vh - 71.97px - 84.19px -  4rem);
+  min-height: calc(100vh - 76.56px - 84.19px -  4rem);
 }

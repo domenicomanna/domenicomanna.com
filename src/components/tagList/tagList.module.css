@@ -1,11 +1,33 @@
-.tags{
+.postHighlightTags,
+.projectTags{
   display: flex;
   list-style: none;
-  margin-bottom: 1rem;
   flex-wrap: wrap;
-
 }
 
-.tags > * {
+.projectTags{
+  margin-bottom: 1rem;
+}
+
+.projectTags > * {
   margin: 0 1rem 1rem 0rem;
+}
+
+.postHighlightTags{
+  display: none;
+}
+
+@media(min-width: 550px){
+  .postHighlightTags{
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .postHighlightTags > * {
+    margin-right: .5rem;
+  }
+
+  .postHighlightTags > *:last-child{
+    margin-right: 0;
+  }
 }

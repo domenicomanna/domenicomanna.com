@@ -22,6 +22,28 @@
   margin-bottom: 1rem;
 }
 
+.description{
+  margin-bottom: 1.6rem;
+}
+
+.technologies{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.technologies > * {
+  margin: 0 1rem 1rem 0rem;
+}
+
+.technology{
+  display: inline-block;
+  border-radius: 5px;
+  padding: .3rem .5rem;
+  border: 1px solid var(--green-500);
+}
+
 .buttonGroup{
   display: flex;
   flex-direction: column;

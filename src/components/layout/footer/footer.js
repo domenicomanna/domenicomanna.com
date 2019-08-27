@@ -13,12 +13,12 @@ const Footer = () => {
         <div className={styles.footer}>
           <span className={styles.copyright}>&copy; {currentYear} Domenico Manna</span>
           <ul className={styles.footerLinks}>
-            {transformSocialNetworks(socialNetworks)}
             <li className={styles.linkItem}>
-              <a className={styles.link} href={`mailto: ${email.address}`}>        
-               <FontAwesomeIcon icon={email.icon} />
+              <a className={styles.link} href={`mailto: ${email.address}`}>
+                <FontAwesomeIcon icon={email.icon} />
               </a>
             </li>
+            {transformSocialNetworks(socialNetworks)}
           </ul>
         </div>
       </Wrapper>

@@ -12,9 +12,9 @@ const Blog = () => {
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
       <ul className={styles.posts}>
-        <BlogPostHighlight />
-        <BlogPostHighlight />
-        <BlogPostHighlight />
+        <BlogPostHighlight image = "gats" />
+        <BlogPostHighlight image = "gats"/>
+        <BlogPostHighlight image = "gatsby-a"/>
       </ul>
     </Layout>
   );
