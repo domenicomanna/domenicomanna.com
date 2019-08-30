@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-// ensures that the icon CSS is loaded immediately before attempting to render icons.
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './header/header';
 import Footer from './footer/footer';
 import Wrapper from '../wrapper/wrapper'
 import "./global.css"
 import styles from './layout.module.css';
+// ensures that the icon CSS is loaded immediately before attempting to render icons.
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 
 class Layout extends Component {

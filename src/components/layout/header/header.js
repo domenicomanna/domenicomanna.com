@@ -9,9 +9,9 @@ import pdf from '../../../assets/test.pdf';
 
 const pageLinks = [
   { to: "/", text: "Home" },
-  { to: "/blog", text: "Blog" },
-  { to: "/about", text: "About" },
-  { to: "/contact", text: "Contact" },
+  { to: "/blog/", text: "Blog" },
+  { to: "/about/", text: "About" },
+  { to: "/contact/", text: "Contact" },
 ]
 
 const Header = (props) => {
