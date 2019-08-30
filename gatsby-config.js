@@ -18,6 +18,7 @@ module.exports = {
       options: {
         name: `blogPosts`,
         path: `${__dirname}/src/blogPosts`,
+        ignore: process.env.NODE_ENV === `production` && [`**/draft-*`]
       },
     },
     `gatsby-transformer-remark`,

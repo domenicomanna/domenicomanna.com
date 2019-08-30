@@ -27,7 +27,6 @@ export const query = graphql`
           excerpt(pruneLength: 140)
           frontmatter {
             title
-            description
             date(formatString: "DD MMMM, YYYY")
           }
           fields{
