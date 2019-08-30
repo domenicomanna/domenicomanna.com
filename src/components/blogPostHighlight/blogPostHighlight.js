@@ -2,8 +2,6 @@ import React from 'react';
 import { navigate } from "gatsby"
 import styles from './blogPostHighlight.module.css';
 import Image from '../image/image';
-import Img from 'gatsby-image';
-import { graphql, useStaticQuery } from 'gatsby';
 
 const BlogPostHighlight = ({ title, date, excerpt, image, slug }) => {
   console.log(slug);

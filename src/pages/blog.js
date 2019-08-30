@@ -3,37 +3,17 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import PageTitle from '../components/pageTitle/pageTitle';
-import BlogPostHighlight from '../components/blogPostHighlight/blogPostHighlight';
-import styles from './pageStyles/blog.module.css';
+import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
 
 const Blog = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
-      <ul className={styles.posts}>
-        {transformPosts(data.allMarkdownRemark.edges)}
-      </ul>
+      <BlogPostHighlightList postEdges= {data.allMarkdownRemark.edges}/>
     </Layout>
   );
 }
-
-const transformPosts = postEdges => (
-  postEdges.map(({ node }) => {
-    const { title, date } = node.frontmatter;
-    return (
-      <BlogPostHighlight key={node.id}
-        title={title}
-        excerpt={node.excerpt}
-        date={date}
-        image="gats"
-        slug={node.fields.slug}
-      />
-    )
-  })
-)
-
-
 
 export default Blog;
 

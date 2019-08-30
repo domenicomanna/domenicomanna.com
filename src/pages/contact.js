@@ -26,7 +26,7 @@ export default Contact;
 
 const transformSocialNetworks = () => (
   socialNetworks.map(socialNetwork => (
-    <li key={socialNetwork.url} className={styles.networkItem}>
+    <li key={socialNetwork.url} className={styles.networkListItem}>
       <span className={styles.networkName}>{socialNetwork.network}: </span>
       <a target="_blank" rel="noopener noreferrer" href={socialNetwork.url}>{socialNetwork.username}</a>
     </li>
