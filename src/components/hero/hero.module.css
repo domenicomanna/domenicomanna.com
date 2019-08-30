@@ -4,9 +4,8 @@
 }
 
 .name{
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   margin: 0 0 1rem 0;
-  line-height: 1.3;
 }
 
 .description{
@@ -16,6 +15,7 @@
 }
 
 .buttonWrapper{
+  font-size: 1.3rem;
   display: inline-block;
 }
 
@@ -36,15 +36,15 @@
   }
 
   .name{
-    line-height: inherit;
-    font-size: 3.5rem;
+    font-size: 3.3rem;
   }
 
   .description{
     font-size: 1.5rem;
+    line-height: 1.85;
   }
 
   .buttonWrapper{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }

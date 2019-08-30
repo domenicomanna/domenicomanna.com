@@ -18,7 +18,6 @@ const Project = ({ imageFileName, title, description, technologiesUsed, websiteL
         <ul className={styles.technologies}>
           {transformTechnologies(technologiesUsed)}
         </ul>
-        {/* <TagList tags={technologiesUsed} tagListType={tagListTypes.project} tagType={tagTypes.project} /> */}
         <div className={styles.buttonGroup}>
           {createButton(websiteLink, "View Site", faExternalLinkAlt)}
           {createButton(repositoryLink, "View Source", faGithub)}

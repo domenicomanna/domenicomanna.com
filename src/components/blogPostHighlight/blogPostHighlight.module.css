@@ -15,32 +15,20 @@
 }
 
 .title {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
+  margin-bottom: 0rem;
   transition: var(--transition-short);
-}
-
-.title:hover{
-  color: var(--blue-500);
-  cursor: pointer;
 }
 
 .date {
   display: inline-block;
   font-size: 1.1rem;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 @media(min-width: 700px){
   .postHighlight{
     padding: 2rem 2rem;
-  }
-  .title{
-    font-size: 1.7rem;
-  }
-  .date{
-    font-size: 1.2rem;
   }
 }
 

@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.title {
+.name {
   margin: 0;
 }
 
@@ -36,7 +36,7 @@
   transition: .4s;
 }
 
-.titleLink{
+.nameLink{
   /* hide title link but allow it to occupy space so the header does not collapse. */
   visibility: hidden;
 
@@ -77,7 +77,7 @@
     justify-content: center;
   }
 
-  .titleLink{
+  .nameLink{
     /* remove the title link and show all other nav links instead */
     display: none;
   }
@@ -115,9 +115,13 @@
     align-items: center;
   }
 
-  .titleLink{
+  .nameLink{
     display: inline-block;
     visibility: visible;
     padding-left: 0;
+  }
+
+  .name{
+    font-size: 1.55rem;
   }
 }

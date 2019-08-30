@@ -1,17 +1,11 @@
 import React from 'react';
 import styles from './tag.module.css';
 
-const tagTypes = {
-  project: styles.project,
-  blogPost: styles.blogPost
-}
-
-const Tag = ({children, tagType}) => {
+const Tag = ({children}) => {
   return (  
-    <li className = {tagType}>
-      {children}
+    <li className = {styles.tag}>
+      null
     </li>
   );
 }
  
-export {Tag, tagTypes};

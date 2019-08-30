@@ -6,7 +6,7 @@
 .posts > *{
   cursor: pointer;
   border-top: 1px solid var(--grey-500);
-  transition: .3s;
+  transition: .35s;
 }
 
 .posts > *:first-child{

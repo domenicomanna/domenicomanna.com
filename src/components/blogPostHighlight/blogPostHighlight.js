@@ -1,25 +1,22 @@
 import React from 'react';
-
+import { navigate } from "gatsby"
 import styles from './blogPostHighlight.module.css';
-import { TagList, tagListTypes } from '../../components/tagList/tagList';
-import { Tag, tagTypes } from '../tag/tag';
 import Image from '../image/image';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
-let tags1 = ['react', 'css'];
-
-const BlogPostHighlight = ({ title, date, tags, description, image, slug }) => {
-
+const BlogPostHighlight = ({ title, date, excerpt, image, slug }) => {
+  console.log(slug);
+  
   return (
-    <li className={styles.postHighlight}>
+    <li className={styles.postHighlight} onClick = { () => { navigate(slug) } }>
       <div className={styles.imageWrapper}>
         <Image fileName={image} />
       </div>
       <div className={styles.postContent}>
-        <h2 className={styles.title}>How to Create a Responsive Navbar in React </h2>
-        <span className={styles.date}>August 16th, 2019</span>
-        <p>A short description about this post A short description about this post A short description about this post A short description about this post</p>
+        <h2 className={styles.title}>{title}</h2>
+        <span className={styles.date}>{date}</span>
+        <p>{excerpt}</p>
       </div>
     </li>
 

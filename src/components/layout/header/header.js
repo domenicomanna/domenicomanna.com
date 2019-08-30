@@ -25,8 +25,8 @@ const Header = (props) => {
       <header className={styles.header}>
         <Wrapper>
           <nav className={styles.nav}>
-            <Link className={`${styles.link} ${styles.titleLink}`} to="/">
-              <h2 className={styles.title}>Domenico Manna</h2>
+            <Link className={`${styles.link} ${styles.nameLink}`} to="/">
+              <h2 className={styles.name}>Domenico Manna</h2>
             </Link>
             <ul className={classesForListOfLinks.join(' ')}>
               {transformPageLinks()}

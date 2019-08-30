@@ -5,7 +5,7 @@ export default [
     description: `A React app that utilizes the <a href = "https://punkapi.com/" target = "_blank" rel="noopener noreferrer"> Punk API </a> to retrieve information about BrewDog's massive beer catalog. This app enables users to search for any BrewDog beer, and save their favorite ones. Favorites are persisted through local storage.`,
     technologiesUsed: ["React", "CSS3"],
     websiteLink: "https://domenicomanna.github.io/beerHub/",
-    repositoryLink: "https://github.com/domenicomanna/beerHub"
+    repositoryLink: "https://github.com/domenicomanna/beerHub",
   },
   {
     imageFileName: "giphy.png",
