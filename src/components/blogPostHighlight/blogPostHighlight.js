@@ -14,9 +14,9 @@ const BlogPostHighlight = ({ title, date, excerpt, image, slug }) => {
         <Image fileName={image} />
       </div>
       <div className={styles.postContent}>
-        <h2 className={styles.title}>{title}</h2>
-        <span className={styles.date}>{date}</span>
-        <p>{excerpt}</p>
+        <h2 className={styles.postTitle}>{title}</h2>
+        <span className={styles.postDate}>{date}</span>
+        {/* <p className = {styles.postExcerpt}>{excerpt}</p> */}
       </div>
     </li>
 

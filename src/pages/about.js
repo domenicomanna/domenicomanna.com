@@ -8,7 +8,7 @@ import styles from './pageStyles/about.module.css';
 const About = () => {
   return (
     <Layout>
-      <section>
+      <section className = {styles.aboutContent}>
         <SEO title="About" />
         <PageTitle>About</PageTitle>
         <p>

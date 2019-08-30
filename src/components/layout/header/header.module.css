@@ -2,7 +2,7 @@
   position: sticky;
   z-index: 11;
   top: 0;
-  padding: .4rem 0;
+  padding: .6rem 0;
   background: var(--grey-200);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -16,7 +16,6 @@
 }
 
 .listOfLinks{
-  /* display: none; */
   height: 0;
   overflow: hidden;
   list-style: none;

@@ -1,8 +1,26 @@
-.postWrapper{
-  max-width: 850px;
+.post{
+  max-width: 725px;
   margin: auto;
 }
 
-.postWrapper h2 {
+.postTitle{
+  margin-bottom: .2rem;
+}
+
+.postMetadata{
+  margin-bottom: 1rem;
+  font-size: 1.1rem; /* matches font-size in blog post highlight css*/
+}
+
+.postDate{
+  display: inline-block;
+}
+
+.postTags{
+  display: flex;
+  margin: 0;
+}
+
+.post h2 {
   margin-top: 2.9rem;
 }

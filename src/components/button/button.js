@@ -3,7 +3,6 @@ import styles from './button.module.css';
 
 const buttonTypes = {
   primary: styles.primary,
-  viewProject: styles.viewProject
 }
 
 const Button = ({children, type}) => {

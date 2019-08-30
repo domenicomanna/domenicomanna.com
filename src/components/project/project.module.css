@@ -1,13 +1,5 @@
 .project{
   display: flex;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid var(--grey-500);
-  margin-bottom: 4rem; 
-}
-
-.project:last-child{
-  border: none;
-  margin-bottom: 0;
 }
 
 .imageWrapper{
@@ -18,48 +10,8 @@
   flex: 1.2;
 }
 
-.title{
+.projectTitle{
   margin-bottom: 1rem;
-}
-
-.description{
-  margin-bottom: 1.6rem;
-}
-
-.technologies{
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  margin-bottom: 1.2rem;
-}
-
-.technologies > * {
-  margin: 0 1rem 1rem 0rem;
-}
-
-.technology{
-  display: inline-block;
-  border-radius: 5px;
-  padding: .3rem .5rem;
-  border: 1px solid var(--green-500);
-}
-
-.buttonGroup{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.buttonGroup > *{
-  margin: 0 0 2rem 0;
-}
-
-.buttonGroup > *:last-child{
-  margin: 0;
-}
-
-.icon{
-  margin-left: .4rem;
 }
 
 .link{
@@ -67,12 +19,69 @@
   text-decoration: none;
 }
 
+.projectDescription{
+  margin-bottom: 1.6rem;
+}
+
+.projectTechnologies{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0 0 1.2rem 0;
+}
+
+.projectTechnologies > * {
+  margin: 0 .75rem 1rem 0rem;
+}
+
+.projectTechnology{
+  display: inline-block;
+  border-radius: 5px;
+  padding: .3rem .5rem;
+  border: 1px solid var(--green-500);
+}
+
+.viewProjectLinkGroup{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.viewProjectLinkGroup > *{
+  margin: 0 0 2rem 0;
+}
+
+.viewProjectLinkGroup > *:last-child{
+  margin: 0;
+}
+
+.viewProjectIcon{
+  margin-left: .4rem;
+}
+
+.viewProjectLink{
+  display: inline-block;
+  padding: .8rem 1rem;
+  border-radius: 5px;
+  color: var(--blue-500);
+  background: var(--grey-100);
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, .1);
+}
+
+@media(any-hover: hover){
+  .viewProjectLink:hover{
+    transform: translateY(-6px);
+    box-shadow: 0px 14px 20px rgba(0, 0, 0, 0.1);
+    color: var(--blue-500);
+  }
+}
+
 @media(min-width: 400px){
-  .buttonGroup{
+  .viewProjectLinkGroup{
     flex-direction: row;
   }
 
-  .buttonGroup > *{
+  .viewProjectLinkGroup > *{
     margin: 0 1rem 0 0;
   }
 }

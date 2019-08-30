@@ -14,16 +14,19 @@
   flex: 1;
 }
 
-.title {
-  margin-bottom: 0rem;
+.postTitle {
+  margin-bottom: .5rem;
   transition: var(--transition-short);
 }
 
-.date {
+.postDate {
   display: inline-block;
   font-size: 1.1rem;
-  font-style: italic;
   margin-bottom: 1.1rem;
+}
+
+.postExcerpt{
+  margin: 0;
 }
 
 @media(min-width: 700px){

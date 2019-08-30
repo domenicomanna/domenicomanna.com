@@ -30,7 +30,7 @@
   }
 }
 
-@media(min-width: 700px){
+@media(min-width: 768px){
   .hero{
     margin-bottom: 7rem;
   }

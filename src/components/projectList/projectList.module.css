@@ -4,3 +4,20 @@
   list-style: none;
   margin: 0;
 }
+
+.projects > * {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--grey-500);
+  margin-bottom: 3rem; 
+}
+
+.projects > *:last-child{
+  border: none;
+  margin-bottom: 0;
+}
+
+@media(min-width: 900px){
+  .projects > *{
+    margin-bottom: 4rem;
+  }
+}

@@ -27,7 +27,7 @@ const transformPosts = postEdges => (
         excerpt={node.excerpt}
         date={date}
         image="gats"
-        slug = {node.fields.slug}
+        slug={node.fields.slug}
       />
     )
   })
@@ -44,7 +44,7 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt
+          excerpt(pruneLength: 140)
           frontmatter {
             title
             description
