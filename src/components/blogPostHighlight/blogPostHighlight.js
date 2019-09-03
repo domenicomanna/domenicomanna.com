@@ -4,8 +4,6 @@ import styles from './blogPostHighlight.module.css';
 import Image from '../image/image';
 
 const BlogPostHighlight = ({ title, date, excerpt, image, slug }) => {
-  console.log(slug);
-  
   return (
     <li className={styles.postHighlight} onClick = { () => { navigate(slug) } }>
       <div className={styles.imageWrapper}>

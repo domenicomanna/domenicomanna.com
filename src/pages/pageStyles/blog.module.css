@@ -1,0 +1,10 @@
+.blogContent{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 3rem;
+}
+
+.tagsLink{
+  text-align: center;
+  font-size: 1.45rem;
+}

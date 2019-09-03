@@ -19,7 +19,7 @@ const queryForAllImages = graphql`query AllImages {
         relativePath
         childImageSharp{
           fluid(maxWidth: 1000){
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }

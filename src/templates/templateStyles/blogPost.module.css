@@ -16,11 +16,6 @@
   display: inline-block;
 }
 
-.postTags{
-  display: flex;
-  margin: 0;
-}
-
 .post h2 {
   margin-top: 2.9rem;
 }

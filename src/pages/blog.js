@@ -1,16 +1,20 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import PageTitle from '../components/pageTitle/pageTitle';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
+import styles from './pageStyles/blog.module.css';
 
 const Blog = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
-      <BlogPostHighlightList postEdges= {data.allMarkdownRemark.edges}/>
+      <h3 className = {styles.tagsLink}><Link to = "/tags">Tags</Link></h3>
+      <div className={styles.blogContent}>
+        <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
+      </div>
     </Layout>
   );
 }

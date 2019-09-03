@@ -31,7 +31,7 @@
 
 @media(min-width: 700px){
   .postHighlight{
-    padding: 2rem 2rem;
+    padding: 2rem .7rem;
   }
 }
 

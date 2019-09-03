@@ -1,0 +1,12 @@
+.backToBlogLink{
+  text-decoration: none;
+  text-align: center;
+}
+
+.arrowIcon{
+  margin-right: .5rem;
+}
+
+.tags > * {
+  margin-bottom: .5rem;
+}
