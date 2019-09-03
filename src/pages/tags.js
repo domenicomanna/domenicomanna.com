@@ -7,8 +7,8 @@ import PageTitle from '../components/pageTitle/pageTitle';
 import styles from './pageStyles/tags.module.css';
 
 const Tags = ({ data }) => {
-  console.log(data.allMarkdownRemark);
   const tagGroup = data.allMarkdownRemark.group;
+  
   // sort tags in descending order by the total amount of times a tag appears in a post
   // so, 4, 3, 2, 1, for example.
   tagGroup.sort((tag1, tag2) => (tag1.totalCount < tag2.totalCount) ? 1 : -1)

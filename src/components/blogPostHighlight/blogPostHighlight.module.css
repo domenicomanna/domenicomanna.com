@@ -3,8 +3,8 @@
   display: flex;
 }
 
-.imageWrapper{
-  flex: .1;
+.featuredImage{
+  flex: .13;
   margin-right: 3rem;
   align-self: center;
   display: none;
@@ -31,12 +31,12 @@
 
 @media(min-width: 700px){
   .postHighlight{
-    padding: 2rem .7rem;
+    padding: 2rem 2rem;
   }
 }
 
 @media(min-width: 800px){
-  .imageWrapper{
+  .featuredImage{
     display: block;
   }
 }

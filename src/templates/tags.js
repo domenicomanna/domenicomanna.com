@@ -43,6 +43,13 @@ export const allPostsWithSelectedTagQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

@@ -3,6 +3,8 @@ import styles from './blogPostHighlightList.module.css';
 import BlogPostHighlight from '../blogPostHighlight/blogPostHighlight';
 
 const BlogPostHighlightList = ({postEdges}) => {
+  console.log(postEdges);
+  
   return (  
     <ul className = {styles.posts}>
       {transformPosts(postEdges)}
@@ -12,13 +14,13 @@ const BlogPostHighlightList = ({postEdges}) => {
 
 const transformPosts = postEdges => (
   postEdges.map(({ node }) => {
-    const { title, date } = node.frontmatter;
+    const { title, date, featuredImage } = node.frontmatter;
     return (
       <BlogPostHighlight key={node.id}
         title={title}
         excerpt={node.excerpt}
         date={date}
-        image="gats"
+        fluidImage={featuredImage.childImageSharp.fluid}
         slug={node.fields.slug}
       />
     )

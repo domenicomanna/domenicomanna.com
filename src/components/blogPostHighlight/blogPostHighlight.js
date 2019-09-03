@@ -1,18 +1,18 @@
 import React from 'react';
 import { navigate } from "gatsby"
+import Img from 'gatsby-image';
 import styles from './blogPostHighlight.module.css';
 import Image from '../image/image';
 
-const BlogPostHighlight = ({ title, date, excerpt, image, slug }) => {
+const BlogPostHighlight = ({ title, date, excerpt, fluidImage, slug }) => {
+  console.log(fluidImage);
+  
   return (
     <li className={styles.postHighlight} onClick = { () => { navigate(slug) } }>
-      <div className={styles.imageWrapper}>
-        <Image fileName={image} />
-      </div>
+        <Img className = {styles.featuredImage} fluid = {fluidImage} />
       <div className={styles.postContent}>
         <h2 className={styles.postTitle}>{title}</h2>
         <span className={styles.postDate}>{date}</span>
-        {/* <p className = {styles.postExcerpt}>{excerpt}</p> */}
       </div>
     </li>
 

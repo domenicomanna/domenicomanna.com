@@ -4,17 +4,14 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import PageTitle from '../components/pageTitle/pageTitle';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
-import styles from './pageStyles/blog.module.css';
 
 const Blog = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
-      <h3 className = {styles.tagsLink}><Link to = "/tags">Tags</Link></h3>
-      <div className={styles.blogContent}>
-        <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
-      </div>
+      <h3 style = {{textAlign: "center"}}><Link to="/tags">Tags</Link></h3>
+      <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
     </Layout>
   );
 }
@@ -32,6 +29,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields{
             slug
