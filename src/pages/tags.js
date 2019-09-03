@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import kebabCase from 'lodash/kebabCase';
 import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
@@ -19,8 +17,7 @@ const Tags = ({ data }) => {
       <SEO title="Tags" />
       <PageTitle>Tags</PageTitle>
       <h3 style = {{textAlign: "center"}}>
-        <Link to="/blog/" className = {styles.backToBlogLink}>
-          <FontAwesomeIcon icon={faArrowLeft} className = {styles.arrowIcon} />
+        <Link to="/blog/">
           Back to Blog
         </Link>
       </h3>

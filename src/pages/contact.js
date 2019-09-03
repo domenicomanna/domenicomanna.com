@@ -12,7 +12,7 @@ const Contact = () => {
         <SEO title="Contact" />
         <PageTitle>Contact</PageTitle>
         <p> Email me anytime: <a href={`mailto: ${email.address}`}>{email.address} </a></p>
-        <p>You can also find me at: </p>
+        <p className = {styles.listDescription}>You can also find me at: </p>
         <ul className = {styles.socialNetworks}>
           {transformSocialNetworks()}
         </ul>

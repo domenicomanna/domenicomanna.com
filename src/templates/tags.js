@@ -1,9 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList'
 import PageTitle from '../components/pageTitle/pageTitle';
+import styles from './templateStyles/tags.module.css';
 
 const Tags = ({pageContext, data}) => {
   console.log(data);
@@ -13,6 +14,11 @@ const Tags = ({pageContext, data}) => {
     <Layout>
       <SEO title = {`${tag} Articles`}/>
       <PageTitle>{tag}</PageTitle>
+      <h3 style = {{textAlign: "center"}}>
+        <Link to="/tags/">
+          Back to Tags
+        </Link>
+      </h3>
       <BlogPostHighlightList postEdges = {data.allMarkdownRemark.edges}/>
     </Layout>
   );
