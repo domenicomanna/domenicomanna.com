@@ -32,7 +32,7 @@ export const query = graphql`
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }
