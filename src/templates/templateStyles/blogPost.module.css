@@ -4,16 +4,38 @@
 }
 
 .postTitle{
-  margin-bottom: .2rem;
+  margin-bottom: .5rem;
 }
 
 .postMetadata{
-  margin-bottom: 1rem;
   font-size: 1.1rem; /* matches font-size in blog post highlight css*/
 }
 
 .postDate{
   display: inline-block;
+  margin-bottom: .1rem;
+}
+
+.postTagsWrapper{
+  display: flex;
+}
+
+.postTags{
+  display: flex;
+  margin: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+
+.postTagsHeader,
+.postTags > * {
+  margin-right: .45rem;
+}
+
+.postTags > *:last-child{
+  margin-right: 0;
 }
 
 .post h2 {

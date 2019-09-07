@@ -3,8 +3,6 @@ import styles from './blogPostHighlightList.module.css';
 import BlogPostHighlight from '../blogPostHighlight/blogPostHighlight';
 
 const BlogPostHighlightList = ({postEdges}) => {
-  console.log(postEdges);
-  
   return (  
     <ul className = {styles.posts}>
       {transformPosts(postEdges)}

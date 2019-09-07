@@ -7,8 +7,6 @@ import PageTitle from '../components/pageTitle/pageTitle';
 import styles from './templateStyles/tags.module.css';
 
 const Tags = ({pageContext, data}) => {
-  console.log(data);
-  console.log(pageContext.tag);
   const {tag} = pageContext
   return (  
     <Layout>

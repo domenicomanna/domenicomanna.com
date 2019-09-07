@@ -1,12 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
 import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
 import styles from './templateStyles/blogPost.module.css';
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
-  const { title, date } = post.frontmatter;
+  const { title, date, tags } = post.frontmatter;
+  const tagsHeader = tags.length > 1 ? 'Tags:' : 'Tag:'
+
   return (
     <Layout>
       <SEO title={title} />
@@ -14,12 +17,24 @@ const BlogPost = ({ data }) => {
         <h1 className={styles.postTitle}>{title}</h1>
         <div className={styles.postMetadata}>
           <span className={styles.postDate}>{date}</span>
+          <div className={styles.postTagsWrapper}>
+            <span className = {styles.postTagsHeader}>{tagsHeader}</span>
+            <ul className={styles.postTags}>
+              {getTags(tags)}
+            </ul>
+          </div>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </Layout>
   );
 }
+
+const getTags = tags => (
+  tags.map(tag => (
+    <li> <Link to = {`/tags/${kebabCase(tag)}`}> {tag} </Link> </li>
+  ))
+)
 
 export default BlogPost;
 
@@ -30,6 +45,7 @@ export const postQuery = graphql`
       frontmatter {
         title
         date
+        tags
       }
     }
   }

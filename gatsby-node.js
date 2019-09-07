@@ -5,9 +5,8 @@ const path = require(`path`);
 exports.onCreateNode = ({ node, getNode, actions}) => {
   const {createNodeField} = actions;
   if (node.internal.type === "MarkdownRemark"){
-    let slug = createFilePath({node, getNode});
-    slug = slug.replace("index.md", "");
-    createNodeField({
+    const slug = `/${kebabCase(node.frontmatter.title)}/`
+      createNodeField({
       node,
       name: `slug`,
       value: slug,
@@ -18,11 +17,11 @@ exports.onCreateNode = ({ node, getNode, actions}) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(allMarkdownRemarkQuery)
-  createAllBlogPages(result.data.postsRemark.edges, createPage);
-  createAllTagPages(result.data.tagsGroup.group, createPage);
+  createBlogPostPages(result.data.postsRemark.edges, createPage);
+  createTagPages(result.data.tagsGroup.group, createPage);
 }
 
-const createAllBlogPages = (postRemarkEdges, createPage) => {
+const createBlogPostPages = (postRemarkEdges, createPage) => {
   postRemarkEdges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
@@ -34,11 +33,10 @@ const createAllBlogPages = (postRemarkEdges, createPage) => {
   })
 }
 
-const createAllTagPages = (tags, createPage) => {
+const createTagPages = (tags, createPage) => {
   tags.forEach(tag => {
-    let tagInKebabCase = kebabCase(tag.fieldValue)
     createPage({
-      path: `/tags/${tagInKebabCase}/`,
+      path: `/tags/${kebabCase(tag.fieldValue)}/`,
       component: path.resolve(`./src/templates/tags.js`),
       context: {
         tag: tag.fieldValue,
@@ -46,7 +44,6 @@ const createAllTagPages = (tags, createPage) => {
     })
   })
 }
-
 const allMarkdownRemarkQuery = `query {
   postsRemark: allMarkdownRemark {
     edges {
