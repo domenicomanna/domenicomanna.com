@@ -5,6 +5,6 @@
 
 .mainContent{
   margin: 2rem 0;
-              /* viewport height - header height - footer height - margin of main content */
-  min-height: calc(100vh - 67.95px - 87.19px -  4rem);
+              /* viewport height - header height - footer height - margin top and bottom of main content */
+  min-height: calc(100vh - 70.97px - 87.19px -  4rem);
 }
