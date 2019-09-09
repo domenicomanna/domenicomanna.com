@@ -18,7 +18,7 @@ const BlogPost = ({ data }) => {
         <div className={styles.postMetadata}>
           <span className={styles.postDate}>{date}</span>
           <div className={styles.postTagsWrapper}>
-            <span className = {styles.postTagsHeader}>{tagsHeader}</span>
+            <span className={styles.postTagsHeader}>{tagsHeader}</span>
             <ul className={styles.postTags}>
               {getTags(tags)}
             </ul>
@@ -32,7 +32,10 @@ const BlogPost = ({ data }) => {
 
 const getTags = tags => (
   tags.map(tag => (
-    <li> <Link to = {`/tags/${kebabCase(tag)}`}> {tag} </Link> </li>
+    <li key={tag}>
+      <Link to={`/tags/${kebabCase(tag)}`}> {tag}
+      </Link>
+    </li>
   ))
 )
 
