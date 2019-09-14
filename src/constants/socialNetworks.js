@@ -8,16 +8,16 @@ const socialNetworks = [
     username: "domenicomanna",
     icon: faGithub
   },
-  {
-    network: "Twitter",
-    url: "https://twitter.com/domenicoLmanna",
-    username: "domenicoLmanna",
-    icon: faTwitter
-  }
+//   {
+//     network: "Twitter",
+//     url: "https://twitter.com/domenicoLmanna",
+//     username: "domenicoLmanna",
+//     icon: faTwitter
+//   }
 ]
 
 const email = {
-  address: "mannadomenico2849@gmail.com",
+  address: "dom@domenicomanna.com",
   icon: faEnvelope
 }
 

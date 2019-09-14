@@ -95,14 +95,14 @@
     width: auto;
   }
   
-  .lastLink{
+  .resumeLink{
     display: none;
   }
   
 }
 
 @media(min-width: 480px){
-  .lastLink{
+  .resumeLink{
     display: inline-block;
     padding-right: 0;
   }

@@ -10,7 +10,7 @@ const Blog = ({ data }) => {
     <Layout>
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
-      <h3 style = {{textAlign: "center"}}><Link to="/tags">Tags</Link></h3>
+      <h3 style = {{textAlign: "center", marginTop: "0rem"}}><Link to="/tags">Tags</Link></h3>
       <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
     </Layout>
   );

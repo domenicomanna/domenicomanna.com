@@ -4,16 +4,17 @@
 }
 
 .postTitle{
-  margin-bottom: .5rem;
+  margin-bottom: .4rem;
 }
 
 .postMetadata{
   font-size: 1.1rem; /* matches font-size in blog post highlight css*/
+  line-height: 1.85;
 }
 
 .postDate{
   display: inline-block;
-  margin-bottom: .1rem;
+  margin-bottom: 0rem;
 }
 
 .postTagsWrapper{

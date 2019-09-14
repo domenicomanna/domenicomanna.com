@@ -12,7 +12,7 @@ const Hero = () => {
         Hi, I'm Domenico
       </h1>
       <p className={styles.description}>
-        I study computer science and currently work as a c# developer.
+        I study computer science and currently work as a C# developer.
         I enjoy web development and like to write about programming.
       </p>
       <div className={styles.buttonWrapper}>

@@ -1,3 +1,4 @@
 pre[class*="language-"]{
   margin-bottom: 1.45rem;
+  border-radius: 5px;
 }

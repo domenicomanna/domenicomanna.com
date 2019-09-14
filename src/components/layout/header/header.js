@@ -30,12 +30,12 @@ const Header = (props) => {
             </Link>
             <ul className={classesForListOfLinks.join(' ')}>
               {transformPageLinks()}
-              <li>
-                <a className={`${styles.link} ${styles.lastLink}`} href={pdf} download="resume.pdf"> 
+              {/* <li>
+                <a className={`${styles.link} ${styles.resumeLink}`} href={pdf} download="resume.pdf"> 
                   Resume
                   <FontAwesomeIcon className={styles.download} icon={faDownload} />
                 </a>
-              </li>
+              </li> */}
             </ul>
             <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
           </nav>

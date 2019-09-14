@@ -16,11 +16,7 @@ const Tags = ({ data }) => {
     <Layout>
       <SEO title="Tags" />
       <PageTitle>Tags</PageTitle>
-      <h3 style = {{textAlign: "center"}}>
-        <Link to="/blog/">
-          Back to Blog
-        </Link>
-      </h3>
+      <h3 style = {{textAlign: "center", marginTop: "-.4rem"}}> <Link to="/blog/">Back to Blog</Link></h3>
       <ul className = {styles.tags}>
         {transformTagGroup(tagGroup)}
       </ul>
