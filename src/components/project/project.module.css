@@ -35,9 +35,10 @@
 }
 
 .projectTechnology{
+  font-size: 1.1rem;
   display: inline-block;
   border-radius: 5px;
-  padding: .3rem .5rem;
+  padding: .02rem .4rem;
   border: 1px solid var(--green-500);
 }
 
