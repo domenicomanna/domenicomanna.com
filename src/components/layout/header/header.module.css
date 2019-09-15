@@ -60,10 +60,10 @@
 }
 
 .hamburgerLinks{
-  /* The exact height is calculated by first changing the display property to block and
-  checking the height of the ul using the browser's developer tools */
+  /* exact height is calculated in dev tools */
   display: block;
-  height: auto;
+  height: 272px;
+  /* height: auto */
 }
 
 .download{
