@@ -5,8 +5,6 @@ import styles from './blogPostHighlight.module.css';
 import Image from '../image/image';
 
 const BlogPostHighlight = ({ title, date, excerpt, fluidImage, slug }) => {
-  console.log(fluidImage);
-  
   return (
     <li className={styles.postHighlight} onClick = { () => { navigate(slug) } }>
         <Img className = {styles.featuredImage} fluid = {fluidImage} />
