@@ -10,7 +10,7 @@ class Comments extends Component {
     head.appendChild(script);
   }
   render() {
-    return (<div className = "comments" id="commento"></div>)
+    return (<div id="commento"></div>)
   }
 }
 
