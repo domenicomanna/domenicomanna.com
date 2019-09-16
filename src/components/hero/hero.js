@@ -16,7 +16,7 @@ const Hero = () => {
         I enjoy web development and like to write about programming.
       </p>
       <div className={styles.buttonWrapper}>
-        <Link to = "projects" smooth = {true} offset = {-120} >
+        <Link to = "projects" smooth = {true} offset = {-115} >
           <Button type={buttonTypes.primary}>
             Checkout my projects
            <FontAwesomeIcon className={styles.icon} icon={faArrowDown} />

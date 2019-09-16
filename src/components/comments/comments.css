@@ -1,7 +1,20 @@
-#commento{
+#commento {
   margin-top: 2.4rem !important;
 }
 
-.commento-root * {
-  font-size: 1rem !important;
+@media (min-width: 600px) {
+  .commento-root * {
+    font-size: 1rem !important;
+  }
+}
+
+.commento-submit-button {
+  background: var(--blue-500) !important;
+  transition: var(--transition-short);
+}
+
+@media (any-hover: hover) {
+  .commento-submit-button:hover {
+    background: #225878 !important;
+  }
 }
