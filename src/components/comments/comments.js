@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import './comments.css'
 
 class Comments extends Component {
   componentDidMount() {
     const head = document.getElementsByTagName('head')[0];
     const script = document.createElement("script");
-    script.src = "https://cdn.commento.io/js/commento.jsz";
+    script.src = "//cdn.commento.io/js/commento.js";
     script.async = true;
     head.appendChild(script);
   }
   render() {
-    return (<div id="commento"></div>)
+    return (<div className = "comments" id="commento"></div>)
   }
 }
 
