@@ -1,4 +1,20 @@
-pre[class*="language-"]{
-  margin-bottom: 1.45rem;
-  border-radius: 5px;
+.gatsby-highlight {
+  background-color:#05213a;
+  border-radius: 0.3em;
+  margin: 0 0 1.45rem 0;
+  overflow: auto;
+  font-size: 1.1rem;
+}
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #455a64;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  /* border-left: 0.25em solid #f99; */
 }
