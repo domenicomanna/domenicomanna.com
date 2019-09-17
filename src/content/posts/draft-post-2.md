@@ -10,8 +10,8 @@ const Project = ({
   imageFileName,
   title,
   description,
-  technologiesUsed,
-  websiteLink,
+  technologiesUsed, // highlight-line
+  websiteLink, // highlight-line
   repositoryLink, // highlight-line
 }) => {
   return (

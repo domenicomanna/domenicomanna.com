@@ -1,5 +1,5 @@
 .gatsby-highlight {
-  background-color:#05213a;
+  background-color: #282c34;
   border-radius: 0.3em;
   margin: 0 0 1.45rem 0;
   overflow: auto;
@@ -10,7 +10,7 @@
 }
 
 .gatsby-highlight-code-line {
-  background-color: #455a64;
+  background-color: rgb(64, 69, 78);
   display: block;
   margin-right: -1em;
   margin-left: -1em;
