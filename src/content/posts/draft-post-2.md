@@ -5,6 +5,10 @@ tags: ["Animals"]
 featuredImage: ../images/gatsby-icon.png
 ---
 
+<h1>HEYY</h1>
+
+<div class = "codeTitle"> Shell </div>
+
 ```jsx
 const Project = ({
   imageFileName,
@@ -16,7 +20,7 @@ const Project = ({
 }) => {
   return (
     <li className={styles.project}>
-      <div className={styles.imageWrapper}> 
+      <div className={styles.imageWrapper}>       {/* highlight-line */}
         <Image fileName={imageFileName} />
       </div>
       <div className={styles.projectContent}>

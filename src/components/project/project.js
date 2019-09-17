@@ -11,7 +11,7 @@ const Project = ({ imageFileName, title, description, technologiesUsed, websiteL
       <div className={styles.imageWrapper}>
         <Image fileName={imageFileName} />
       </div>
-      <div className={styles.projectContent}>
+      <div className={styles.projectContent}> 
         <h2 className={styles.projectTitle}>{title}</h2>
         <p className = {styles.projectDescription} dangerouslySetInnerHTML={{ __html: description }} />
         <ul className={styles.projectTechnologies}>

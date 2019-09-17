@@ -1,10 +1,11 @@
 .gatsby-highlight {
   background-color: #282c34;
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
   margin: 0 0 1.45rem 0;
   overflow: auto;
   font-size: 1.1rem;
 }
+
 .gatsby-highlight pre[class*="language-"] {
   background-color: transparent;
 }
@@ -17,4 +18,17 @@
   padding-right: 1em;
   padding-left: 0.75em;
   /* border-left: 0.25em solid #f99; */
+}
+
+.codeTitle{
+  font-size: 1.1rem;
+  background: black;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
+  padding: .3rem 1rem;
+  color: white;
+}
+
+.codeTitle + * {
+  border-radius: 0;
 }
