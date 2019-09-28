@@ -25,7 +25,7 @@ const BlogPost = ({ data }) => {
             </ul>
           </div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className={styles.postMainContent} dangerouslySetInnerHTML={{ __html: post.html }} />
         <Comments />
       </article>
     </Layout>

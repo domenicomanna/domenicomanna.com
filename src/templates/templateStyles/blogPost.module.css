@@ -39,8 +39,12 @@
   margin-right: 0;
 }
 
-.post h2 {
+.postMainContent h2 {
   margin: 2rem 0 .7rem 0;
+}
+
+.postMainContent ul > *{
+  margin-bottom: .5rem;
 }
 
 @media (min-width: 768px) {
