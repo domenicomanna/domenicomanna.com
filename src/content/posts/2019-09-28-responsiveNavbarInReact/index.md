@@ -5,7 +5,7 @@ tags: ["React", "CSS"]
 featuredImage: ../../featuredImages/react.png
 ---
 
-Navigation menu's are a central part of every website. In this tutorial, we will be creating a responsive navbar in React.
+Navigation menus are a central part of every website. In this tutorial, we will be creating a responsive navbar in React.
 
 **Prerequisites**: Basic knowledge in HTML, CSS, and React.
 
@@ -49,7 +49,7 @@ const Layout = props => {
 export default Layout
 ```
 
-Now, let's make sure everything is working properly by returning this component in our app.js file.
+Now, let's make sure everything is working correctly by returning this component in our app.js file.
 
 <div class = "codeTitle">App.js </div>
 
@@ -125,7 +125,7 @@ const Navbar = props => {
 export default Navbar
 ```
 
-All we are doing here is creating the markup for a navigation menu. Now, let's add the styles in a mobile first approach.
+All we are doing here is creating the markup for a navigation menu. Now, let's add the styles in a mobile-first approach.
 
 <div class = "codeTitle">layout/navbar.module.css</div>
 
@@ -312,7 +312,7 @@ export default Navbar
 With these changes in place, our navigation menu should now look like:
 ![](./images/Screen Shot 2019-09-25 at 10.26.31 PM.png)
 
-This is much better, however we still need to fix a few more issues. Right now, the hamburger menu is always open, which is not desirable. Let's add some code that will allow us to open and close the menu.
+This is much better, however, we still need to fix a few more issues. Right now, the hamburger menu is always open, which is not desirable. Let's add some code that will allow us to open and close the menu.
 
 ## Opening and Closing the Hamburger Menu
 
@@ -470,7 +470,7 @@ const Navbar = props => {
 }
 ```
 
-Before, I explain what's going on, let's add the following styles to our navbar stylesheet.
+Before I explain what's going on, let's add the following styles to our navbar stylesheet.
 
 <div class = "codeTitle">navbar.module.css</div>
 
@@ -493,7 +493,7 @@ So, now by default, our hamburger links will not show at all. When the hamburger
 
 ## Improving the Styling For Large Screens
 
-Great, so at this point we have a menu that will open and close, and is perfect for smaller devices. However, when the screen size is big enough, we should remove the hamburger menu all together, and instead use a normal navigation bar. Let's work on that right now.
+Great, so at this point we have a menu that will open and close, and is perfect for smaller devices. However, when the screen size is big enough, we should remove the hamburger menu altogether, and instead use a normal navigation bar. Let's work on that right now.
 
 In our navbar stylesheet, let's add the following media query underneath all of the existing styles:
 
@@ -626,7 +626,7 @@ And with those styles added, the navbar now looks great on both smaller devices 
 
 The last modification we are going to make to our hamburger menu is to add animation to it. Currently, when we open and close it, the change is instant. Let's improve this so that it opens and closes smoothly.
 
-We are going to use fixed height values in order to add this animation. In our navbar stylesheet, lets add the highlighted code:
+We are going to use fixed height values in order to add this animation. In our navbar stylesheet, let's add the highlighted code:
 
 <div class = "codeTitle">navbar.module.css</div>
 
@@ -660,7 +660,7 @@ We are going to use fixed height values in order to add this animation. In our n
 }
 ```
 
-So, instead of going from display: none, to display: block, we go from a height of 0, to a height of 114px. Using these fixed heights allows us to add the transition property, which creates the smooth effect. The height of 114px was used because that was the original height of the element when it's display property was set to block. Chrome's Developer Tools were used to check this.
+So, instead of going from display: none, to display: block, we go from a height of 0 to a height of 114px. Using these fixed heights allows us to add the transition property, which creates a smooth effect. The height of 114px was used because that was the original height of the element when it's display property was set to block. Chrome's Developer Tools were used to check this.
 
 ## Conclusion
 
@@ -669,4 +669,4 @@ Awesome, we created a navbar that can now be used on any React project! Here are
 - [View Demo](https://domenicomanna.github.io/reactNavbar/)
 - [View Source](https://github.com/domenicomanna/reactNavbar)
 
-Hopefully this tutorial was useful to you, and thanks for reading!
+Hopefully, this tutorial was useful to you, and thanks for reading!
