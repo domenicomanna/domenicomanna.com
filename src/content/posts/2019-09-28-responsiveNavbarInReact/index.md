@@ -2,7 +2,7 @@
 title: "How to Create a Responsive Navbar in React"
 date: "2019-09-28"
 tags: ["React", "CSS"]
-featuredImage: ../../featuredImages/react.png
+featuredImage: ../../featuredImages/reactIcon.png
 ---
 
 Navigation menus are a central part of every website. In this tutorial, we will be creating a responsive navbar in React.
