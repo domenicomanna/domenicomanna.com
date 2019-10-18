@@ -13,7 +13,7 @@ const Tags = ({pageContext, data}) => {
       <SEO title = {`${tag} Articles`}/>
       <PageTitle>{tag}</PageTitle>
       <h3 style = {{textAlign: "center"}}>
-        <Link to="/tags/">
+        <Link style = {{textDecoration: "none"}} to="/tags/">
           Back to Tags
         </Link>
       </h3>
