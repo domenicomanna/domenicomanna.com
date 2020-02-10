@@ -13,14 +13,21 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-remark-prismjs',
+          "gatsby-remark-prismjs",
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 680,
               backgroundColor: "transparent",
               tracedSVG: true,
-              wrapperStyle: `margin: 3.6rem auto;`
+              wrapperStyle: `margin: 3.6rem auto;`,
+            },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "noopener",
             },
           },
         ],
@@ -38,7 +45,7 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/src/content/`,
-        ignore: process.env.NODE_ENV === `production` && [`**/draft-*`]
+        ignore: process.env.NODE_ENV === `production` && [`**/draft-*`],
       },
     },
     {
