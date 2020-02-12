@@ -18,7 +18,7 @@ const About = () => {
           I created this website because I want to share my experiences and discuss solutions to technical problems that I've faced. In doing so, I hope to reinforce concepts for myself and help other developers.
         </p>
         <div className={styles.imageWrapper}>
-          <Image fileName="me_good.jpg" />
+          <Image fileName="me.jpg" />
         </div>
       </section>
     </Layout>
