@@ -13,6 +13,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+            options: {
+              className: 'codeTitle ',
+            },
+          },
           "gatsby-remark-prismjs",
           {
             resolve: `gatsby-remark-images`,

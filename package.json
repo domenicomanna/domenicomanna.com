@@ -35,6 +35,7 @@
     "typeface-lato": "0.0.75"
   },
   "devDependencies": {
+    "gatsby-remark-code-titles": "^1.1.0",
     "prettier": "^1.18.2"
   },
   "keywords": [
