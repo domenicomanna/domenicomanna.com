@@ -1,11 +1,11 @@
 ---
-title: "React context title..."
-date: "2020-02-09"
+title: "An Introduction to React's Context API"
+date: "2020-02-15"
 tags: ["React"]
 featuredImage: ../../featuredImages/reactIcon.png
 ---
 
-In this post we're going to take a look at React's context API and how it can be used to build an application.
+In this post, we're going to take a look at React's context API and how it can be used to build an application.
 
 The demo and source code can be found at:
 
@@ -20,7 +20,7 @@ The context API gives us a way to access data from other components without the 
 
 ### Why is it Useful?
 
-It's useful because it prevents us from needing to pass down props across many components. This is especially useful in instances where the data from a top level component is needed by a highly nested component.
+It's useful because it prevents us from needing to pass down props across many components. This is especially useful in instances where data from a top-level component is needed by a highly nested component.
 
 Now that we know what the context API is, and why it's useful, let's take a look at how it can be used.
 
@@ -28,7 +28,7 @@ Now that we know what the context API is, and why it's useful, let's take a look
 
 ### How to Create A Context
 
-When working with the Context API, the first thing we need to do is create a context. To create a context, we use the createContext function exported from react. We can pass this function a parameter which represents the default value (more on this below) of the context. In our case though, we have not passed a parameter, which means the default value of our context will be undefined.
+When working with the Context API, the first thing we need to do is create a context. To create a context, we use the `createContext` function exported from React. We can pass this function a parameter which represents the default value (more on this below) of the context. In our case though, we have not passed a parameter, which means the default value of our context will be undefined.
 
 ```js
 import { createContext } from "react"
@@ -39,11 +39,11 @@ console.log(myContext.Provider)
 console.log(myContext.Consumer)
 ```
 
-The returned result from the `createContext` function is an object. We can see that this object has properties called `Provider` and `Consumer`. The `Provider` property is a React component. This component has a `value` prop where we specify the data that we want to be available to components that consume, or use, the context. The `Consumer` property gives us one way to access that data in other components. However, in the project that we will create, we will use the `useContext` hook to access the data, so we will not use the `Consumer` property.
+The `createContext` function returns an object. We can see that this object has properties called `Provider` and `Consumer`. The `Provider` property is a React component. This component has a `value` prop where we specify the data that we want to be available to components that consume, or use, the context. The `Consumer` property gives us one way to access that data in other components. However, in the project that we will create, we will use the `useContext` hook to access the data, so we will not use the `Consumer` property.
 
 ### How to Use a Context
 
-So, to use the data provided to our context, we simply call the `useContext` function exported from react. As a parameter, we pass in the context object that was initially created from our `createContext` call.
+To use the data provided to our context, we simply call the `useContext` function exported from React. As a parameter to the `useContext` function, we pass in the context object that was initially created from our `createContext` call.
 
 ```jsx
 import React, { createContext, useContext } from "react"
@@ -58,7 +58,7 @@ function RandomJSXComponent() {
 export default RandomJSXComponent
 ```
 
-The `useContext` function returns the value provided by the nearest rendered `Provider` for that context type. Since we are calling `useContext` with `myContext` as a parameter, then the provider that will be searched for in the component tree of our app is `myContext.Provider`. However, since `myContext.Provider` is not rendered anywhere in our app, then the `myContext.Provider` will not be found. In the case of a provider not being found, `useContext` will return the default value that was specified in the `createContext` call. In our example, since we did not specify a default value, the value returned from our `useContext` call will be undefined.
+The `useContext` function returns the value provided by the nearest rendered `Provider` for that context type. Since we are calling `useContext` with `myContext` as a parameter, then the provider that will be searched for in the component tree of our app is `myContext.Provider`. However, since `myContext.Provider` is not rendered anywhere in our app, then `myContext.Provider` will not be found. In the case of a provider not being found, `useContext` will return the default value that was specified in the `createContext` call. In our example, since we did not specify a default value, the value returned from our `useContext` call will be undefined.
 
 ```jsx
 import React, { createContext, useContext } from "react"
@@ -90,7 +90,7 @@ function RandomJSXComponent() {
 export default RandomJSXComponent
 ```
 
-Now, the default value will be 10 instead of undefined.
+Now, the default value is 10 instead of undefined.
 
 ### Summary
 
@@ -122,11 +122,13 @@ export default interface IClotheItem {
 }
 ```
 
-So, all of our clothe items will have the following properties: an id, a description, and an isFavorited status.
+According to this interface, all of our clothe items will have the following properties: an id, a description, and an isFavorited status.
+
+Now that we have the model defined, let's create a fake API client that will return an array of clothe items.
 
 ### Creating Fake Data For Our Clothe Items
 
-Now that we have our model defined, let's create a fake API client that will return an array of clothe items. In our `src` folder, Let's created a new folder called `api`. In `src\api` let's add a new file called `ClothesApiClient.ts`, and add the following code to it:
+In our `src` folder, let's create a new folder called `api`. In `src/api` let's add a new file called `ClothesApiClient.ts`, and add the following code to it:
 
 ```ts:title=ClothesApiClient.ts
 import IClotheItem from "../models/IClotheItem"
@@ -146,13 +148,11 @@ export default class ClothesApiClient {
 }
 ```
 
-So all we did was define one method that returns an array of type IClotheItem.
-
-Now that we have our model defined, as well as some data, let's work on creating the context.
+Since we now have some data, let's work on creating the context.
 
 ### Creating the Context
 
-In our `src` folder, lets create a new folder called `contexts`. In `src/contexts`, let's add a new file called `ClothesContext.tsx`. Let's first start with defining which properties we want our context data to contain. We will do this by using an interface. Add the following code in the `ClothesContext.tsx` file:
+In the `src` folder, lets create a new folder called `contexts`. In `src/contexts`, add a new file called `ClothesContext.tsx`. Let's first start with defining which properties we want our context data to contain. We will do this by using an interface. Add the following code in the `ClothesContext.tsx` file:
 
 <div class = "codeTitle">ClothesContext.tsx</div>
 
@@ -187,7 +187,7 @@ export const ClothesContext = createContext<IClothesContext>( {/* highlight-line
 )                                                             {/* highlight-line */}
 ```
 
-With this addition, we specified that the context that we are creating will have all of the properties defined in our interface. The `{}as IClothesContext` represents a default value that is given to our context. The `as` keyword just specifies to treat our empty object as if it were a type of IClothesContext. This is added purely to avoid the TypeScript compile errors. In the project that we are creating, the default value will not be used.
+With this addition, we specified that the context that we are creating will have all of the properties defined in our interface. The `{} as IClothesContext` represents a default value that is given to our context. The `as` keyword just specifies to treat our empty object as if it were a type of IClothesContext. This is added purely to avoid the TypeScript compile errors. In the project that we are creating, the default value will not be used.
 
 Great, so we have our context created, but now we must render the provider component that is a property of our `ClothesContext`.
 
@@ -253,7 +253,7 @@ const ClothesContextProvider: FunctionComponent = ({ children }) => {
 export default ClothesContextProvider
 ```
 
-So, with this code we created a JSX component called ClothesContextProvider. In this component, we are managing state through the use of hooks. In our `useEffect` hook, we load our data from our fake API client. In our `toggleFavorite` function, we change the isFavorited status of the `IClotheItem` that has the same `id` as the `id` parameter. So, that's how the state is being managed in this component. Now let's look more closely at what this functional component is returning.
+With this code, we created a JSX component called ClothesContextProvider. In this component, we are managing state through the use of hooks. In our `useEffect` hook, we load our data from our fake API client. In our `toggleFavorite` function, we change the isFavorited status of the `IClotheItem` that has the same `id` as the `id` parameter. So, that's how the state is being managed in this component. Now let's look more closely at what this functional component is returning.
 
 <div class = "codeTitle">ClothesContext.tsx</div>
 
@@ -271,15 +271,15 @@ return (
 )
 ```
 
-We are returning the `Provider` component that was created when we called the function `createContext`. If you recall from before, the `Provider` is a react component with a `value prop` where we specify the data that we want available to consuming components. In this case, the value we are specifying is an object that contains the `clotheItems`, the `toggleFavorite` function, and the `isLoading` status.
+What is being returned is the `Provider` component that was created from the `createContext` function call. If you recall from before, the `Provider` is a react component with a `value prop` where we specify the data that we want available to consuming components. In this case, the value we are specifying is an object that contains the `clotheItems`, the `toggleFavorite` function, and the `isLoading` status.
 
 Lastly, in the return statement, we also specify `children`. This will render all of the children passed as props to our `ClothesContextProvider` component. This point is important, because if we call `useContext(ClothesContext)` from any of these child components, then the value returned is going to be the same value that we gave to our `ClothesContext.Provider` component. This is exactly what we want.
 
-Now that we have our context created with the data we want available to consuming components, let's see how we can actually use the data in other components.
+Now that we have our context created with the data we want available to consuming components, let's see how we can use the data in other components.
 
 ### Using the Context in Other Components
 
-Let's create a new folder in a `src` folder and call it `components`. In `src/components` Let's add a new file called `ClotheItem.tsx`, and add the following code to it:
+Let's create a new folder in a `src` folder and call it `components`. In `src/components`, add a new file called `ClotheItem.tsx`, and add the following code to it:
 
 <div class = "codeTitle">ClotheItem.tsx</div>
 
@@ -329,7 +329,9 @@ Here we are passing in the `ClothesContext` that we created before. So, if we lo
 export const ClothesContext = createContext<IClothesContext>({} as IClothesContext)
 ```
 
-This `ClothesContext` that we are exporting is exactly what we are passing as a parameter to our `useContext` call. Also, in this case, since we currently aren't rendering our `ClothesContextProvider` component, then there actually will not be a provider found when we call `useContext`. In this instance, the default value, which in our case is an empty object, will be returned. This is obviously not what we want, and we will fix this soon.
+This `ClothesContext` that we are exporting is exactly what we are passing as a parameter to our `useContext` call. 
+
+Also, it's important to note that since we currently aren't rendering our `ClotheItem` component as a child of our `ClothesContextProvider` component, a provider will not be found when `useContext` is called. This means that the default value of the context, which in our case is an empty object, will be returned. This is obviously not what we want, and we will fix this soon.
 
 In `src/components`, let's add a new file called `ClotheItemList.tsx`, and add the following code to it:
 
@@ -365,9 +367,9 @@ function transformClotheItems(clotheItems: IClotheItem[]) {
 export default ClotheItemsList
 ```
 
-All this component does is retrieve the clothe items from our context and renders them.
+This component is retrieving the clothe items from our context and rendering them.
 
-In `src/components` let's add another file called `FavoritedClotheItemsList.tsx`, and let's add the following code to it:
+In `src/components`, let's add another file called `FavoritedClotheItemsList.tsx`, and add the following code to it:
 
 <div class = "codeTitle">FavoritedClotheItemsList.tsx</div>
 
@@ -404,11 +406,11 @@ function transformClotheItems(clotheItems: IClotheItem[]) {
 export default FavoritedClotheItemsList
 ```
 
-This component retrieves only the clothe items that have been favorited, and then renders those.
+This component retrieves only the clothe items that have been favorited, and then renders them.
 
-So right now, our components are all using the context that we created, however we still need to add a few things to make the app work. We need to add our two routes, some basic styling, and most importantly we need to render the provider component.
+At this point, our components are all using the context that we created, however we still need to add a few things to make the app work. We need to add our two routes, some basic styling, and most importantly, we need to render these newly created components as children of our provider component.
 
-Let's work on these issues now.
+Let's work on these fixing these issues.
 
 ### Resolving our Final Issues
 
@@ -418,7 +420,7 @@ Since we are going to be using routes, let's install `react-router-dom`.
 npm install react-router-dom
 ```
 
-In `src/components` add a new file called `Layout.tsx`, and add the following code to it:
+In `src/components`, add a new file called `Layout.tsx`, and add the following code to it:
 
 ```jsx:title=Layout.tsx
 import React, { FunctionComponent } from "react"
@@ -503,7 +505,7 @@ body {
 }
 ```
 
-Finally, let's render our provider component. In our `App.tsx` file, add the following code:
+Finally, let's render our provider component. In the `App.tsx` file, add the following code:
 
 ```jsx:title=App.tsx
 import React from "react"
@@ -533,7 +535,7 @@ const App = () => {
 export default App
 ```
 
-Since we are rendering our `ClotheItemsList` and `FavoritedClotheItemsList` components as children of our `ClothesContextProvider`, then when `useContext` is called from these components, the value that is returned will be the value we specified in our `ClotheContextProvider`. Let's take a look at our `ClotheContextProvider` component again:
+Since we are rendering the `ClotheItemsList` and `FavoritedClotheItemsList` components as children of the `ClothesContextProvider`, then when `useContext` is called from these children components, the value that is returned will be the value we specified in our `ClotheContextProvider`. Let's take a look at that value again:
 
 <div class = "codeTitle">ClotheContextProvider.tsx</div>
 
@@ -553,7 +555,7 @@ return (
 
 We can see that the value is an object that contains an array of `clotheItems`, the `toggleFavorite` function and the `isLoading` status. So, this is the value that will be returned when `useContext` is called in any child component of the `ClothesContextProvider` component.
 
-Now we just need to make one last change before we are able to run our app. Since we are using routes, we need to render our app with a router. Let's replace the existing code in the `index.tsx` file with the following code:
+Now we just need to make one last change before we can run our app. Since we are using routes, we need to render our app with a router. Let's replace the existing code in the `index.tsx` file with the following code:
 
 ```tsx:title=index.tsx
 import React from "react"
@@ -579,7 +581,7 @@ There is one last important detail to mention, and that is, when do components t
 
 ## When Do Consumers of a Context Rerender?
 
-Consumers of a context rerender every time the `value` prop on the `Provider` component changes. React uses the [Object.is algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) to determine if a the `value` has changed. Let's take a look at our `toggleFavorite` function in our context to better understand this.
+Consumers of a context rerender every time the `value` prop on the `Provider` component changes. React uses the [Object.is algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) to determine if the `value` has changed. Let's take a look at our `toggleFavorite` function in our context to better understand this.
 
 <div class = "codeTitle">ClothesContext.tsx</div>
 
@@ -615,7 +617,7 @@ return (
 )
 ```
 
-Since we are passing the `value` prop a new object reference, then that means the `value` prop has changed according to the [Object.is algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is). This will then cause the components that are consuming the context to rerender. In process of rerendering, when `useContext` is called in these consuming components, the value returned will of course be the new value that triggered the rerender. This ensures that all consuming components are always receiving the most up to date value from the context.
+Since we are passing the `value` prop a new object reference, then that means the `value` prop has changed according to the [Object.is algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is). This will then cause the components that are consuming the context to rerender. In the process of rerendering, when `useContext` is called in these consuming components, the value returned will be the value that triggered the rerender. This ensures that all consuming components are always receiving the most up to date value from the context.
 
 ## Conclusion
 
