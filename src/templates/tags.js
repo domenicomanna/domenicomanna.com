@@ -4,7 +4,6 @@ import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList'
 import PageTitle from '../components/pageTitle/pageTitle';
-import styles from './templateStyles/tags.module.css';
 
 const Tags = ({pageContext, data}) => {
   const {tag} = pageContext
