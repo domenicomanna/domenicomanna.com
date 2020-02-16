@@ -7,7 +7,7 @@ import Image from '../image/image';
 const BlogPostHighlight = ({ title, date, excerpt, fluidImage, slug }) => {
   return (
     <li className={styles.postHighlight} onClick = { () => { navigate(slug) } }>
-        <Img className = {styles.featuredImage} fluid = {fluidImage} />
+      <Img className = {styles.featuredImage} fluid = {fluidImage} />
       <div className={styles.postContent}>
         <h2 className={styles.postTitle}>{title}</h2>
         <span className={styles.postDate}>{date}</span>

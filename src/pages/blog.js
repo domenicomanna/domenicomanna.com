@@ -28,7 +28,7 @@ export const query = graphql`
           excerpt(pruneLength: 140)
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM Do, YYYY")
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 1000) {

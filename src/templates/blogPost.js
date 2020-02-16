@@ -50,7 +50,7 @@ export const postQuery = graphql`
       html
       frontmatter {
         title
-        date
+        date(formatString: "MMMM Do, YYYY")
         tags
       }
     }
