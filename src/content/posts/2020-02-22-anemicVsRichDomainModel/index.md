@@ -1,6 +1,6 @@
 ---
 title: "An Anemic Domain Model vs a Rich Domain Model"
-date: "2020-02-22"
+date: "2020-02-24"
 tags: ["Design Patterns"]
 featuredImage: ../../featuredImages/designPatterns.jpg
 ---
