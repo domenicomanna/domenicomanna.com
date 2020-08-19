@@ -12,7 +12,7 @@ export default [
       "Typescript",
       "CSS"
     ],
-    websiteLink: "https://bodyfitnesstracker.com/login",
+    websiteLink: "https://bodyfitnesstracker.com",
     repositoryLink: "https://github.com/domenicomanna/bodyFitTracker",
   },
   {
