@@ -12,7 +12,7 @@ const About = () => {
         <SEO title="About" />
         <PageTitle>About</PageTitle>
         <p>
-          Hi, my name is Domenico Manna. I study computer science at the University of Bridgeport. In addition to attending school full time, I work part time as a C# developer, where I write applications to automate repetitive tasks. In my free time, I like to make projects and learn more about software development.
+          Hi, my name is Domenico Manna. I work as a software developer at Foyer Inc, and studied computer science at the University of Bridgeport.
         </p>
         <p>
           I created this website because I want to share my experiences and discuss solutions to technical problems that I've faced. In doing so, I hope to reinforce concepts for myself and help other developers.
