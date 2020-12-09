@@ -5,12 +5,11 @@ import Backdrop from '../../backdrop/backdrop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
 import styles from './header.module.css';
-import pdf from '../../../assets/test.pdf';
 
 const pageLinks = [
   { to: "/", text: "Home" },
   { to: "/blog/", text: "Blog" },
-  { to: "/about/", text: "About" },
+  // { to: "/about/", text: "About" },
   { to: "/contact/", text: "Contact" },
 ]
 
@@ -30,12 +29,6 @@ const Header = (props) => {
             </Link>
             <ul className={classesForListOfLinks.join(' ')}>
               {transformPageLinks()}
-              {/* <li>
-                <a className={`${styles.link} ${styles.resumeLink}`} href={pdf} download="resume.pdf"> 
-                  Resume
-                  <FontAwesomeIcon className={styles.download} icon={faDownload} />
-                </a>
-              </li> */}
             </ul>
             <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
           </nav>

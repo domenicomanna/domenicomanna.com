@@ -1,13 +1,13 @@
-.header{
+.header {
   position: sticky;
   z-index: 11;
   top: 0;
-  padding: .6rem 0;
+  padding: 0.6rem 0;
   background: var(--grey-200);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav{
+.nav {
   position: relative;
 }
 
@@ -15,27 +15,27 @@
   margin: 0;
 }
 
-.listOfLinks{
+.listOfLinks {
   height: 0;
   overflow: hidden;
   list-style: none;
   margin: 0;
   text-align: center;
-  transition: .4s;
+  transition: 0.4s;
 }
 
-.link{
+.link {
   display: inline-block;
-  padding: 1rem 0;
+  padding: .6rem 0;
   /* so link is clickable anywhere on the viewport. This is only for the hamburger menu */
   width: 100%;
   text-decoration: none;
   cursor: pointer;
   color: inherit;
-  transition: .4s;
+  transition: 0.4s;
 }
 
-.nameLink{
+.nameLink {
   /* hide title link but allow it to occupy space so the header does not collapse. */
   visibility: hidden;
 
@@ -43,84 +43,83 @@
   padding: 0;
 }
 
-.active{
+.active {
   color: var(--blue-500);
 }
 
-@media(any-hover: hover){
+@media (any-hover: hover) {
   .link:hover {
     color: var(--blue-500);
   }
 }
 
-.hamburger{
+.hamburger {
   position: absolute;
   top: 11px;
   right: 5px;
 }
 
-.hamburgerLinks{
-  /* exact height is calculated in dev tools */
+.hamburgerLinks {
+  /* exact height is calculated in dev tools with height:auto not commented */
   display: block;
-  height: 272px;
-  /* height: auto */
+  height: 165.56px;
+  /* height: auto; */
 }
 
-.download{
-  padding-left: .5rem;
+.download {
+  padding-left: 0.5rem;
 }
 
-@media(min-width: 360px){
-  .nav{
+@media (min-width: 360px) {
+  .nav {
     display: flex;
     justify-content: center;
   }
 
-  .nameLink{
+  .nameLink {
     /* remove the title link and show all other nav links instead */
     display: none;
   }
 
-  .listOfLinks{
+  .listOfLinks {
     display: flex;
-    height: auto;;
+    height: auto;
   }
 
-  .hamburger{
-    display: none
+  .hamburger {
+    display: none;
   }
 
   .link {
-    padding: .4rem .9rem;
+    padding: 0.4rem 0.9rem;
     width: auto;
   }
-  
-  .resumeLink{
+
+  .resumeLink {
     display: none;
   }
-  
 }
 
-@media(min-width: 480px){
-  .resumeLink{
+@media (min-width: 480px) {
+  .resumeLink {
     display: inline-block;
     padding-right: 0;
   }
 }
 
-@media(min-width: 750px){
-  .nav{
+@media (min-width: 750px) {
+  .nav {
     justify-content: space-between;
     align-items: center;
   }
 
-  .nameLink{
+  .nameLink {
     display: inline-block;
     visibility: visible;
     padding-left: 0;
   }
 
-  .name{
+  .name {
     font-size: 1.55rem;
   }
 }
