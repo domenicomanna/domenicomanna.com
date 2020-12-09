@@ -12,8 +12,7 @@ const Hero = () => {
         Hi, I'm Domenico
       </h1>
       <p className={styles.description}>
-        I study computer science and currently work as a C# developer.
-        I enjoy web development and like to write about programming.
+        I work as a software developer, and studied computer science at the University of Bridgeport.
       </p>
       <div className={styles.buttonWrapper}>
         <Link to = "projects" smooth = {true} offset = {-115} >
