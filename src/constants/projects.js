@@ -6,7 +6,7 @@ export default [
     technologiesUsed: [
       ".Net Core",
       "Entity Framework Core",
-      "MySql Server",
+      "MySQL Server",
       "Linux VPS",
       "React",
       "Typescript",
