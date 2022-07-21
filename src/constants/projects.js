@@ -2,7 +2,8 @@ export default [
   {
     imageFileName: "bodyFitnessTracker.png",
     title: "Body Fitness Tracker",
-    description: 'A website powered by a REST API that allows users to track their body measurements and body fat percentage.',
+    description:
+      "A website powered by a REST API that allows users to track their body measurements and body fat percentage.",
     technologiesUsed: [
       ".Net Core",
       "Entity Framework Core",
@@ -10,9 +11,9 @@ export default [
       "Linux VPS",
       "React",
       "Typescript",
-      "CSS"
+      "CSS",
     ],
-    websiteLink: "https://bodyfitnesstracker.com",
+    websiteLink: "https://body-fit-tracker-client.hobby-projects.com/",
     repositoryLink: "https://github.com/domenicomanna/bodyFitTracker",
   },
   {
