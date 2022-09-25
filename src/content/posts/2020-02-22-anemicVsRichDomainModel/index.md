@@ -34,7 +34,6 @@ In an anemic domain model, the data and logic are separated from one another. Th
 
         // Male or Female
         public GenderType Gender { get; set; }
-        public double BasicMetabolicRate { get; set; }
     }
 ```
 
@@ -67,7 +66,7 @@ Then to set the `BasicMetabolicRate` property we would do something like:
 User user = new User {
 	// set all properties...
 }
-user.BasicMetabolicRate = BasicMetabolicRateCalculator.CalculateBasicMetabolicRate(user);
+double bmr = BasicMetabolicRateCalculator.CalculateBasicMetabolicRate(user);
 ```
 
 As we can see in the anemic domain model, the data and logic are separated. The `User` class contains the data, and the `BasicMetabolicRateCalculator` class contains the logic for calculating the BMR.
@@ -85,9 +84,8 @@ Unlike the anemic domain model, in a rich domain model, the data and logic live 
 
         // Male or Female
         public GenderType Gender { get; set; }
-        public double BasicMetabolicRate { get; private set; }
 
-        public void CalculateBasicMetabolicRate()
+        public double CalculateBasicMetabolicRate()
         {
             double bmrResult = 0;
             if (Gender == GenderType.Female)
@@ -99,7 +97,7 @@ Unlike the anemic domain model, in a rich domain model, the data and logic live 
             {
                 bmrResult = // do Calculation
             }
-            BasicMetabolicRate = bmrResult;
+            return bmrResult;
         }
     }
 ```
@@ -110,7 +108,7 @@ Then to set the `BasicMetabolicRate` property we would do something like:
 User user = new User {
 	// set all properties...
 }
-user.CalculateBasicMetabolicRate();
+double bmr = user.CalculateBasicMetabolicRate();
 ```
 
 In this case not only does the data live inside the `User` class, but the logic for calculating the BMR is also contained in this class.
