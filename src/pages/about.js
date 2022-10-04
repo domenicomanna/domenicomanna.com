@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/pageTitle/pageTitle"
 import Image from "../components/image/image"
-import styles from "./pageStyles/about.module.css"
+import * as styles from "./pageStyles/about.module.css"
 
 const About = () => {
   return (

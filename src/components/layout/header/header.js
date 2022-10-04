@@ -4,7 +4,7 @@ import Wrapper from "../../wrapper/wrapper"
 import Backdrop from "../../backdrop/backdrop"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDownload, faBars } from "@fortawesome/free-solid-svg-icons"
-import styles from "./header.module.css"
+import * as styles from "./header.module.css"
 
 const pageLinks = [
   { to: "/", text: "Home" },

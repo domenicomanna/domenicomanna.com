@@ -1,7 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby"
 import Img from "gatsby-image"
-import styles from "./blogPostHighlight.module.css"
+import * as styles from "./blogPostHighlight.module.css"
 
 const BlogPostHighlight = ({ title, date, excerpt, fluidImage, slug }) => {
   return (

@@ -3,7 +3,7 @@ import Image from "../image/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import styles from "./project.module.css"
+import * as styles from "./project.module.css"
 
 const Project = ({
   imageFileName,

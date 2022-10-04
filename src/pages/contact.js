@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/pageTitle/pageTitle"
 import { socialNetworks, email } from "../constants/socialNetworks"
-import styles from "./pageStyles/contact.module.css"
+import * as styles from "./pageStyles/contact.module.css"
 
 const Contact = () => {
   return (

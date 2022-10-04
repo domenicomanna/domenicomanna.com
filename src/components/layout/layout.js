@@ -6,7 +6,7 @@ import Header from "./header/header"
 import Footer from "./footer/footer"
 import Wrapper from "../wrapper/wrapper"
 import "./global.css"
-import styles from "./layout.module.css"
+import * as styles from "./layout.module.css"
 
 class Layout extends Component {
   state = {

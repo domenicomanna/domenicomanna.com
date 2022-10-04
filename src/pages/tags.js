@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout/layout"
 import PageTitle from "../components/pageTitle/pageTitle"
-import styles from "./pageStyles/tags.module.css"
+import * as styles from "./pageStyles/tags.module.css"
 
 const Tags = ({ data }) => {
   const tagGroup = data.allMarkdownRemark.group

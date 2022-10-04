@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./blogPostHighlightList.module.css"
+import * as styles from "./blogPostHighlightList.module.css"
 import BlogPostHighlight from "../blogPostHighlight/blogPostHighlight"
 
 const BlogPostHighlightList = ({ postEdges }) => {

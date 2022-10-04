@@ -2,7 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { socialNetworks, email } from "../../../constants/socialNetworks"
 import Wrapper from "../../wrapper/wrapper"
-import styles from "./footer.module.css"
+import * as styles from "./footer.module.css"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()

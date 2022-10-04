@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import SEO from "../components/seo"
 import Layout from "../components/layout/layout"
-import styles from "./templateStyles/blogPost/blogPost.module.css"
+import * as styles from "./templateStyles/blogPost/blogPost.module.css"
 import "./templateStyles/blogPost/codeTitle.css"
 
 const BlogPost = ({ data }) => {

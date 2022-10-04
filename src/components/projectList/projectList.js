@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./projectList.module.css"
+import * as styles from "./projectList.module.css"
 import Project from "../project/project"
 
 const ProjectList = ({ projects }) => {
