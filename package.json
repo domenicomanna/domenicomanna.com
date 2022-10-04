@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "domenicomanna.com",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Domenico Manna",
   "dependencies": {
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
@@ -38,9 +37,6 @@
     "gatsby-remark-code-titles": "^1.1.0",
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -52,9 +48,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/domenicomanna/domenicomanna.com"
   }
 }
