@@ -1,5 +1,5 @@
 import React from "react"
-import PageTitle from '../components/pageTitle/pageTitle';
+import PageTitle from "../components/pageTitle/pageTitle"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 

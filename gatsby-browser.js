@@ -1,3 +1,3 @@
-import "typeface-lato";
+import "typeface-lato"
 import "prismjs/themes/prism-tomorrow.css"
-import "./prism-override.css";
+import "./prism-override.css"

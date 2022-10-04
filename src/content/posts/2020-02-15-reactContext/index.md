@@ -329,7 +329,7 @@ Here we are passing in the `ClothesContext` that we created before. So, if we lo
 export const ClothesContext = createContext<IClothesContext>({} as IClothesContext)
 ```
 
-This `ClothesContext` that we are exporting is exactly what we are passing as a parameter to our `useContext` call. 
+This `ClothesContext` that we are exporting is exactly what we are passing as a parameter to our `useContext` call.
 
 Also, it's important to note that since we currently aren't rendering our `ClotheItem` component as a child of our `ClothesContextProvider` component, a provider will not be found when `useContext` is called. This means that the default value of the context, which in our case is an empty object, will be returned. This is obviously not what we want, and we will fix this soon.
 

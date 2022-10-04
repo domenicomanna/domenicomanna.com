@@ -14,9 +14,9 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-code-titles',
+            resolve: "gatsby-remark-code-titles",
             options: {
-              className: 'codeTitle ',
+              className: "codeTitle ",
             },
           },
           "gatsby-remark-prismjs",
@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content/`
+        path: `${__dirname}/src/content/`,
       },
     },
     {

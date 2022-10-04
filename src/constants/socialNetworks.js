@@ -1,24 +1,24 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 const socialNetworks = [
   {
-    network : "Github",
+    network: "Github",
     url: "https://github.com/domenicomanna",
     username: "domenicomanna",
-    icon: faGithub
+    icon: faGithub,
   },
   {
-    network : "LinkedIn",
+    network: "LinkedIn",
     url: "https://www.linkedin.com/in/domenico-manna-6007a01a2/",
     username: "Domenico Manna",
-    icon: faLinkedin
+    icon: faLinkedin,
   },
 ]
 
 const email = {
   address: "dom@domenicomanna.com",
-  icon: faEnvelope
+  icon: faEnvelope,
 }
 
-export {socialNetworks, email};
+export { socialNetworks, email }

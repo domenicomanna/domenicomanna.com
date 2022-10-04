@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Wrapper from '../../wrapper/wrapper';
-import Backdrop from '../../backdrop/backdrop';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload, faBars } from '@fortawesome/free-solid-svg-icons'
-import styles from './header.module.css';
+import React from "react"
+import { Link } from "gatsby"
+import Wrapper from "../../wrapper/wrapper"
+import Backdrop from "../../backdrop/backdrop"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDownload, faBars } from "@fortawesome/free-solid-svg-icons"
+import styles from "./header.module.css"
 
 const pageLinks = [
   { to: "/", text: "Home" },
@@ -13,11 +13,12 @@ const pageLinks = [
   { to: "/contact/", text: "Contact" },
 ]
 
-const Header = (props) => {
-  const { hamburgerLinksShouldShow, toggleHamburgerLinks } = props;
+const Header = props => {
+  const { hamburgerLinksShouldShow, toggleHamburgerLinks } = props
 
-  let classesForListOfLinks = [styles.listOfLinks];
-  if (hamburgerLinksShouldShow) classesForListOfLinks.push(styles.hamburgerLinks);
+  let classesForListOfLinks = [styles.listOfLinks]
+  if (hamburgerLinksShouldShow)
+    classesForListOfLinks.push(styles.hamburgerLinks)
 
   return (
     <>
@@ -27,24 +28,35 @@ const Header = (props) => {
             <Link className={`${styles.link} ${styles.nameLink}`} to="/">
               <h2 className={styles.name}>Domenico Manna</h2>
             </Link>
-            <ul className={classesForListOfLinks.join(' ')}>
+            <ul className={classesForListOfLinks.join(" ")}>
               {transformPageLinks()}
             </ul>
-            <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
+            <FontAwesomeIcon
+              className={styles.hamburger}
+              icon={faBars}
+              onClick={toggleHamburgerLinks}
+            />
           </nav>
         </Wrapper>
       </header>
-      <Backdrop backdropShouldShow={hamburgerLinksShouldShow} toggleBackdrop={toggleHamburgerLinks} />
+      <Backdrop
+        backdropShouldShow={hamburgerLinksShouldShow}
+        toggleBackdrop={toggleHamburgerLinks}
+      />
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header
 
 const transformPageLinks = () => {
   return pageLinks.map((pageLink, index) => (
-    <li key = {index}>
-      <Link className={styles.link} activeClassName = {styles.active} to={pageLink.to}>
+    <li key={index}>
+      <Link
+        className={styles.link}
+        activeClassName={styles.active}
+        to={pageLink.to}
+      >
         {pageLink.text}
       </Link>
     </li>

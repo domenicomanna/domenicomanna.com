@@ -115,12 +115,12 @@ function Person(name, age) {
 }
 
 let bob = Person("Bob", 14) // Throws an error because
-                            // `this` is undefined
+// `this` is undefined
 ```
 
-This results in an error because we are trying to add properties to ```this``` and ```this``` is undefined.
+This results in an error because we are trying to add properties to `this` and `this` is undefined.
 
-If **sloppy mode** is on, then `this` will refer to the global object. In the case of running Javascript in the browser, the global object is the ```Window``` object. So, if we look at the following example:
+If **sloppy mode** is on, then `this` will refer to the global object. In the case of running Javascript in the browser, the global object is the `Window` object. So, if we look at the following example:
 
 ```js
 function Person(name, age) {
@@ -139,7 +139,7 @@ Because we did not specify `new`, then `this` refers to the `Window` object. Sin
 In case anyone faces the same issue, I had to use [this online code editor](https://playcode.io/) to verify the sloppy mode example, as it seems as if strict mode is on by default in my code editor.
 
 ## Conclusion
+
 You now have a better understanding of what a constructor function is, and how it works under the hood. Hopefully, constructor functions no longer seem magical.
 
 Thanks for reading!
-

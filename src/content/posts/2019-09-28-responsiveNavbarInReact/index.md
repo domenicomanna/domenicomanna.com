@@ -274,7 +274,9 @@ import styles from "./navbar.module.css"
 const Navbar = props => {
   return (
     <header className={styles.header}>
-      <Container> {/* highlight-line */}
+      <Container>
+        {" "}
+        {/* highlight-line */}
         <nav className={styles.nav}>
           <h1 className={styles.brand}>Brand Name</h1>
           <ul className={styles.mainNavigationLinks}>
@@ -301,7 +303,8 @@ const Navbar = props => {
             &#9776; {/* HTML entity code for hamburger menu */}
           </span>
         </nav>
-      </Container> {/* highlight-line */}
+      </Container>{" "}
+      {/* highlight-line */}
     </header>
   )
 }

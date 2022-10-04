@@ -1,27 +1,27 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import SEO from '../components/seo';
-import Layout from '../components/layout/layout';
-import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList'
-import PageTitle from '../components/pageTitle/pageTitle';
+import React from "react"
+import { graphql, Link } from "gatsby"
+import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import BlogPostHighlightList from "../components/blogPostHighlightList/blogPostHighlightList"
+import PageTitle from "../components/pageTitle/pageTitle"
 
-const Tags = ({pageContext, data}) => {
-  const {tag} = pageContext
-  return (  
+const Tags = ({ pageContext, data }) => {
+  const { tag } = pageContext
+  return (
     <Layout>
-      <SEO title = {`${tag} Articles`}/>
+      <SEO title={`${tag} Articles`} />
       <PageTitle>{tag}</PageTitle>
-      <h3 style = {{textAlign: "center"}}>
-        <Link style = {{textDecoration: "none"}} to="/tags/">
+      <h3 style={{ textAlign: "center" }}>
+        <Link style={{ textDecoration: "none" }} to="/tags/">
           Back to Tags
         </Link>
       </h3>
-      <BlogPostHighlightList postEdges = {data.allMarkdownRemark.edges}/>
+      <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
     </Layout>
-  );
+  )
 }
- 
-export default Tags;
+
+export default Tags
 
 export const allPostsWithSelectedTagQuery = graphql`
   query($tag: String) {

@@ -1,15 +1,15 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
-import SEO from '../components/seo';
-import Layout from '../components/layout/layout';
-import styles from './templateStyles/blogPost/blogPost.module.css';
-import './templateStyles/blogPost/codeTitle.css';
+import React from "react"
+import { graphql, Link } from "gatsby"
+import kebabCase from "lodash/kebabCase"
+import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import styles from "./templateStyles/blogPost/blogPost.module.css"
+import "./templateStyles/blogPost/codeTitle.css"
 
 const BlogPost = ({ data }) => {
-  const post = data.markdownRemark;
-  const { title, date, tags } = post.frontmatter;
-  const tagsHeader = tags.length > 1 ? 'Tags:' : 'Tag:'
+  const post = data.markdownRemark
+  const { title, date, tags } = post.frontmatter
+  const tagsHeader = tags.length > 1 ? "Tags:" : "Tag:"
 
   return (
     <Layout>
@@ -20,27 +20,26 @@ const BlogPost = ({ data }) => {
           <span className={styles.postDate}>{date}</span>
           <div className={styles.postTagsWrapper}>
             <span className={styles.postTagsHeader}>{tagsHeader}</span>
-            <ul className={styles.postTags}>
-              {getTags(tags)}
-            </ul>
+            <ul className={styles.postTags}>{getTags(tags)}</ul>
           </div>
         </div>
-        <div className={styles.postMainContent} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className={styles.postMainContent}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
     </Layout>
-  );
+  )
 }
 
-const getTags = tags => (
+const getTags = tags =>
   tags.map(tag => (
     <li key={tag}>
-      <Link to={`/tags/${kebabCase(tag)}`}> {tag}
-      </Link>
+      <Link to={`/tags/${kebabCase(tag)}`}> {tag}</Link>
     </li>
   ))
-)
 
-export default BlogPost;
+export default BlogPost
 
 export const postQuery = graphql`
   query($slug: String!) {
