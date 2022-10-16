@@ -8,7 +8,7 @@ export default [
       ".Net Core",
       "Entity Framework Core",
       "MySQL Server",
-      "Linux VPS",
+      "Docker",
       "React",
       "Typescript",
       "CSS",
