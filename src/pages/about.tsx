@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import PageTitle from '../components/pageTitle/pageTitle';
@@ -17,7 +16,7 @@ const About = () => {
         </p>
         <p>
           I created this website because I want to share my experiences and discuss solutions to technical problems that
-          I've faced. In doing so, I hope to reinforce concepts for myself and help other developers.
+          I&apos;ve faced. In doing so, I hope to reinforce concepts for myself and help other developers.
         </p>
         <div className={styles.imageWrapper}>
           <Image fileName="me.jpg" />

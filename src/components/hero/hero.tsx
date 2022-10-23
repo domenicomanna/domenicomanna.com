@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +7,7 @@ import { Button, buttonTypes } from '../button/button';
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <h1 className={styles.name}>Hi, I'm Domenico</h1>
+      <h1 className={styles.name}>Hi, I&apos;m Domenico</h1>
       <p className={styles.description}>
         I work as a software developer, and studied computer science at the University of Bridgeport.
       </p>

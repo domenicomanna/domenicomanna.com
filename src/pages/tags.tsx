@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import kebabCase from 'lodash/kebabCase';
 import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo';

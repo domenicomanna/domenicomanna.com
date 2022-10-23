@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialNetworks, email, SocialNetwork } from '../../../constants/socialNetworks';
 import Wrapper from '../../wrapper/wrapper';

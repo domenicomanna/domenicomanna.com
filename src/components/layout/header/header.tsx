@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import Wrapper from '../../wrapper/wrapper';
 import Backdrop from '../../backdrop/backdrop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import * as styles from './header.module.css';
 
 const pageLinks = [
@@ -19,7 +19,7 @@ type Props = {
 };
 
 const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamburgerLinks }) => {
-  let classesForListOfLinks = [styles.listOfLinks];
+  const classesForListOfLinks = [styles.listOfLinks];
   if (hamburgerLinksShouldShow) classesForListOfLinks.push(styles.hamburgerLinks);
 
   return (

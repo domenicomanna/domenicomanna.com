@@ -8,7 +8,7 @@ type MarkdownContentQuery = {
   tagsGroup: Queries.MarkdownRemarkGroupConnection;
 };
 
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const frontMatter = node.frontmatter as Queries.MarkdownRemarkFrontmatter;
@@ -78,4 +78,14 @@ const createSelectedTagArticlePages = (tagSlugs: string[], actions: Actions) => 
       },
     });
   }
+};
+
+export const onCreateBabelConfig: GatsbyNode['onCreateBabelConfig'] = ({ actions }) => {
+  actions.setBabelPreset({
+    name: 'babel-preset-gatsby',
+    options: {
+      // allows jsx to be used without importing react
+      reactRuntime: 'automatic',
+    },
+  });
 };

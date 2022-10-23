@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { navigate } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as styles from './blogPostHighlightListItem.module.css';
@@ -17,13 +17,13 @@ type Props = {
 };
 
 const BlogPostHighlightListItem: FunctionComponent<Props> = ({ blogPostHighlight }) => {
-  const { title, date, excerpt, fluidImage, slug } = blogPostHighlight;
+  const { title, date, fluidImage, slug } = blogPostHighlight;
 
   return (
     <li
       className={styles.postHighlight}
       onClick={() => {
-        navigate(slug);
+        void navigate(slug);
       }}
     >
       {fluidImage && <Img className={styles.featuredImage} fluid={fluidImage} />}

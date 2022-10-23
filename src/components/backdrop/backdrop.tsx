@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import * as styles from './backdrop.module.css';
 
 type Props = {

@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 // ensures that the icon CSS is loaded immediately before attempting to render icons.
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './header/header';

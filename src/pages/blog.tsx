@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';

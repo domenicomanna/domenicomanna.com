@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import * as styles from './blogPostHighlightList.module.css';
 import BlogPostHighlightListItem from '../blogPostHighlight/blogPostHighlightListItem';
 import { BlogPostHighlight } from '../blogPostHighlight/blogPostHighlightListItem';
