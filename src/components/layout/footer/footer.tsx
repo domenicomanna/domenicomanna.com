@@ -1,6 +1,10 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { socialNetworks, email } from "../../../constants/socialNetworks"
+import {
+  socialNetworks,
+  email,
+  SocialNetwork,
+} from "../../../constants/socialNetworks"
 import Wrapper from "../../wrapper/wrapper"
 import * as styles from "./footer.module.css"
 
@@ -30,7 +34,7 @@ const Footer = () => {
 
 export default Footer
 
-const transformSocialNetworks = socialNetworks => {
+const transformSocialNetworks = (socialNetworks: SocialNetwork[]) => {
   return socialNetworks.map((socialNetwork, index) => (
     <li className={styles.linkItem} key={index}>
       <a

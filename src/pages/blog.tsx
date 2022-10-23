@@ -1,11 +1,17 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import PageTitle from "../components/pageTitle/pageTitle"
 import BlogPostHighlightList from "../components/blogPostHighlightList/blogPostHighlightList"
+import { BlogPostHighlight } from "../components/blogPostHighlight/blogPostHighlightListItem"
+import { FluidObject } from "gatsby-image"
 
-const Blog = ({ data }) => {
+type Props = {
+  data: Queries.BlogQuery
+}
+
+const Blog: FunctionComponent<Props> = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
@@ -15,7 +21,25 @@ const Blog = ({ data }) => {
           Tags
         </Link>
       </h3>
-      <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
+      <BlogPostHighlightList
+        blogPostHighlights={data.allMarkdownRemark.edges.map(
+          (x): BlogPostHighlight => {
+            const node = x.node
+            const fluidImage = node.frontmatter?.featuredImage
+              ? (node.frontmatter.featuredImage.childImageSharp
+                  ?.fluid as FluidObject)
+              : null
+            return {
+              id: node.id,
+              title: node.frontmatter?.title ?? "",
+              excerpt: node.excerpt ?? "",
+              date: node.frontmatter?.date ?? "",
+              slug: node.fields?.slug ?? "",
+              fluidImage,
+            }
+          }
+        )}
+      />
     </Layout>
   )
 }
@@ -23,7 +47,7 @@ const Blog = ({ data }) => {
 export default Blog
 
 export const query = graphql`
-  query {
+  query Blog {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
