@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
-import PageTitle from '../components/ui/pageTitle/pageTitle';
-import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
-import { BlogPostHighlight } from '../components/blogPostHighlightListItem/blogPostHighlightListItem';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import PageTitle from '../../components/ui/pageTitle/pageTitle';
+import BlogPostHighlightList from '../../components/blogPostHighlightList/blogPostHighlightList';
+import { BlogPostHighlight } from '../../components/blogPostHighlightList/blogPostHighlightListItem/blogPostHighlightListItem';
 import { FluidObject } from 'gatsby-image';
-import { routes } from '../constants/routes';
+import { routes } from '../../constants/routes';
 
 type Props = {
   data: Queries.BlogQuery;

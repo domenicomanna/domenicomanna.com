@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import * as styles from './blogPostHighlightList.module.css';
-import BlogPostHighlightListItem from '../blogPostHighlightListItem/blogPostHighlightListItem';
-import { BlogPostHighlight } from '../blogPostHighlightListItem/blogPostHighlightListItem';
+import BlogPostHighlightListItem from './blogPostHighlightListItem/blogPostHighlightListItem';
+import { BlogPostHighlight } from './blogPostHighlightListItem/blogPostHighlightListItem';
 
 type Props = {
   blogPostHighlights: BlogPostHighlight[];

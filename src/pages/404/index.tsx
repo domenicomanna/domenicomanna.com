@@ -1,6 +1,6 @@
-import PageTitle from '../components/ui/pageTitle/pageTitle';
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
+import PageTitle from '../../components/ui/pageTitle/pageTitle';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
 
 const NotFoundPage = () => (
   <Layout>

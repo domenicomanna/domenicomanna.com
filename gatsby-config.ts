@@ -72,6 +72,14 @@ export default {
         icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        // ignore every file except any index.tsx that exists within the pages folder
+        ignore: [`**/!(index.tsx)`],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

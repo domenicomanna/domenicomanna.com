@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
+import { Project } from '../../../constants/projects';
 import * as styles from './projectList.module.css';
-import ProjectListItem from '../projectListItem/projectListItem';
-import { Project } from '../../constants/projects';
+import ProjectListItem from './projectListItem/projectListItem';
 
 type Props = {
   projects: Project[];

@@ -1,7 +1,7 @@
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
 import PageTitle from '../../components/ui/pageTitle/pageTitle';
-import Image from '../../components/ui/image/image';
+import Image from '../../components/ui/image';
 import * as styles from './about.module.css';
 
 const About = () => {

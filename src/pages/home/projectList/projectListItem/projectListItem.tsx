@@ -1,10 +1,10 @@
 import { FunctionComponent, ReactNode } from 'react';
-import Image from '../ui/image/image';
+import Image from '../../../../components/ui/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import * as styles from './projectListItem.module.css';
-import { Project } from '../../constants/projects';
+import { Project } from '../../../../constants/projects';
 
 type Props = {
   project: Project;
