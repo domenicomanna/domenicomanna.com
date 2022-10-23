@@ -1,10 +1,10 @@
-.site{
+.site {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.mainContent{
+.mainContent {
   margin: 2rem 0;
   flex: 1;
 }

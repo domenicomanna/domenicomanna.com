@@ -1,50 +1,50 @@
-.hero{
+.hero {
   text-align: center;
   margin-bottom: 5rem;
 }
 
-.name{
+.name {
   line-height: 1.4;
   font-size: 2.4rem;
   margin: 0 0 1rem 0;
 }
 
-.description{
+.description {
   /* font-size: 1.2rem; */
   max-width: 600px;
   margin: 0 auto 2rem auto;
 }
 
-.buttonWrapper{
+.buttonWrapper {
   font-size: 1.3rem;
   display: inline-block;
 }
 
-.icon{
-  padding-left: .5rem;
+.icon {
+  padding-left: 0.5rem;
   transition: var(--transition-short);
 }
 
-@media(any-hover: hover){
-  .buttonWrapper:hover .icon{
+@media (any-hover: hover) {
+  .buttonWrapper:hover .icon {
     color: var(--green-500);
   }
 }
 
-@media(min-width: 768px){
-  .hero{
+@media (min-width: 768px) {
+  .hero {
     margin-bottom: 7rem;
   }
 
-  .name{
+  .name {
     font-size: 2.9rem;
   }
 
-  .description{
+  .description {
     font-size: 1.5rem;
   }
 
-  .buttonWrapper{
+  .buttonWrapper {
     font-size: 1.5rem;
   }
 }

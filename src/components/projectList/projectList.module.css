@@ -1,4 +1,4 @@
-.projects{
+.projects {
   display: grid;
   grid-template-columns: 1fr;
   list-style: none;
@@ -8,16 +8,16 @@
 .projects > * {
   padding-bottom: 4rem;
   border-bottom: 1px solid var(--grey-500);
-  margin-bottom: 3rem; 
+  margin-bottom: 3rem;
 }
 
-.projects > *:last-child{
+.projects > *:last-child {
   border: none;
   margin-bottom: 0;
 }
 
-@media(min-width: 900px){
-  .projects > *{
+@media (min-width: 900px) {
+  .projects > * {
     margin-bottom: 4rem;
   }
 }

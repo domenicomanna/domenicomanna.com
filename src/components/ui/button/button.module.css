@@ -1,6 +1,6 @@
-.button{
+.button {
   display: inline-block;
-  padding: .8rem 1rem;
+  padding: 0.8rem 1rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -9,14 +9,13 @@
   transition: var(--transition-short);
 }
 
-.primary{
+.primary {
   background: var(--blue-500);
   color: var(--grey-100);
 }
 
-@media(any-hover: hover){
-  .primary:hover{
+@media (any-hover: hover) {
+  .primary:hover {
     transform: scale(1.05);
   }
 }
-

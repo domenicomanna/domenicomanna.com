@@ -1,27 +1,27 @@
-.post{
+.post {
   max-width: 730px;
   margin: auto;
 }
 
-.postTitle{
-  margin-bottom: .4rem;
+.postTitle {
+  margin-bottom: 0.4rem;
 }
 
-.postMetadata{
+.postMetadata {
   font-size: 1.1rem; /* matches font-size in blog post highlight css*/
   line-height: 1.85;
 }
 
-.postDate{
+.postDate {
   display: inline-block;
   margin-bottom: 0rem;
 }
 
-.postTagsWrapper{
+.postTagsWrapper {
   display: flex;
 }
 
-.postTags{
+.postTags {
   display: flex;
   margin: 0;
   list-style: none;
@@ -29,22 +29,21 @@
   margin-bottom: 1.5rem;
 }
 
-
 .postTagsHeader,
 .postTags > * {
-  margin-right: .45rem;
+  margin-right: 0.45rem;
 }
 
-.postTags > *:last-child{
+.postTags > *:last-child {
   margin-right: 0;
 }
 
 .postMainContent h2 {
-  margin: 2rem 0 .7rem 0;
+  margin: 2rem 0 0.7rem 0;
 }
 
-.postMainContent ul > *{
-  margin-bottom: .5rem;
+.postMainContent ul > * {
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
