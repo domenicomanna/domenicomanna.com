@@ -7,9 +7,11 @@ type Props = {
   projects: Project[];
 };
 
+export const projectsSectionId = 'projects';
+
 const ProjectList: FunctionComponent<Props> = ({ projects }) => {
   return (
-    <section id="projects">
+    <section id={projectsSectionId}>
       <ul className={styles.projects}>
         {projects.map((project, index) => (
           <ProjectListItem key={index} project={project} />
