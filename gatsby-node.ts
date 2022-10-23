@@ -1,47 +1,37 @@
-import { GatsbyNode, Actions, CreatePagesArgs } from "gatsby"
-import _ from "lodash"
-import path from "path"
-import { SelectedTagArticlesPageContext } from "./src/templates/selectedTagArticles"
+import { GatsbyNode, Actions, CreatePagesArgs } from 'gatsby';
+import _ from 'lodash';
+import path from 'path';
+import { SelectedTagArticlesPageContext } from './src/templates/selectedTagArticles';
 
 type MarkdownContentQuery = {
-  postsRemark: Queries.MarkdownRemarkConnection
-  tagsGroup: Queries.MarkdownRemarkGroupConnection
-}
+  postsRemark: Queries.MarkdownRemarkConnection;
+  tagsGroup: Queries.MarkdownRemarkGroupConnection;
+};
 
-export const onCreateNode: GatsbyNode["onCreateNode"] = ({
-  node,
-  getNode,
-  actions,
-}) => {
-  const { createNodeField } = actions
-  if (node.internal.type === "MarkdownRemark") {
-    const frontMatter = node.frontmatter as Queries.MarkdownRemarkFrontmatter
-    const slug = `/${_.kebabCase(frontMatter.title ?? "")}/`
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === 'MarkdownRemark') {
+    const frontMatter = node.frontmatter as Queries.MarkdownRemarkFrontmatter;
+    const slug = `/${_.kebabCase(frontMatter.title ?? '')}/`;
     createNodeField({
       node,
       name: `slug`,
       value: slug,
-    })
+    });
   }
-}
+};
 
-export const createPages: GatsbyNode["createPages"] = async (
-  createPagesArgs: CreatePagesArgs
-) => {
-  const markdownContent = await getMarkdownContent(createPagesArgs)
-  if (!markdownContent) return
-  const blogPostSlugs = markdownContent.postsRemark.edges.map(
-    x => x.node?.fields?.slug ?? ""
-  )
-  const tagSlugs = markdownContent.tagsGroup.group.map(x => x.fieldValue ?? "")
-  createBlogPostPages(blogPostSlugs, createPagesArgs.actions)
-  createSelectedTagArticlePages(tagSlugs, createPagesArgs.actions)
-}
+export const createPages: GatsbyNode['createPages'] = async (createPagesArgs: CreatePagesArgs) => {
+  const markdownContent = await getMarkdownContent(createPagesArgs);
+  if (!markdownContent) return;
+  const blogPostSlugs = markdownContent.postsRemark.edges.map(x => x.node?.fields?.slug ?? '');
+  const tagSlugs = markdownContent.tagsGroup.group.map(x => x.fieldValue ?? '');
+  createBlogPostPages(blogPostSlugs, createPagesArgs.actions);
+  createSelectedTagArticlePages(tagSlugs, createPagesArgs.actions);
+};
 
-const getMarkdownContent = async (
-  createPagesArgs: CreatePagesArgs
-): Promise<MarkdownContentQuery | undefined> => {
-  const { graphql } = createPagesArgs
+const getMarkdownContent = async (createPagesArgs: CreatePagesArgs): Promise<MarkdownContentQuery | undefined> => {
+  const { graphql } = createPagesArgs;
 
   const allMarkdownRemarkQuery = `query {
     postsRemark: allMarkdownRemark {
@@ -58,13 +48,13 @@ const getMarkdownContent = async (
         fieldValue
       }
     }
-  }`
-  const result = await graphql<MarkdownContentQuery>(allMarkdownRemarkQuery)
-  return result.data
-}
+  }`;
+  const result = await graphql<MarkdownContentQuery>(allMarkdownRemarkQuery);
+  return result.data;
+};
 
 const createBlogPostPages = (blogPostSlugs: string[], actions: Actions) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   for (const slug in blogPostSlugs) {
     createPage({
       path: slug,
@@ -72,15 +62,12 @@ const createBlogPostPages = (blogPostSlugs: string[], actions: Actions) => {
       context: {
         slug: slug,
       },
-    })
+    });
   }
-}
+};
 
-const createSelectedTagArticlePages = (
-  tagSlugs: string[],
-  actions: Actions
-) => {
-  const { createPage } = actions
+const createSelectedTagArticlePages = (tagSlugs: string[], actions: Actions) => {
+  const { createPage } = actions;
 
   for (const slug of tagSlugs) {
     createPage<SelectedTagArticlesPageContext>({
@@ -89,6 +76,6 @@ const createSelectedTagArticlePages = (
       context: {
         tag: slug,
       },
-    })
+    });
   }
-}
+};

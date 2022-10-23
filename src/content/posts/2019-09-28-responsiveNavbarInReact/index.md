@@ -1,7 +1,7 @@
 ---
-title: "How to Create a Responsive Navbar in React"
-date: "2019-09-28"
-tags: ["React", "CSS"]
+title: 'How to Create a Responsive Navbar in React'
+date: '2019-09-28'
+tags: ['React', 'CSS']
 featuredImage: ../../featuredImages/reactIcon.png
 ---
 
@@ -40,13 +40,13 @@ Finally, let's create a layout.js file in our layout folder, and add the followi
 <div class = "codeTitle">layout/layout.js </div>
 
 ```jsx
-import React from "react"
+import React from 'react';
 
 const Layout = props => {
-  return <main> {props.children} </main>
-}
+  return <main> {props.children} </main>;
+};
 
-export default Layout
+export default Layout;
 ```
 
 Now, let's make sure everything is working correctly by returning this component in our app.js file.
@@ -54,8 +54,8 @@ Now, let's make sure everything is working correctly by returning this component
 <div class = "codeTitle">App.js </div>
 
 ```jsx
-import React from "react"
-import Layout from "./components/layout/layout"
+import React from 'react';
+import Layout from './components/layout/layout';
 
 function App() {
   return (
@@ -64,10 +64,10 @@ function App() {
       <h2>Some page content</h2>
       <h2>Some page content</h2>
     </Layout>
-  )
+  );
 }
 
-export default App
+export default App;
 ```
 
 After running the development server, we should now see:
@@ -89,8 +89,8 @@ In the navbar.js file, add the following code:
 <div class = "codeTitle">layout/navbar.js </div>
 
 ```jsx
-import React from "react"
-import styles from "./navbar.module.css"
+import React from 'react';
+import styles from './navbar.module.css';
 
 const Navbar = props => {
   return (
@@ -114,15 +114,13 @@ const Navbar = props => {
             </a>
           </li>
         </ul>
-        <span className={styles.hamburger}>
-          &#9776; {/* HTML entity code for hamburger menu */}
-        </span>
+        <span className={styles.hamburger}>&#9776; {/* HTML entity code for hamburger menu */}</span>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
 ```
 
 All we are doing here is creating the markup for a navigation menu. Now, let's add the styles in a mobile-first approach.
@@ -176,8 +174,8 @@ Finally, let's return the navbar component in our layout.js file.
 <div class = "codeTitle">layout.js</div>
 
 ```jsx
-import React from "react"
-import Navbar from "./navbar"
+import React from 'react';
+import Navbar from './navbar';
 
 const Layout = props => {
   return (
@@ -185,10 +183,10 @@ const Layout = props => {
       <Navbar />
       <main> {props.children} </main>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 ```
 
 So, at this point, our navigation menu should look like:
@@ -214,14 +212,14 @@ The code for the container component is super simple:
 <div class = "codeTitle">components/components.js</div>
 
 ```jsx
-import React from "react"
-import styles from "./container.module.css"
+import React from 'react';
+import styles from './container.module.css';
 
 const Container = props => {
-  return <div className={styles.container}>{props.children}</div>
-}
+  return <div className={styles.container}>{props.children}</div>;
+};
 
-export default Container
+export default Container;
 ```
 
 And for the styling:
@@ -267,15 +265,15 @@ Also, let's add the same three lines in our navbar.js file:
 <div class = "codeTitle">navbar.js</div>
 
 ```jsx
-import React from "react"
-import Container from "../container/container" // highlight-line
-import styles from "./navbar.module.css"
+import React from 'react';
+import Container from '../container/container'; // highlight-line
+import styles from './navbar.module.css';
 
 const Navbar = props => {
   return (
     <header className={styles.header}>
       <Container>
-        {" "}
+        {' '}
         {/* highlight-line */}
         <nav className={styles.nav}>
           <h1 className={styles.brand}>Brand Name</h1>
@@ -296,20 +294,17 @@ const Navbar = props => {
               </a>
             </li>
           </ul>
-          <span
-            onClick={props.toggleHamburgerLinks}
-            className={styles.hamburger}
-          >
+          <span onClick={props.toggleHamburgerLinks} className={styles.hamburger}>
             &#9776; {/* HTML entity code for hamburger menu */}
           </span>
         </nav>
-      </Container>{" "}
+      </Container>{' '}
       {/* highlight-line */}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
 ```
 
 With these changes in place, our navigation menu should now look like:
@@ -324,14 +319,14 @@ To open and close the hamburger menu, we will add state to our layout component.
 <div class = "codeTitle">layout.js</div>
 
 ```jsx
-import React, { Component } from "react"
-import Navbar from "./navbar"
-import Container from "../container/container"
+import React, { Component } from 'react';
+import Navbar from './navbar';
+import Container from '../container/container';
 
 class Layout extends Component {
   state = {
     hamburgerLinksShouldShow: false,
-  }
+  };
 
   render() {
     return (
@@ -341,11 +336,11 @@ class Layout extends Component {
           <Container>{this.props.children}</Container>
         </main>
       </>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;
 ```
 
 Let's also add a method in this class that will change whether or not the hamburger links should show.
@@ -356,13 +351,13 @@ Let's also add a method in this class that will change whether or not the hambur
 class Layout extends Component {
   state = {
     hamburgerLinksShouldShow: false,
-  }
+  };
 
   toggleHamburgerLinks = () => {
     this.setState(previousState => ({
       hamburgerLinksShouldShow: !previousState.hamburgerLinksShouldShow,
-    }))
-  }
+    }));
+  };
 
   // ...
 }
@@ -385,7 +380,7 @@ return (
       <Container>{this.props.children}</Container>
     </main>
   </>
-)
+);
 ```
 
 The full code should look like:
@@ -393,20 +388,20 @@ The full code should look like:
 <div class = "codeTitle">layout.js</div>
 
 ```jsx
-import React, { Component } from "react"
-import Navbar from "./navbar"
-import Container from "../container/container"
+import React, { Component } from 'react';
+import Navbar from './navbar';
+import Container from '../container/container';
 
 class Layout extends Component {
   state = {
     hamburgerLinksShouldShow: false,
-  }
+  };
 
   toggleHamburgerLinks = () => {
     this.setState(previousState => ({
       hamburgerLinksShouldShow: !previousState.hamburgerLinksShouldShow,
-    }))
-  }
+    }));
+  };
 
   render() {
     return (
@@ -419,11 +414,11 @@ class Layout extends Component {
           <Container>{this.props.children}</Container>
         </main>
       </>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;
 ```
 
 Now, let's use these props in our navbar component.

@@ -1,7 +1,7 @@
-import React from "react"
-import PageTitle from "../components/pageTitle/pageTitle"
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import React from 'react';
+import PageTitle from '../components/pageTitle/pageTitle';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo';
 
 const NotFoundPage = () => (
   <Layout>
@@ -9,6 +9,6 @@ const NotFoundPage = () => (
     <PageTitle>Not found</PageTitle>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

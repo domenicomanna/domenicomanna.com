@@ -15,26 +15,26 @@ export default {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-code-titles",
+            resolve: 'gatsby-remark-code-titles',
             options: {
-              className: "codeTitle ",
+              className: 'codeTitle ',
             },
           },
-          "gatsby-remark-prismjs",
+          'gatsby-remark-prismjs',
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 680,
-              backgroundColor: "transparent",
+              backgroundColor: 'transparent',
               tracedSVG: true,
               wrapperStyle: `margin: 3.6rem auto;`,
             },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-              rel: "noopener",
+              target: '_blank',
+              rel: 'noopener',
             },
           },
         ],
@@ -57,7 +57,7 @@ export default {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-136154509-2",
+        trackingId: 'UA-136154509-2',
       },
     },
     {
@@ -76,4 +76,4 @@ export default {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

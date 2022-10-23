@@ -1,9 +1,9 @@
-import React from "react"
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
-import PageTitle from "../components/pageTitle/pageTitle"
-import { socialNetworks, email } from "../constants/socialNetworks"
-import * as styles from "./pageStyles/contact.module.css"
+import React from 'react';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo';
+import PageTitle from '../components/pageTitle/pageTitle';
+import { socialNetworks, email } from '../constants/socialNetworks';
+import * as styles from './pageStyles/contact.module.css';
 
 const Contact = () => {
   return (
@@ -12,18 +12,17 @@ const Contact = () => {
         <SEO title="Contact" />
         <PageTitle>Contact</PageTitle>
         <p>
-          {" "}
-          Email me anytime:{" "}
-          <a href={`mailto: ${email.address}`}>{email.address} </a>
+          {' '}
+          Email me anytime: <a href={`mailto: ${email.address}`}>{email.address} </a>
         </p>
         <p className={styles.listDescription}>You can also find me at: </p>
         <ul className={styles.socialNetworks}>{transformSocialNetworks()}</ul>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
 
 const transformSocialNetworks = () =>
   socialNetworks.map(socialNetwork => (
@@ -33,4 +32,4 @@ const transformSocialNetworks = () =>
         {socialNetwork.username}
       </a>
     </li>
-  ))
+  ));

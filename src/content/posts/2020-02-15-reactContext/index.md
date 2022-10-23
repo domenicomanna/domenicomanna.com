@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to React's Context API"
-date: "2020-02-15"
-tags: ["React"]
+date: '2020-02-15'
+tags: ['React']
 featuredImage: ../../featuredImages/reactIcon.png
 ---
 
@@ -31,12 +31,12 @@ Now that we know what the context API is, and why it's useful, let's take a look
 When working with the Context API, the first thing we need to do is create a context. To create a context, we use the `createContext` function exported from React. We can pass this function a parameter which represents the default value (more on this below) of the context. In our case though, we have not passed a parameter, which means the default value of our context will be undefined.
 
 ```js
-import { createContext } from "react"
+import { createContext } from 'react';
 
-const myContext = createContext()
+const myContext = createContext();
 
-console.log(myContext.Provider)
-console.log(myContext.Consumer)
+console.log(myContext.Provider);
+console.log(myContext.Consumer);
 ```
 
 The `createContext` function returns an object. We can see that this object has properties called `Provider` and `Consumer`. The `Provider` property is a React component. This component has a `value` prop where we specify the data that we want to be available to components that consume, or use, the context. The `Consumer` property gives us one way to access that data in other components. However, in the project that we will create, we will use the `useContext` hook to access the data, so we will not use the `Consumer` property.
@@ -46,48 +46,48 @@ The `createContext` function returns an object. We can see that this object has 
 To use the data provided to our context, we simply call the `useContext` function exported from React. As a parameter to the `useContext` function, we pass in the context object that was initially created from our `createContext` call.
 
 ```jsx
-import React, { createContext, useContext } from "react"
+import React, { createContext, useContext } from 'react';
 
-export const myContext = createContext()
+export const myContext = createContext();
 
 function RandomJSXComponent() {
-  const data = useContext(myContext)
-  return <div>hi</div>
+  const data = useContext(myContext);
+  return <div>hi</div>;
 }
 
-export default RandomJSXComponent
+export default RandomJSXComponent;
 ```
 
 The `useContext` function returns the value provided by the nearest rendered `Provider` for that context type. Since we are calling `useContext` with `myContext` as a parameter, then the provider that will be searched for in the component tree of our app is `myContext.Provider`. However, since `myContext.Provider` is not rendered anywhere in our app, then `myContext.Provider` will not be found. In the case of a provider not being found, `useContext` will return the default value that was specified in the `createContext` call. In our example, since we did not specify a default value, the value returned from our `useContext` call will be undefined.
 
 ```jsx
-import React, { createContext, useContext } from "react"
+import React, { createContext, useContext } from 'react';
 
-export const myContext = createContext()
+export const myContext = createContext();
 
 function RandomJSXComponent() {
-  const data = useContext(myContext)
-  console.log(data === undefined) // true
-  return <div>hi</div>
+  const data = useContext(myContext);
+  console.log(data === undefined); // true
+  return <div>hi</div>;
 }
 
-export default RandomJSXComponent
+export default RandomJSXComponent;
 ```
 
 Let's look at the same example but this time let's specify a default value:
 
 ```jsx
-import React, { createContext, useContext } from "react"
+import React, { createContext, useContext } from 'react';
 
-export const myContext = createContext(10)
+export const myContext = createContext(10);
 
 function RandomJSXComponent() {
-  const data = useContext(myContext)
-  console.log(data) // 10
-  return <div>hi</div>
+  const data = useContext(myContext);
+  console.log(data); // 10
+  return <div>hi</div>;
 }
 
-export default RandomJSXComponent
+export default RandomJSXComponent;
 ```
 
 Now, the default value is 10 instead of undefined.
@@ -116,9 +116,9 @@ Let's first create a model for our clothe item. This model will contain all the 
 
 ```ts:title=IClotheItem.ts
 export default interface IClotheItem {
-  id: number
-  description: string
-  isFavorited: boolean
+  id: number;
+  description: string;
+  isFavorited: boolean;
 }
 ```
 
@@ -131,19 +131,19 @@ Now that we have the model defined, let's create a fake API client that will ret
 In our `src` folder, let's create a new folder called `api`. In `src/api` let's add a new file called `ClothesApiClient.ts`, and add the following code to it:
 
 ```ts:title=ClothesApiClient.ts
-import IClotheItem from "../models/IClotheItem"
+import IClotheItem from '../models/IClotheItem';
 
 export default class ClothesApiClient {
   getClothes(): IClotheItem[] {
     // fake api call...
     return [
-      { id: 1, description: "A lovely t-shirt", isFavorited: false },
-      { id: 2, description: "A lovely blouse", isFavorited: false },
-      { id: 3, description: "A lovely dress", isFavorited: false },
-      { id: 4, description: "A lovely suit", isFavorited: false },
-      { id: 5, description: "An awesome pair of shoes", isFavorited: false },
-      { id: 6, description: "An awesome belt", isFavorited: false },
-    ]
+      { id: 1, description: 'A lovely t-shirt', isFavorited: false },
+      { id: 2, description: 'A lovely blouse', isFavorited: false },
+      { id: 3, description: 'A lovely dress', isFavorited: false },
+      { id: 4, description: 'A lovely suit', isFavorited: false },
+      { id: 5, description: 'An awesome pair of shoes', isFavorited: false },
+      { id: 6, description: 'An awesome belt', isFavorited: false },
+    ];
   }
 }
 ```
@@ -157,12 +157,12 @@ In the `src` folder, lets create a new folder called `contexts`. In `src/context
 <div class = "codeTitle">ClothesContext.tsx</div>
 
 ```tsx
-import IClotheItem from "../models/IClotheItem"
+import IClotheItem from '../models/IClotheItem';
 
 interface IClothesContext {
-  clotheItems: IClotheItem[]
-  isLoading: boolean
-  toggleFavorite: (id: number) => void
+  clotheItems: IClotheItem[];
+  isLoading: boolean;
+  toggleFavorite: (id: number) => void;
 }
 ```
 
@@ -198,43 +198,34 @@ Let's add the following code to our `ClothesContext.tsx` file, and then we will 
 <div class = "codeTitle">ClothesContext.tsx</div>
 
 ```tsx
-import React, {
-  createContext,
-  useEffect,
-  useState,
-  FunctionComponent,
-} from "react"
-import IClotheItem from "../models/IClotheItem"
-import ClothesApiClient from "../api/ClothesApiClient"
+import React, { createContext, useEffect, useState, FunctionComponent } from 'react';
+import IClotheItem from '../models/IClotheItem';
+import ClothesApiClient from '../api/ClothesApiClient';
 
-const clothesApiClient = new ClothesApiClient()
+const clothesApiClient = new ClothesApiClient();
 
 interface IClothesContext {
-  clotheItems: IClotheItem[]
-  isLoading: boolean
-  toggleFavorite: (id: number) => void
+  clotheItems: IClotheItem[];
+  isLoading: boolean;
+  toggleFavorite: (id: number) => void;
 }
 
-export const ClothesContext = createContext<IClothesContext>(
-  {} as IClothesContext
-)
+export const ClothesContext = createContext<IClothesContext>({} as IClothesContext);
 
 const ClothesContextProvider: FunctionComponent = ({ children }) => {
-  const [clotheItems, setClotheItems] = useState<IClotheItem[]>([])
-  const [isLoading, setLoading] = useState(false)
+  const [clotheItems, setClotheItems] = useState<IClotheItem[]>([]);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
-    let clotheItems = clothesApiClient.getClothes()
-    setClotheItems(clotheItems)
-    setLoading(false)
-  }, [])
+    setLoading(true);
+    let clotheItems = clothesApiClient.getClothes();
+    setClotheItems(clotheItems);
+    setLoading(false);
+  }, []);
 
   function toggleFavorite(id: number) {
-    let updatedClotheItems = clotheItems.map(c =>
-      c.id === id ? { ...c, isFavorited: !c.isFavorited } : c
-    )
-    setClotheItems(updatedClotheItems)
+    let updatedClotheItems = clotheItems.map(c => (c.id === id ? { ...c, isFavorited: !c.isFavorited } : c));
+    setClotheItems(updatedClotheItems);
   }
 
   return (
@@ -247,10 +238,10 @@ const ClothesContextProvider: FunctionComponent = ({ children }) => {
     >
       {children}
     </ClothesContext.Provider>
-  )
-}
+  );
+};
 
-export default ClothesContextProvider
+export default ClothesContextProvider;
 ```
 
 With this code, we created a JSX component called ClothesContextProvider. In this component, we are managing state through the use of hooks. In our `useEffect` hook, we load our data from our fake API client. In our `toggleFavorite` function, we change the isFavorited status of the `IClotheItem` that has the same `id` as the `id` parameter. So, that's how the state is being managed in this component. Now let's look more closely at what this functional component is returning.
@@ -268,7 +259,7 @@ return (
   >
     {children}
   </ClothesContext.Provider>
-)
+);
 ```
 
 What is being returned is the `Provider` component that was created from the `createContext` function call. If you recall from before, the `Provider` is a react component with a `value prop` where we specify the data that we want available to consuming components. In this case, the value we are specifying is an object that contains the `clotheItems`, the `toggleFavorite` function, and the `isLoading` status.
@@ -284,8 +275,8 @@ Let's create a new folder in a `src` folder and call it `components`. In `src/co
 <div class = "codeTitle">ClotheItem.tsx</div>
 
 ```jsx
-import React, { FunctionComponent, useContext } from "react"
-import { ClothesContext } from "../contexts/ClothesContext"
+import React, { FunctionComponent, useContext } from 'react';
+import { ClothesContext } from '../contexts/ClothesContext';
 
 interface IProps {
   id: number;
@@ -293,32 +284,25 @@ interface IProps {
   isFavorited: boolean;
 }
 
-const ClotheItem: FunctionComponent<IProps> = ({
-  id,
-  description,
-  isFavorited,
-}) => {
-  const clothesContext = useContext(ClothesContext)
+const ClotheItem: FunctionComponent<IProps> = ({ id, description, isFavorited }) => {
+  const clothesContext = useContext(ClothesContext);
   return (
     <li className="clotheItem">
       <p>{description}</p>
-      <button
-        onClick={() => clothesContext.toggleFavorite(id)}
-        className="favorite-clothe-item-button"
-      >
-        {isFavorited ? "Unfavorite" : "Favorite"}
+      <button onClick={() => clothesContext.toggleFavorite(id)} className="favorite-clothe-item-button">
+        {isFavorited ? 'Unfavorite' : 'Favorite'}
       </button>
     </li>
-  )
-}
+  );
+};
 
-export default ClotheItem
+export default ClotheItem;
 ```
 
 We defined the props this component will receive in our interface `IProps`. The most interesting line in this component is the `useContext` call. Let's examine this more closely:
 
 ```jsx
-const clothesContext = useContext(ClothesContext)
+const clothesContext = useContext(ClothesContext);
 ```
 
 Here we are passing in the `ClothesContext` that we created before. So, if we look back in our `ClothesContext.tsx` file:
@@ -338,33 +322,28 @@ In `src/components`, let's add a new file called `ClotheItemList.tsx`, and add t
 <div class = "codeTitle">ClotheItemList.tsx</div>
 
 ```jsx
-import React, { useContext } from "react"
-import { ClothesContext } from "../contexts/ClothesContext"
-import IClotheItem from "../models/IClotheItem"
-import ClotheItem from "./ClotheItem"
+import React, { useContext } from 'react';
+import { ClothesContext } from '../contexts/ClothesContext';
+import IClotheItem from '../models/IClotheItem';
+import ClotheItem from './ClotheItem';
 
 const ClotheItemsList = () => {
-  const context = useContext(ClothesContext)
+  const context = useContext(ClothesContext);
 
   return context.isLoading ? (
     <h1>Loading...</h1>
   ) : (
     <ul className="clotheItems">{transformClotheItems(context.clotheItems)}</ul>
-  )
-}
+  );
+};
 
 function transformClotheItems(clotheItems: IClotheItem[]) {
   return clotheItems.map(c => (
-    <ClotheItem
-      key={c.id}
-      id={c.id}
-      description={c.description}
-      isFavorited={c.isFavorited}
-    />
-  ))
+    <ClotheItem key={c.id} id={c.id} description={c.description} isFavorited={c.isFavorited} />
+  ));
 }
 
-export default ClotheItemsList
+export default ClotheItemsList;
 ```
 
 This component is retrieving the clothe items from our context and rendering them.
@@ -374,36 +353,29 @@ In `src/components`, let's add another file called `FavoritedClotheItemsList.tsx
 <div class = "codeTitle">FavoritedClotheItemsList.tsx</div>
 
 ```jsx
-import React, { useContext } from "react"
-import { ClothesContext } from "../contexts/ClothesContext"
-import IClotheItem from "../models/IClotheItem"
-import ClotheItem from "./ClotheItem"
+import React, { useContext } from 'react';
+import { ClothesContext } from '../contexts/ClothesContext';
+import IClotheItem from '../models/IClotheItem';
+import ClotheItem from './ClotheItem';
 
 const FavoritedClotheItemsList = () => {
-  const context = useContext(ClothesContext)
-  const favoritedClotheItems = context.clotheItems.filter(c => c.isFavorited)
+  const context = useContext(ClothesContext);
+  const favoritedClotheItems = context.clotheItems.filter(c => c.isFavorited);
 
   return favoritedClotheItems.length === 0 ? (
     <h1>You have no favorited clothes :(</h1>
   ) : (
-    <ul className="clotheItems">
-      {transformClotheItems(favoritedClotheItems)}
-    </ul>
-  )
-}
+    <ul className="clotheItems">{transformClotheItems(favoritedClotheItems)}</ul>
+  );
+};
 
 function transformClotheItems(clotheItems: IClotheItem[]) {
   return clotheItems.map(c => (
-    <ClotheItem
-      key={c.id}
-      id={c.id}
-      description={c.description}
-      isFavorited={c.isFavorited}
-    />
-  ))
+    <ClotheItem key={c.id} id={c.id} description={c.description} isFavorited={c.isFavorited} />
+  ));
 }
 
-export default FavoritedClotheItemsList
+export default FavoritedClotheItemsList;
 ```
 
 This component retrieves only the clothe items that have been favorited, and then renders them.
@@ -423,9 +395,9 @@ npm install react-router-dom
 In `src/components`, add a new file called `Layout.tsx`, and add the following code to it:
 
 ```jsx:title=Layout.tsx
-import React, { FunctionComponent } from "react"
-import { Link } from "react-router-dom"
-import "../App.css"
+import React, { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 const Layout: FunctionComponent = ({ children }) => {
   return (
@@ -447,10 +419,10 @@ const Layout: FunctionComponent = ({ children }) => {
 
       <footer></footer>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 ```
 
 Let's also add the following styles in `App.css`
@@ -508,13 +480,13 @@ body {
 Finally, let's render our provider component. In the `App.tsx` file, add the following code:
 
 ```jsx:title=App.tsx
-import React from "react"
-import "./App.css"
-import Layout from "./components/Layout"
-import ClothesContextProvider from "./contexts/ClothesContext"
-import ClotheItemsList from "./components/ClotheItemsList"
-import { Switch, Route } from "react-router-dom"
-import FavoritedClotheItemsList from "./components/FavoritedClotheItemsList"
+import React from 'react';
+import './App.css';
+import Layout from './components/Layout';
+import ClothesContextProvider from './contexts/ClothesContext';
+import ClotheItemsList from './components/ClotheItemsList';
+import { Switch, Route } from 'react-router-dom';
+import FavoritedClotheItemsList from './components/FavoritedClotheItemsList';
 
 const App = () => {
   return (
@@ -522,17 +494,14 @@ const App = () => {
       <ClothesContextProvider>
         <Switch>
           <Route path="/" component={ClotheItemsList} exact />
-          <Route
-            path="/favorited-clothes"
-            component={FavoritedClotheItemsList}
-          />
+          <Route path="/favorited-clothes" component={FavoritedClotheItemsList} />
         </Switch>
       </ClothesContextProvider>
     </Layout>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 ```
 
 Since we are rendering the `ClotheItemsList` and `FavoritedClotheItemsList` components as children of the `ClothesContextProvider`, then when `useContext` is called from these children components, the value that is returned will be the value we specified in our `ClotheContextProvider`. Let's take a look at that value again:
@@ -550,7 +519,7 @@ return (
   >
     {children}
   </ClothesContext.Provider>
-)
+);
 ```
 
 We can see that the value is an object that contains an array of `clotheItems`, the `toggleFavorite` function and the `isLoading` status. So, this is the value that will be returned when `useContext` is called in any child component of the `ClothesContextProvider` component.
@@ -558,21 +527,21 @@ We can see that the value is an object that contains an array of `clotheItems`, 
 Now we just need to make one last change before we can run our app. Since we are using routes, we need to render our app with a router. Let's replace the existing code in the `index.tsx` file with the following code:
 
 ```tsx:title=index.tsx
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./App"
-import * as serviceWorker from "./serviceWorker"
-import { HashRouter } from "react-router-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { HashRouter } from 'react-router-dom';
 
 const app = (
   <HashRouter basename="/">
     <App />
   </HashRouter>
-)
+);
 
-ReactDOM.render(app, document.getElementById("root"))
+ReactDOM.render(app, document.getElementById('root'));
 
-serviceWorker.unregister()
+serviceWorker.unregister();
 ```
 
 With this change in place, you should now be able to run the app.
@@ -588,14 +557,12 @@ Consumers of a context rerender every time the `value` prop on the `Provider` co
 ```tsx
 // rest of code ...
 
-const [clotheItems, setClotheItems] = useState<IClotheItem[]>([])
-const [isLoading, setLoading] = useState(false)
+const [clotheItems, setClotheItems] = useState<IClotheItem[]>([]);
+const [isLoading, setLoading] = useState(false);
 
 function toggleFavorite(id: number) {
-  let updatedClotheItems = clotheItems.map(c =>
-    c.id === id ? { ...c, isFavorited: !c.isFavorited } : c
-  )
-  setClotheItems(updatedClotheItems)
+  let updatedClotheItems = clotheItems.map(c => (c.id === id ? { ...c, isFavorited: !c.isFavorited } : c));
+  setClotheItems(updatedClotheItems);
 }
 
 // ... rest of code
@@ -614,7 +581,7 @@ return (
   >
     {children}
   </ClothesContext.Provider>
-)
+);
 ```
 
 Since we are passing the `value` prop a new object reference, then that means the `value` prop has changed according to the [Object.is algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is). This will then cause the components that are consuming the context to rerender. In the process of rerendering, when `useContext` is called in these consuming components, the value returned will be the value that triggered the rerender. This ensures that all consuming components are always receiving the most up to date value from the context.

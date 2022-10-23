@@ -1,7 +1,7 @@
 ---
-title: "Understanding Constructor Functions in Javascript"
-date: "2019-10-17"
-tags: ["Javascript"]
+title: 'Understanding Constructor Functions in Javascript'
+date: '2019-10-17'
+tags: ['Javascript']
 featuredImage: ../../featuredImages/javascriptIcon.png
 ---
 
@@ -15,8 +15,8 @@ Okay, so let's take a look at a constructor function.
 
 ```js
 function Person(name, age) {
-  this.name = name
-  this.age = age
+  this.name = name;
+  this.age = age;
 }
 ```
 
@@ -24,12 +24,12 @@ So, this is simply a function that takes in two parameters, `name` and `age`. We
 
 ```js
 function Person(name, age) {
-  this.name = name
-  this.age = age
+  this.name = name;
+  this.age = age;
 }
 
-let bob = new Person("Bob", 14)
-console.log(bob.name, bob.age) // Bob 14
+let bob = new Person('Bob', 14);
+console.log(bob.name, bob.age); // Bob 14
 ```
 
 After we call this function with the `new` keyword, an object with a `name` and `age` property is created and returned. The property values are set when we say `this.name = name`, and `this.age = age`.
@@ -37,9 +37,9 @@ After we call this function with the `new` keyword, an object with a `name` and 
 Of course, we can also create many more objects using this constructor function:
 
 ```js
-let bob = new Person("Bob", 14)
-let john = new Person("John", 54)
-let henry = new Person("Henry", 32)
+let bob = new Person('Bob', 14);
+let john = new Person('John', 54);
+let henry = new Person('Henry', 32);
 ```
 
 In each of these cases, an object with the properties of `name` and `age` is returned.
@@ -75,12 +75,12 @@ We can imagine this whole process may look something like:
 
 ```js
 function Person(name, age) {
-  let newPerson = {} // create empty object
+  let newPerson = {}; // create empty object
 
-  newPerson.name = name // add properties to object
-  newPerson.age = age
+  newPerson.name = name; // add properties to object
+  newPerson.age = age;
 
-  return newPerson // return object
+  return newPerson; // return object
 }
 ```
 
@@ -89,13 +89,13 @@ In this example, we create an empty object, add properties to it, and return it.
 We can now call the function the same way as before:
 
 ```js
-let bob = new Person("Bob", 14)
+let bob = new Person('Bob', 14);
 ```
 
 In this case, it does not matter if we specify `new`, because we are returning our own object. When we return our own object, then our object will always be returned regardless if the function was called with `new` or not. So, we can also call the function like this:
 
 ```js
-let bob = Person("Bob", 14)
+let bob = Person('Bob', 14);
 ```
 
 Hopefully, this example clarified constructor functions a bit. As we can see, all they do is create an object, add properties to that object, and then return that object.
@@ -110,11 +110,11 @@ If **strict mode** is on , then the value of `this` will be undefined. So, that 
 
 ```js
 function Person(name, age) {
-  this.name = name
-  this.age = age
+  this.name = name;
+  this.age = age;
 }
 
-let bob = Person("Bob", 14) // Throws an error because
+let bob = Person('Bob', 14); // Throws an error because
 // `this` is undefined
 ```
 
@@ -124,14 +124,14 @@ If **sloppy mode** is on, then `this` will refer to the global object. In the ca
 
 ```js
 function Person(name, age) {
-  this.name = name
-  this.age = age
+  this.name = name;
+  this.age = age;
 }
 
-let bob = Person("Bob", 14)
-console.log(bob) // undefined
-console.log(window.name) // Bob
-console.log(window.age) // 14
+let bob = Person('Bob', 14);
+console.log(bob); // undefined
+console.log(window.name); // Bob
+console.log(window.age); // 14
 ```
 
 Because we did not specify `new`, then `this` refers to the `Window` object. Since `this` refers to the `Window` object, then this function call adds the `name` and `age` properties to the `Window` object.

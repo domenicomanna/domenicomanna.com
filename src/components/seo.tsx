@@ -5,23 +5,18 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { FunctionComponent } from "react"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { FunctionComponent } from 'react';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 type Props = {
-  description?: string
-  lang?: string
-  meta?: any[]
-  title: string
-}
+  description?: string;
+  lang?: string;
+  meta?: any[];
+  title: string;
+};
 
-const SEO: FunctionComponent<Props> = ({
-  description,
-  lang = "en",
-  meta = [],
-  title,
-}) => {
+const SEO: FunctionComponent<Props> = ({ description, lang = 'en', meta = [], title }) => {
   const result = useStaticQuery<Queries.SeoQuery>(
     graphql`
       query Seo {
@@ -34,11 +29,11 @@ const SEO: FunctionComponent<Props> = ({
         }
       }
     `
-  )
+  );
 
-  const siteMetadata = result.site?.siteMetadata
+  const siteMetadata = result.site?.siteMetadata;
 
-  const metaDescription = description ?? siteMetadata?.description ?? ""
+  const metaDescription = description ?? siteMetadata?.description ?? '';
 
   return (
     <Helmet
@@ -46,7 +41,7 @@ const SEO: FunctionComponent<Props> = ({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${siteMetadata?.title ?? ""}`}
+      titleTemplate={`%s | ${siteMetadata?.title ?? ''}`}
       meta={[
         {
           name: `description`,
@@ -70,7 +65,7 @@ const SEO: FunctionComponent<Props> = ({
         },
         {
           name: `twitter:creator`,
-          content: siteMetadata?.author ?? "",
+          content: siteMetadata?.author ?? '',
         },
         {
           name: `twitter:title`,
@@ -82,7 +77,7 @@ const SEO: FunctionComponent<Props> = ({
         },
       ].concat(meta)}
     />
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;
