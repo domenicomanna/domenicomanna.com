@@ -3,7 +3,7 @@ import { Component, ReactNode } from 'react';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './header/header';
 import Footer from './footer/footer';
-import Wrapper from '../ui/wrapper/wrapper';
+import Container from '../ui/container/container';
 import './global.css';
 import * as styles from './layout.module.css';
 
@@ -34,7 +34,7 @@ class Layout extends Component<Props, State> {
           hamburgerLinksShouldShow={this.state.hamburgerLinksShouldShow}
         />
         <main className={styles.mainContent}>
-          <Wrapper> {this.props.children} </Wrapper>
+          <Container> {this.props.children} </Container>
         </main>
         <Footer />
       </div>

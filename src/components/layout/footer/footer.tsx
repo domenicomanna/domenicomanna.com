@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialNetworks, email, SocialNetwork } from '../../../constants/socialNetworks';
-import Wrapper from '../../ui/wrapper/wrapper';
+import Container from '../../ui/container/container';
 import * as styles from './footer.module.css';
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Wrapper>
+      <Container>
         <div className={styles.footer}>
           <span className={styles.copyright}>&copy; {currentYear} Domenico Manna</span>
           <ul className={styles.footerLinks}>
@@ -20,7 +20,7 @@ const Footer = () => {
             {transformSocialNetworks(socialNetworks)}
           </ul>
         </div>
-      </Wrapper>
+      </Container>
     </footer>
   );
 };

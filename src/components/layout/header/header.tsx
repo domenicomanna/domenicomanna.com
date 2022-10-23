@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import Wrapper from '../../ui/wrapper/wrapper';
+import Container from '../../ui/container/container';
 import Backdrop from '../../ui/backdrop/backdrop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,7 @@ const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamb
   return (
     <>
       <header className={styles.header}>
-        <Wrapper>
+        <Container>
           <nav className={styles.nav}>
             <Link className={`${styles.link} ${styles.nameLink}`} to="/">
               <h2 className={styles.name}>Domenico Manna</h2>
@@ -33,7 +33,7 @@ const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamb
             <ul className={classesForListOfLinks.join(' ')}>{transformPageLinks()}</ul>
             <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
           </nav>
-        </Wrapper>
+        </Container>
       </header>
       <Backdrop backdropShouldShow={hamburgerLinksShouldShow} toggleBackdrop={toggleHamburgerLinks} />
     </>
