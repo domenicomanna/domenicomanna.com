@@ -3,7 +3,7 @@ import { Component, ReactNode } from 'react';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './header/header';
 import Footer from './footer/footer';
-import Wrapper from '../wrapper/wrapper';
+import Wrapper from '../ui/wrapper/wrapper';
 import './global.css';
 import * as styles from './layout.module.css';
 

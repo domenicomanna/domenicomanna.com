@@ -1,8 +1,8 @@
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
-import PageTitle from '../components/pageTitle/pageTitle';
-import { socialNetworks, email } from '../constants/socialNetworks';
-import * as styles from './pageStyles/contact.module.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import PageTitle from '../../components/ui/pageTitle/pageTitle';
+import { socialNetworks, email } from '../../constants/socialNetworks';
+import * as styles from './contact.module.css';
 
 const Contact = () => {
   return (

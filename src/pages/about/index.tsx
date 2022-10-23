@@ -1,8 +1,8 @@
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
-import PageTitle from '../components/pageTitle/pageTitle';
-import Image from '../components/image/image';
-import * as styles from './pageStyles/about.module.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import PageTitle from '../../components/ui/pageTitle/pageTitle';
+import Image from '../../components/ui/image/image';
+import * as styles from './about.module.css';
 
 const About = () => {
   return (

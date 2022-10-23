@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialNetworks, email, SocialNetwork } from '../../../constants/socialNetworks';
-import Wrapper from '../../wrapper/wrapper';
+import Wrapper from '../../ui/wrapper/wrapper';
 import * as styles from './footer.module.css';
 
 const Footer = () => {

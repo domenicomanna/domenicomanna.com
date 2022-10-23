@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import kebabCase from 'lodash/kebabCase';
 import { graphql, Link } from 'gatsby';
-import SEO from '../components/seo';
-import Layout from '../components/layout/layout';
-import PageTitle from '../components/pageTitle/pageTitle';
-import * as styles from './pageStyles/tags.module.css';
+import SEO from '../../components/seo';
+import Layout from '../../components/layout/layout';
+import PageTitle from '../../components/ui/pageTitle/pageTitle';
+import * as styles from './tags.module.css';
 
 type TagGroupItem = {
   totalCount: number;

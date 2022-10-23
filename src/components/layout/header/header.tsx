@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import Wrapper from '../../wrapper/wrapper';
-import Backdrop from '../../backdrop/backdrop';
+import Wrapper from '../../ui/wrapper/wrapper';
+import Backdrop from '../../ui/backdrop/backdrop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import * as styles from './header.module.css';

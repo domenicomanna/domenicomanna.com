@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import PageTitle from '../components/pageTitle/pageTitle';
+import PageTitle from '../components/ui/pageTitle/pageTitle';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
 import { BlogPostHighlight } from '../components/blogPostHighlight/blogPostHighlightListItem';
 import { FluidObject } from 'gatsby-image';

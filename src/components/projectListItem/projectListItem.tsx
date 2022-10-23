@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
-import Image from '../image/image';
+import Image from '../ui/image/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';

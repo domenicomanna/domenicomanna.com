@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import * as styles from './hero.module.css';
-import { Button, buttonTypes } from '../button/button';
+import { Button, buttonTypes } from '../ui/button/button';
 
 const Hero = () => {
   return (
