@@ -4,7 +4,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './header/header';
 import Footer from './footer/footer';
 import Container from '../ui/container/container';
-import './global.css';
 import * as styles from './layout.module.css';
 
 type State = {
