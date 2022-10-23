@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Container: FunctionComponent<Props> = ({ children }) => {
-  return <div className={styles.wrapper}>{children}</div>;
+  return <div className={styles.container}>{children}</div>;
 };
 
 export default Container;
