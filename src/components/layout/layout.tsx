@@ -1,15 +1,22 @@
-import React, { Component } from "react"
+import React, { Component, ReactNode } from "react"
 // ensures that the icon CSS is loaded immediately before attempting to render icons.
 import "@fortawesome/fontawesome-svg-core/styles.css"
-import PropTypes from "prop-types"
 import Header from "./header/header"
 import Footer from "./footer/footer"
 import Wrapper from "../wrapper/wrapper"
 import "./global.css"
 import * as styles from "./layout.module.css"
 
-class Layout extends Component {
-  state = {
+type State = {
+  hamburgerLinksShouldShow: boolean
+}
+
+type Props = {
+  children: ReactNode
+}
+
+class Layout extends Component<Props, State> {
+  state: State = {
     hamburgerLinksShouldShow: false,
   }
 
@@ -33,10 +40,6 @@ class Layout extends Component {
       </div>
     )
   }
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

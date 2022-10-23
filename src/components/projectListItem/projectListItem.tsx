@@ -1,18 +1,28 @@
-import React from "react"
+import React, { FunctionComponent, ReactNode } from "react"
 import Image from "../image/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
+import {
+  faExternalLinkAlt,
+  IconDefinition,
+} from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import * as styles from "./project.module.css"
+import * as styles from "./projectListItem.module.css"
+import { Project } from "../../constants/projects"
 
-const Project = ({
-  imageFileName,
-  title,
-  description,
-  technologiesUsed,
-  websiteLink,
-  repositoryLink,
-}) => {
+type Props = {
+  project: Project
+}
+
+const ProjectListItem: FunctionComponent<Props> = ({ project }) => {
+  const {
+    imageFileName,
+    title,
+    description,
+    technologiesUsed,
+    websiteLink,
+    repositoryLink,
+  } = project
+
   return (
     <li className={styles.project}>
       <div className={styles.imageWrapper}>
@@ -36,14 +46,18 @@ const Project = ({
   )
 }
 
-const transformTechnologies = technologies =>
+const transformTechnologies = (technologies: string[]) =>
   technologies.map(technology => (
     <li key={technology} className={styles.projectTechnology}>
       {technology}
     </li>
   ))
 
-const createLinkForProject = (link, children, icon) => (
+const createLinkForProject = (
+  link: string,
+  children: ReactNode,
+  icon: IconDefinition
+) => (
   <a
     className={`${styles.link} ${styles.viewProjectLink}`}
     target="_blank"
@@ -55,4 +69,4 @@ const createLinkForProject = (link, children, icon) => (
   </a>
 )
 
-export default Project
+export default ProjectListItem

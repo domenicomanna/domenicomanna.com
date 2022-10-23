@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { Link } from "gatsby"
 import Wrapper from "../../wrapper/wrapper"
 import Backdrop from "../../backdrop/backdrop"
@@ -13,9 +13,15 @@ const pageLinks = [
   { to: "/contact/", text: "Contact" },
 ]
 
-const Header = props => {
-  const { hamburgerLinksShouldShow, toggleHamburgerLinks } = props
+type Props = {
+  hamburgerLinksShouldShow: boolean
+  toggleHamburgerLinks: () => void
+}
 
+const Header: FunctionComponent<Props> = ({
+  hamburgerLinksShouldShow,
+  toggleHamburgerLinks,
+}) => {
   let classesForListOfLinks = [styles.listOfLinks]
   if (hamburgerLinksShouldShow)
     classesForListOfLinks.push(styles.hamburgerLinks)

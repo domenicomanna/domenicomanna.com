@@ -1,11 +1,16 @@
-import React from "react"
+import React, { FunctionComponent, ReactNode } from "react"
 import * as styles from "./button.module.css"
 
 const buttonTypes = {
   primary: styles.primary,
 }
 
-const Button = ({ children, type }) => {
+type Props = {
+  type: string
+  children: ReactNode
+}
+
+const Button: FunctionComponent<Props> = ({ children, type }) => {
   return <button className={`${styles.button} ${type}`}>{children}</button>
 }
 

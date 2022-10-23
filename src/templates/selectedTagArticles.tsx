@@ -1,11 +1,25 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout/layout"
 import BlogPostHighlightList from "../components/blogPostHighlightList/blogPostHighlightList"
 import PageTitle from "../components/pageTitle/pageTitle"
+import { FluidObject } from "gatsby-image"
+import { BlogPostHighlight } from "../components/blogPostHighlight/blogPostHighlightListItem"
 
-const Tags = ({ pageContext, data }) => {
+export type SelectedTagArticlesPageContext = {
+  tag: string
+}
+
+type Props = {
+  pageContext: SelectedTagArticlesPageContext
+  data: Queries.SelectedTagArticlesQuery
+}
+
+const SelectedTagArticles: FunctionComponent<Props> = ({
+  pageContext,
+  data,
+}) => {
   const { tag } = pageContext
   return (
     <Layout>
@@ -16,15 +30,33 @@ const Tags = ({ pageContext, data }) => {
           Back to Tags
         </Link>
       </h3>
-      <BlogPostHighlightList postEdges={data.allMarkdownRemark.edges} />
+      <BlogPostHighlightList
+        blogPostHighlights={data.allMarkdownRemark.edges.map(
+          (x): BlogPostHighlight => {
+            const node = x.node
+            const fluidImage = node.frontmatter?.featuredImage
+              ? (node.frontmatter.featuredImage.childImageSharp
+                  ?.fluid as FluidObject)
+              : null
+            return {
+              id: node.id,
+              title: node.frontmatter?.title ?? "",
+              excerpt: "",
+              date: node.frontmatter?.date ?? "",
+              slug: node.fields?.slug ?? "",
+              fluidImage,
+            }
+          }
+        )}
+      />
     </Layout>
   )
 }
 
-export default Tags
+export default SelectedTagArticles
 
 export const allPostsWithSelectedTagQuery = graphql`
-  query($tag: String) {
+  query SelectedTagArticles($tag: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

@@ -71,3 +71,4 @@ yarn-error.log
 
 # Other
 .vscode
+gatsby-types.d.ts

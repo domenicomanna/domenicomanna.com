@@ -1,4 +1,5 @@
-module.exports = {
+export default {
+  graphqlTypegen: true,
   siteMetadata: {
     title: `Domenico Manna`,
     description: `Personal website + blog built with Gatsby.js`,

@@ -1,7 +1,14 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelope, IconDefinition } from "@fortawesome/free-solid-svg-icons"
 
-const socialNetworks = [
+export type SocialNetwork = {
+  network: string
+  url: string
+  username: string
+  icon: IconDefinition
+}
+
+const socialNetworks: SocialNetwork[] = [
   {
     network: "Github",
     url: "https://github.com/domenicomanna",

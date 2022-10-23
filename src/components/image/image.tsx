@@ -1,9 +1,13 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 
-export default ({ fileName }) => {
-  const { allFile } = useStaticQuery(queryForAllImages)
+type Props = {
+  fileName: string
+}
+
+const Image: FunctionComponent<Props> = ({ fileName }) => {
+  const { allFile } = useStaticQuery<Queries.AllImagesQuery>(queryForAllImages)
 
   const imageEdge = allFile.edges.find(edge => {
     return edge.node.relativePath
@@ -11,7 +15,9 @@ export default ({ fileName }) => {
       .includes(fileName.toLowerCase().trim())
   })
 
-  return imageEdge ? <Img fluid={imageEdge.node.childImageSharp.fluid} /> : null
+  const fluidObject = imageEdge?.node?.childImageSharp?.fluid
+  if (!fluidObject) return null
+  return imageEdge ? <Img fluid={fluidObject as FluidObject} /> : null
 }
 
 const queryForAllImages = graphql`
@@ -30,3 +36,5 @@ const queryForAllImages = graphql`
     }
   }
 `
+
+export default Image

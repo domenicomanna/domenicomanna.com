@@ -1,4 +1,13 @@
-export default [
+export type Project = {
+  imageFileName: string
+  title: string
+  description: string
+  technologiesUsed: string[]
+  websiteLink: string
+  repositoryLink: string
+}
+
+const projects: Project[] = [
   {
     imageFileName: "bodyFitnessTracker.jpg",
     title: "Body Fitness Tracker",
@@ -33,3 +42,5 @@ export default [
     repositoryLink: "https://github.com/domenicomanna/titanFitness",
   },
 ]
+
+export default projects
