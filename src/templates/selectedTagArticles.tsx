@@ -5,7 +5,7 @@ import Layout from '../components/layout/layout';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
 import PageTitle from '../components/ui/pageTitle/pageTitle';
 import { FluidObject } from 'gatsby-image';
-import { BlogPostHighlight } from '../components/blogPostHighlight/blogPostHighlightListItem';
+import { BlogPostHighlight } from '../components/blogPostHighlightListItem/blogPostHighlightListItem';
 
 export type SelectedTagArticlesPageContext = {
   tag: string;

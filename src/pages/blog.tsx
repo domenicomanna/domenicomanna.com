@@ -4,7 +4,7 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import PageTitle from '../components/ui/pageTitle/pageTitle';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
-import { BlogPostHighlight } from '../components/blogPostHighlight/blogPostHighlightListItem';
+import { BlogPostHighlight } from '../components/blogPostHighlightListItem/blogPostHighlightListItem';
 import { FluidObject } from 'gatsby-image';
 
 type Props = {
