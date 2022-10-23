@@ -9,11 +9,11 @@ type Props = {
 
 const BlogPostHighlightList: FunctionComponent<Props> = ({ blogPostHighlights }) => {
   return (
-    <ul className={styles.posts}>
+    <div className={styles.posts}>
       {blogPostHighlights.map(highlight => (
         <BlogPostHighlightListItem key={highlight.id} blogPostHighlight={highlight} />
       ))}
-    </ul>
+    </div>
   );
 };
 

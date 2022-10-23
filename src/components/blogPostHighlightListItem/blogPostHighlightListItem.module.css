@@ -1,22 +1,23 @@
-.postHighlight {
-  padding: 1rem .2rem ;
+.postHighlightLink {
+  text-decoration: none;
+  color: inherit;
   display: flex;
+  padding: 2rem 2rem;
 }
 
-.featuredImage{
-  flex: .13;
+.featuredImage {
+  flex: 0.13;
   margin-right: 3rem;
   align-self: center;
   display: none;
 }
 
-.postContent{
+.postContent {
   flex: 1;
 }
 
 .postTitle {
-  margin-bottom: .5rem;
-  transition: var(--transition-short);
+  margin-bottom: 0.5rem;
 }
 
 .postDate {
@@ -25,18 +26,14 @@
   margin-bottom: 1.1rem;
 }
 
-.postExcerpt{
-  margin: 0;
-}
-
-@media(min-width: 700px){
-  .postHighlight{
+@media (min-width: 700px) {
+  .postHighlight {
     padding: 2rem 2rem;
   }
 }
 
-@media(min-width: 800px){
-  .featuredImage{
+@media (min-width: 800px) {
+  .featuredImage {
     display: block;
   }
 }
