@@ -21,7 +21,13 @@ const ProjectListItem: FunctionComponent<Props> = ({ project }) => {
       <div className={styles.projectContent}>
         <h2 className={styles.projectTitle}>{title}</h2>
         <p className={styles.projectDescription} dangerouslySetInnerHTML={{ __html: description }} />
-        <ul className={styles.projectTechnologies}>{transformTechnologies(technologiesUsed)}</ul>
+        <ul className={styles.projectTechnologies}>
+          {technologiesUsed.map(technology => (
+            <li key={technology} className={styles.projectTechnology}>
+              {technology}
+            </li>
+          ))}
+        </ul>
         <div className={styles.viewProjectLinkGroup}>
           {createLinkForProject(websiteLink, 'View Site', faExternalLinkAlt)}
           {createLinkForProject(repositoryLink, 'View Source', faGithub)}
@@ -30,13 +36,6 @@ const ProjectListItem: FunctionComponent<Props> = ({ project }) => {
     </li>
   );
 };
-
-const transformTechnologies = (technologies: string[]) =>
-  technologies.map(technology => (
-    <li key={technology} className={styles.projectTechnology}>
-      {technology}
-    </li>
-  ));
 
 const createLinkForProject = (link: string, children: ReactNode, icon: IconDefinition) => (
   <a className={`${styles.link} ${styles.viewProjectLink}`} target="_blank" href={link} rel="noopener noreferrer">

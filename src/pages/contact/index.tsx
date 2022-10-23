@@ -15,20 +15,19 @@ const Contact = () => {
           Email me anytime: <a href={`mailto: ${email.address}`}>{email.address} </a>
         </p>
         <p className={styles.listDescription}>You can also find me at: </p>
-        <ul className={styles.socialNetworks}>{transformSocialNetworks()}</ul>
+        <ul className={styles.socialNetworks}>
+          {socialNetworks.map(socialNetwork => (
+            <li key={socialNetwork.url}>
+              <span>{socialNetwork.network}: </span>
+              <a target="_blank" rel="noopener noreferrer" href={socialNetwork.url}>
+                {socialNetwork.username}
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
 };
 
 export default Contact;
-
-const transformSocialNetworks = () =>
-  socialNetworks.map(socialNetwork => (
-    <li key={socialNetwork.url}>
-      <span>{socialNetwork.network}: </span>
-      <a target="_blank" rel="noopener noreferrer" href={socialNetwork.url}>
-        {socialNetwork.username}
-      </a>
-    </li>
-  ));

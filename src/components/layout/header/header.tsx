@@ -30,7 +30,15 @@ const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamb
             <Link className={`${styles.link} ${styles.nameLink}`} to="/">
               <h2 className={styles.name}>Domenico Manna</h2>
             </Link>
-            <ul className={classesForListOfLinks.join(' ')}>{transformPageLinks()}</ul>
+            <ul className={classesForListOfLinks.join(' ')}>
+              {pageLinks.map((pageLink, index) => (
+                <li key={index}>
+                  <Link className={styles.link} activeClassName={styles.active} to={pageLink.to}>
+                    {pageLink.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
           </nav>
         </Container>
@@ -41,13 +49,3 @@ const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamb
 };
 
 export default Header;
-
-const transformPageLinks = () => {
-  return pageLinks.map((pageLink, index) => (
-    <li key={index}>
-      <Link className={styles.link} activeClassName={styles.active} to={pageLink.to}>
-        {pageLink.text}
-      </Link>
-    </li>
-  ));
-};

@@ -14,4 +14,6 @@ const Button: FunctionComponent<Props> = ({ children, type }) => {
   return <button className={`${styles.button} ${type}`}>{children}</button>;
 };
 
-export { Button, buttonTypes };
+export { buttonTypes };
+
+export default Button;

@@ -49,8 +49,6 @@ const SelectedTagArticles: FunctionComponent<Props> = ({ pageContext, data }) =>
   );
 };
 
-export default SelectedTagArticles;
-
 export const allPostsWithSelectedTagQuery = graphql`
   query SelectedTagArticles($tag: String) {
     allMarkdownRemark(
@@ -81,3 +79,5 @@ export const allPostsWithSelectedTagQuery = graphql`
     }
   }
 `;
+
+export default SelectedTagArticles;

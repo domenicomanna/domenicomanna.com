@@ -43,8 +43,6 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
   );
 };
 
-export default Blog;
-
 export const query = graphql`
   query Blog {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -72,3 +70,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default Blog;

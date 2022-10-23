@@ -19,8 +19,7 @@ const Tags: FunctionComponent<Props> = ({ data }) => {
   const tagGroupItems = data.allMarkdownRemark.group as TagGroupItem[];
 
   // sort tags in descending order by the total amount of times a tag appears in a post
-  // so, 4, 3, 2, 1, for example.
-  tagGroupItems.sort((tag1, tag2) => (tag1.totalCount < tag2.totalCount ? 1 : -1));
+  tagGroupItems.sort((tag1, tag2) => tag2.totalCount - tag1.totalCount);
   return (
     <Layout>
       <SEO title="Tags" />
@@ -31,21 +30,17 @@ const Tags: FunctionComponent<Props> = ({ data }) => {
           Back to Blog
         </Link>
       </h3>
-      <ul className={styles.tags}>{transformTagGroupItems(tagGroupItems)}</ul>
+      <ul className={styles.tags}>
+        {tagGroupItems.map(tag => (
+          <li key={tag.fieldValue}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue ?? '')}`}>{tag.fieldValue}</Link>
+            &nbsp; &#40;{tag.totalCount}&#41; {/* Left parenthesis and right parenthesis */}
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 };
-
-const transformTagGroupItems = (tagGroupItems: TagGroupItem[]) =>
-  tagGroupItems.map(tag => (
-    <li key={tag.fieldValue}>
-      <Link to={`/tags/${kebabCase(tag.fieldValue ?? '')}`}>{tag.fieldValue}</Link>
-      &nbsp; {/* space character */}
-      &#40;{tag.totalCount}&#41; {/* Left parenthesis and right parenthesis */}
-    </li>
-  ));
-
-export default Tags;
 
 export const allTagsQuery = graphql`
   query Tags {
@@ -57,3 +52,5 @@ export const allTagsQuery = graphql`
     }
   }
 `;
+
+export default Tags;

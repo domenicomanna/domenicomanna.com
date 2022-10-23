@@ -5,8 +5,8 @@ type Props = {
   children: ReactNode;
 };
 
-const pageTitle: FunctionComponent<Props> = ({ children }) => {
+const PageTitle: FunctionComponent<Props> = ({ children }) => {
   return <h1 className={styles.title}>{children}</h1>;
 };
 
-export default pageTitle;
+export default PageTitle;

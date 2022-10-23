@@ -25,7 +25,13 @@ const BlogPost: FunctionComponent<Props> = ({ data }) => {
           <span className={styles.postDate}>{frontmatter?.date ?? ''}</span>
           <div className={styles.postTagsWrapper}>
             <span className={styles.postTagsHeader}>{tagsHeader}</span>
-            <ul className={styles.postTags}>{getTags(tags)}</ul>
+            <ul className={styles.postTags}>
+              {tags.map(tag => (
+                <li key={tag}>
+                  <Link to={`/tags/${kebabCase(tag ?? '')}`}> {tag}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className={styles.postMainContent} dangerouslySetInnerHTML={{ __html: post?.html ?? '' }} />
@@ -33,15 +39,6 @@ const BlogPost: FunctionComponent<Props> = ({ data }) => {
     </Layout>
   );
 };
-
-const getTags = (tags: readonly (string | null)[]) =>
-  tags.map(tag => (
-    <li key={tag}>
-      <Link to={`/tags/${kebabCase(tag ?? '')}`}> {tag}</Link>
-    </li>
-  ));
-
-export default BlogPost;
 
 export const postQuery = graphql`
   query BlogPost($slug: String!) {
@@ -55,3 +52,5 @@ export const postQuery = graphql`
     }
   }
 `;
+
+export default BlogPost;

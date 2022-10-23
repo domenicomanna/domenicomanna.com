@@ -8,12 +8,13 @@ type Props = {
 };
 
 const BlogPostHighlightList: FunctionComponent<Props> = ({ blogPostHighlights }) => {
-  return <ul className={styles.posts}>{transformPosts(blogPostHighlights)}</ul>;
+  return (
+    <ul className={styles.posts}>
+      {blogPostHighlights.map(highlight => (
+        <BlogPostHighlightListItem key={highlight.id} blogPostHighlight={highlight} />
+      ))}
+    </ul>
+  );
 };
-
-const transformPosts = (blogPostHighlights: BlogPostHighlight[]) =>
-  blogPostHighlights.map(highlight => {
-    return <BlogPostHighlightListItem key={highlight.id} blogPostHighlight={highlight} />;
-  });
 
 export default BlogPostHighlightList;

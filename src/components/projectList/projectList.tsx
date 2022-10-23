@@ -10,13 +10,13 @@ type Props = {
 const ProjectList: FunctionComponent<Props> = ({ projects }) => {
   return (
     <section id="projects">
-      <ul className={styles.projects}>{transformProjects(projects)}</ul>
+      <ul className={styles.projects}>
+        {projects.map((project, index) => (
+          <ProjectListItem key={index} project={project} />
+        ))}
+      </ul>
     </section>
   );
 };
 
 export default ProjectList;
-
-const transformProjects = (projects: Project[]) => {
-  return projects.map((project, index) => <ProjectListItem key={index} project={project} />);
-};
