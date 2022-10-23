@@ -1,27 +1,11 @@
-import { GatsbyNode, Actions } from "gatsby"
+import { GatsbyNode, Actions, CreatePagesArgs } from "gatsby"
 import _ from "lodash"
 import path from "path"
 import { SelectedTagArticlesPageContext } from "./src/templates/selectedTagArticles"
 
-type Edge = {
-  node: {
-    fields: {
-      slug: string
-    }
-  }
-}
-
-type Tag = {
-  fieldValue: string
-}
-
 type MarkdownContentQuery = {
-  postsRemark: {
-    edges: Edge[]
-  }
-  tagsGroup: {
-    group: Tag[]
-  }
+  postsRemark: Queries.MarkdownRemarkConnection
+  tagsGroup: Queries.MarkdownRemarkGroupConnection
 }
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
@@ -41,10 +25,24 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 }
 
-export const createPages: GatsbyNode["createPages"] = async ({
-  graphql,
-  actions,
-}) => {
+export const createPages: GatsbyNode["createPages"] = async (
+  createPagesArgs: CreatePagesArgs
+) => {
+  const markdownContent = await getMarkdownContent(createPagesArgs)
+  if (!markdownContent) return
+  const blogPostSlugs = markdownContent.postsRemark.edges.map(
+    x => x.node?.fields?.slug ?? ""
+  )
+  const tagSlugs = markdownContent.tagsGroup.group.map(x => x.fieldValue ?? "")
+  createBlogPostPages(blogPostSlugs, createPagesArgs.actions)
+  createSelectedTagArticlePages(tagSlugs, createPagesArgs.actions)
+}
+
+const getMarkdownContent = async (
+  createPagesArgs: CreatePagesArgs
+): Promise<MarkdownContentQuery | undefined> => {
+  const { graphql } = createPagesArgs
+
   const allMarkdownRemarkQuery = `query {
     postsRemark: allMarkdownRemark {
       edges {
@@ -61,35 +59,36 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   }`
-  const result = await graphql(allMarkdownRemarkQuery)
-  const data = result.data as MarkdownContentQuery
-  createBlogPostPages(data.postsRemark.edges, actions)
-  createSelectedTagArticlePages(data.tagsGroup.group, actions)
+  const result = await graphql<MarkdownContentQuery>(allMarkdownRemarkQuery)
+  return result.data
 }
 
-const createBlogPostPages = (postRemarkEdges: Edge[], actions: Actions) => {
+const createBlogPostPages = (blogPostSlugs: string[], actions: Actions) => {
   const { createPage } = actions
-  postRemarkEdges.forEach(({ node }) => {
+  for (const slug in blogPostSlugs) {
     createPage({
-      path: node.fields.slug,
+      path: slug,
       component: path.resolve(`./src/templates/blogPost.tsx`),
       context: {
-        slug: node.fields.slug,
+        slug: slug,
       },
     })
-  })
+  }
 }
 
-const createSelectedTagArticlePages = (tags: Tag[], actions: Actions) => {
+const createSelectedTagArticlePages = (
+  tagSlugs: string[],
+  actions: Actions
+) => {
   const { createPage } = actions
 
-  tags.forEach(tag => {
+  for (const slug of tagSlugs) {
     createPage<SelectedTagArticlesPageContext>({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${_.kebabCase(slug)}/`,
       component: path.resolve(`./src/templates/selectedTagArticles.tsx`),
       context: {
-        tag: tag.fieldValue,
+        tag: slug,
       },
     })
-  })
+  }
 }
