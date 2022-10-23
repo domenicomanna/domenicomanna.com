@@ -1,10 +1,10 @@
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import * as styles from './hero.module.css';
+import * as styles from './summary.module.css';
 import Button, { buttonTypes } from '../../../components/ui/button/button';
 
-const Hero = () => {
+const Summary = () => {
   return (
     <section className={styles.hero}>
       <h1 className={styles.name}>Hi, I&apos;m Domenico</h1>
@@ -23,4 +23,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Summary;
