@@ -6,6 +6,7 @@ import PageTitle from '../components/ui/pageTitle/pageTitle';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
 import { BlogPostHighlight } from '../components/blogPostHighlightListItem/blogPostHighlightListItem';
 import { FluidObject } from 'gatsby-image';
+import { routes } from '../constants/routes';
 
 type Props = {
   data: Queries.BlogQuery;
@@ -17,7 +18,7 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
       <h3 style={{ textAlign: 'center' }}>
-        <Link style={{ textDecoration: 'none' }} to="/tags">
+        <Link style={{ textDecoration: 'none' }} to={routes.tags}>
           Tags
         </Link>
       </h3>

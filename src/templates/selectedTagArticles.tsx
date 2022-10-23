@@ -6,6 +6,7 @@ import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostH
 import PageTitle from '../components/ui/pageTitle/pageTitle';
 import { FluidObject } from 'gatsby-image';
 import { BlogPostHighlight } from '../components/blogPostHighlightListItem/blogPostHighlightListItem';
+import { routes } from '../constants/routes';
 
 export type SelectedTagArticlesPageContext = {
   tag: string;
@@ -23,7 +24,7 @@ const SelectedTagArticles: FunctionComponent<Props> = ({ pageContext, data }) =>
       <SEO title={`${tag} Articles`} />
       <PageTitle>{tag}</PageTitle>
       <h3 style={{ textAlign: 'center' }}>
-        <Link style={{ textDecoration: 'none' }} to="/tags/">
+        <Link style={{ textDecoration: 'none' }} to={routes.tags}>
           Back to Tags
         </Link>
       </h3>

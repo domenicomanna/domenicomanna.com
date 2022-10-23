@@ -5,6 +5,7 @@ import SEO from '../../components/seo';
 import Layout from '../../components/layout/layout';
 import PageTitle from '../../components/ui/pageTitle/pageTitle';
 import * as styles from './tags.module.css';
+import { routes } from '../../constants/routes';
 
 type TagGroupItem = {
   totalCount: number;
@@ -26,14 +27,14 @@ const Tags: FunctionComponent<Props> = ({ data }) => {
       <PageTitle>Tags</PageTitle>
       <h3 style={{ textAlign: 'center' }}>
         {' '}
-        <Link style={{ textDecoration: 'none' }} to="/blog/">
+        <Link style={{ textDecoration: 'none' }} to={routes.blog}>
           Back to Blog
         </Link>
       </h3>
       <ul className={styles.tags}>
         {tagGroupItems.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue ?? '')}`}>{tag.fieldValue}</Link>
+            <Link to={`${routes.tags}/${kebabCase(tag.fieldValue ?? '')}`}>{tag.fieldValue}</Link>
             &nbsp; &#40;{tag.totalCount}&#41; {/* Left parenthesis and right parenthesis */}
           </li>
         ))}

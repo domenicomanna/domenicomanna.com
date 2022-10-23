@@ -5,6 +5,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
 import * as styles from './templateStyles/blogPost/blogPost.module.css';
 import './templateStyles/blogPost/codeTitle.css';
+import { routes } from '../constants/routes';
 
 type Props = {
   data: Queries.BlogPostQuery;
@@ -28,7 +29,7 @@ const BlogPost: FunctionComponent<Props> = ({ data }) => {
             <ul className={styles.postTags}>
               {tags.map(tag => (
                 <li key={tag}>
-                  <Link to={`/tags/${kebabCase(tag ?? '')}`}> {tag}</Link>
+                  <Link to={`${routes.tags}/${kebabCase(tag ?? '')}`}> {tag}</Link>
                 </li>
               ))}
             </ul>

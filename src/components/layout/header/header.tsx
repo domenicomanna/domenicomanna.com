@@ -5,13 +5,7 @@ import Backdrop from '../../ui/backdrop/backdrop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import * as styles from './header.module.css';
-
-const pageLinks = [
-  { to: '/', text: 'Home' },
-  { to: '/blog/', text: 'Blog' },
-  // { to: "/about/", text: "About" },
-  { to: '/contact/', text: 'Contact' },
-];
+import { routes } from '../../../constants/routes';
 
 type Props = {
   hamburgerLinksShouldShow: boolean;
@@ -27,17 +21,19 @@ const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamb
       <header className={styles.header}>
         <Container>
           <nav className={styles.nav}>
-            <Link className={`${styles.link} ${styles.nameLink}`} to="/">
+            <Link className={`${styles.link} ${styles.nameLink}`} to={routes.home}>
               <h2 className={styles.name}>Domenico Manna</h2>
             </Link>
             <ul className={classesForListOfLinks.join(' ')}>
-              {pageLinks.map((pageLink, index) => (
-                <li key={index}>
-                  <Link className={styles.link} activeClassName={styles.active} to={pageLink.to}>
-                    {pageLink.text}
-                  </Link>
-                </li>
-              ))}
+              <Link className={styles.link} activeClassName={styles.active} to={routes.home}>
+                Home
+              </Link>
+              <Link className={styles.link} activeClassName={styles.active} to={routes.blog}>
+                Blog
+              </Link>
+              <Link className={styles.link} activeClassName={styles.active} to={routes.contact}>
+                Contact
+              </Link>
             </ul>
             <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
           </nav>
