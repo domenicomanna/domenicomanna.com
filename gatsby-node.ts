@@ -55,7 +55,7 @@ const getMarkdownContent = async (createPagesArgs: CreatePagesArgs): Promise<Mar
 
 const createBlogPostPages = (blogPostSlugs: string[], actions: Actions) => {
   const { createPage } = actions;
-  for (const slug in blogPostSlugs) {
+  for (const slug of blogPostSlugs) {
     createPage({
       path: slug,
       component: path.resolve(`./src/templates/blogPost.tsx`),
