@@ -13,7 +13,7 @@ const projects: Project[] = [
     title: 'Body Fitness Tracker',
     description:
       'A website powered by a REST API that allows users to track their body measurements and body fat percentage.',
-    technologiesUsed: ['.Net Core', 'Entity Framework Core', 'MySQL Server', 'Docker', 'React', 'Typescript', 'CSS'],
+    technologiesUsed: ['.Net Core', 'Entity Framework Core', 'Postgres', 'Docker', 'React', 'Typescript', 'CSS'],
     websiteLink: 'https://body-fit-tracker-client.hobby-projects.com/',
     repositoryLink: 'https://github.com/domenicomanna/bodyFitTracker',
   },
