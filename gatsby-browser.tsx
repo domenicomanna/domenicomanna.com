@@ -5,13 +5,8 @@ import Layout from './src/components/layout/layout';
 import { ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 
-type Args = {
-  element: ReactNode;
-  props: NonNullable<unknown>;
-};
-
-export const wrapPageElement = (args: Args) => {
-  return <Layout {...args.props}>{args.element}</Layout>;
+export const wrapPageElement = ({ props, element }: { props: any; element: ReactNode }) => {
+  return <Layout {...props}>{element}</Layout>;
 };
 
 export const replaceHydrateFunction = () => {
