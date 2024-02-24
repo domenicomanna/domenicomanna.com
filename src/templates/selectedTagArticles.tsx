@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
-import Layout from '../components/layout/layout';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
 import PageTitle from '../components/ui/pageTitle/pageTitle';
 import { FluidObject } from 'gatsby-image';
@@ -20,7 +19,7 @@ type Props = {
 const SelectedTagArticles: FC<Props> = ({ pageContext, data }) => {
   const { tag } = pageContext;
   return (
-    <Layout>
+    <>
       <SEO title={`${tag} Articles`} />
       <PageTitle>{tag}</PageTitle>
       <h3 style={{ textAlign: 'center' }}>
@@ -44,7 +43,7 @@ const SelectedTagArticles: FC<Props> = ({ pageContext, data }) => {
           };
         })}
       />
-    </Layout>
+    </>
   );
 };
 

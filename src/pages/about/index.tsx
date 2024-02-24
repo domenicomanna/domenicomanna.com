@@ -1,4 +1,3 @@
-import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
 import PageTitle from '../../components/ui/pageTitle/pageTitle';
 import Image from '../../components/ui/image';
@@ -6,7 +5,7 @@ import * as styles from './about.module.css';
 
 const About = () => {
   return (
-    <Layout>
+    <>
       <section className={styles.aboutContent}>
         <SEO title="About" />
         <PageTitle>About</PageTitle>
@@ -22,7 +21,7 @@ const About = () => {
           <Image fileName="me.jpg" />
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

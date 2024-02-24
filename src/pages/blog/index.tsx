@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
 import PageTitle from '../../components/ui/pageTitle/pageTitle';
 import BlogPostHighlightList from '../../components/blogPostHighlightList/blogPostHighlightList';
@@ -14,7 +13,7 @@ type Props = {
 
 const Blog: FC<Props> = ({ data }) => {
   return (
-    <Layout>
+    <>
       <SEO title="Blog" />
       <PageTitle>Blog</PageTitle>
       <h3 style={{ textAlign: 'center' }}>
@@ -38,7 +37,7 @@ const Blog: FC<Props> = ({ data }) => {
           };
         })}
       />
-    </Layout>
+    </>
   );
 };
 

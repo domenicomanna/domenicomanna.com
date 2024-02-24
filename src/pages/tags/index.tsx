@@ -2,7 +2,6 @@ import { FC } from 'react';
 import kebabCase from 'lodash/kebabCase';
 import { graphql, Link } from 'gatsby';
 import SEO from '../../components/seo';
-import Layout from '../../components/layout/layout';
 import PageTitle from '../../components/ui/pageTitle/pageTitle';
 import * as styles from './tags.module.css';
 import { routes } from '../../constants/routes';
@@ -22,7 +21,7 @@ const Tags: FC<Props> = ({ data }) => {
   // sort tags in descending order by the total amount of times a tag appears in a post
   tagGroupItems.sort((tag1, tag2) => tag2.totalCount - tag1.totalCount);
   return (
-    <Layout>
+    <>
       <SEO title="Tags" />
       <PageTitle>Tags</PageTitle>
       <h3 style={{ textAlign: 'center' }}>
@@ -39,7 +38,7 @@ const Tags: FC<Props> = ({ data }) => {
           </li>
         ))}
       </ul>
-    </Layout>
+    </>
   );
 };
 

@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import SEO from '../components/seo';
-import Layout from '../components/layout/layout';
 import * as styles from './templateStyles/blogPost/blogPost.module.css';
 import './templateStyles/blogPost/codeTitle.css';
 import { routes } from '../constants/routes';
@@ -18,7 +17,7 @@ const BlogPost: FC<Props> = ({ data }) => {
   const tagsHeader = (frontmatter?.tags ?? []).length > 1 ? 'Tags:' : 'Tag:';
 
   return (
-    <Layout>
+    <>
       <SEO title={frontmatter?.title ?? ''} />
       <article className={styles.post}>
         <h1 className={styles.postTitle}>{frontmatter?.title ?? ''}</h1>
@@ -37,7 +36,7 @@ const BlogPost: FC<Props> = ({ data }) => {
         </div>
         <div className={styles.postMainContent} dangerouslySetInnerHTML={{ __html: post?.html ?? '' }} />
       </article>
-    </Layout>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
 import PageTitle from '../../components/ui/pageTitle/pageTitle';
 import { socialNetworks, email } from '../../constants/socialNetworks';
@@ -6,7 +5,7 @@ import * as styles from './contact.module.css';
 
 const Contact = () => {
   return (
-    <Layout>
+    <>
       <section>
         <SEO title="Contact" />
         <PageTitle>Contact</PageTitle>
@@ -26,7 +25,7 @@ const Contact = () => {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
 };
 
