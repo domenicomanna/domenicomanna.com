@@ -27,7 +27,7 @@ const BlogPost: FunctionComponent<Props> = ({ data }) => {
           <div className={styles.postTagsWrapper}>
             <span className={styles.postTagsHeader}>{tagsHeader}</span>
             <ul className={styles.postTags}>
-              {tags.map(tag => (
+              {tags.map((tag) => (
                 <li key={tag}>
                   <Link to={`${routes.tags}/${kebabCase(tag ?? '')}`}> {tag}</Link>
                 </li>

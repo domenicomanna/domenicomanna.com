@@ -42,7 +42,7 @@ Finally, let's create a layout.js file in our layout folder, and add the followi
 ```jsx
 import React from 'react';
 
-const Layout = props => {
+const Layout = (props) => {
   return <main> {props.children} </main>;
 };
 
@@ -92,7 +92,7 @@ In the navbar.js file, add the following code:
 import React from 'react';
 import styles from './navbar.module.css';
 
-const Navbar = props => {
+const Navbar = (props) => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -177,7 +177,7 @@ Finally, let's return the navbar component in our layout.js file.
 import React from 'react';
 import Navbar from './navbar';
 
-const Layout = props => {
+const Layout = (props) => {
   return (
     <>
       <Navbar />
@@ -215,7 +215,7 @@ The code for the container component is super simple:
 import React from 'react';
 import styles from './container.module.css';
 
-const Container = props => {
+const Container = (props) => {
   return <div className={styles.container}>{props.children}</div>;
 };
 
@@ -269,7 +269,7 @@ import React from 'react';
 import Container from '../container/container'; // highlight-line
 import styles from './navbar.module.css';
 
-const Navbar = props => {
+const Navbar = (props) => {
   return (
     <header className={styles.header}>
       <Container>
@@ -354,7 +354,7 @@ class Layout extends Component {
   };
 
   toggleHamburgerLinks = () => {
-    this.setState(previousState => ({
+    this.setState((previousState) => ({
       hamburgerLinksShouldShow: !previousState.hamburgerLinksShouldShow,
     }));
   };
@@ -398,7 +398,7 @@ class Layout extends Component {
   };
 
   toggleHamburgerLinks = () => {
-    this.setState(previousState => ({
+    this.setState((previousState) => ({
       hamburgerLinksShouldShow: !previousState.hamburgerLinksShouldShow,
     }));
   };

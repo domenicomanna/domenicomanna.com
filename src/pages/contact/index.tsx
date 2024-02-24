@@ -16,7 +16,7 @@ const Contact = () => {
         </p>
         <p className={styles.listDescription}>You can also find me at: </p>
         <ul className={styles.socialNetworks}>
-          {socialNetworks.map(socialNetwork => (
+          {socialNetworks.map((socialNetwork) => (
             <li key={socialNetwork.url}>
               <span>{socialNetwork.network}: </span>
               <a target="_blank" rel="noopener noreferrer" href={socialNetwork.url}>

@@ -32,7 +32,7 @@ const Tags: FunctionComponent<Props> = ({ data }) => {
         </Link>
       </h3>
       <ul className={styles.tags}>
-        {tagGroupItems.map(tag => (
+        {tagGroupItems.map((tag) => (
           <li key={tag.fieldValue}>
             <Link to={`${routes.tags}/${kebabCase(tag.fieldValue ?? '')}`}>{tag.fieldValue}</Link>
             &nbsp; &#40;{tag.totalCount}&#41; {/* Left parenthesis and right parenthesis */}

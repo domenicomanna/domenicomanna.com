@@ -29,22 +29,20 @@ const SelectedTagArticles: FunctionComponent<Props> = ({ pageContext, data }) =>
         </Link>
       </h3>
       <BlogPostHighlightList
-        blogPostHighlights={data.allMarkdownRemark.edges.map(
-          (x): BlogPostHighlight => {
-            const node = x.node;
-            const fluidImage = node.frontmatter?.featuredImage
-              ? (node.frontmatter.featuredImage.childImageSharp?.fluid as FluidObject)
-              : null;
-            return {
-              id: node.id,
-              title: node.frontmatter?.title ?? '',
-              excerpt: '',
-              date: node.frontmatter?.date ?? '',
-              slug: node.fields?.slug ?? '',
-              fluidImage,
-            };
-          }
-        )}
+        blogPostHighlights={data.allMarkdownRemark.edges.map((x): BlogPostHighlight => {
+          const node = x.node;
+          const fluidImage = node.frontmatter?.featuredImage
+            ? (node.frontmatter.featuredImage.childImageSharp?.fluid as FluidObject)
+            : null;
+          return {
+            id: node.id,
+            title: node.frontmatter?.title ?? '',
+            excerpt: '',
+            date: node.frontmatter?.date ?? '',
+            slug: node.fields?.slug ?? '',
+            fluidImage,
+          };
+        })}
       />
     </Layout>
   );

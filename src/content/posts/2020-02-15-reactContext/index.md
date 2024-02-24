@@ -224,7 +224,7 @@ const ClothesContextProvider: FunctionComponent = ({ children }) => {
   }, []);
 
   function toggleFavorite(id: number) {
-    let updatedClotheItems = clotheItems.map(c => (c.id === id ? { ...c, isFavorited: !c.isFavorited } : c));
+    let updatedClotheItems = clotheItems.map((c) => (c.id === id ? { ...c, isFavorited: !c.isFavorited } : c));
     setClotheItems(updatedClotheItems);
   }
 
@@ -561,7 +561,7 @@ const [clotheItems, setClotheItems] = useState<IClotheItem[]>([]);
 const [isLoading, setLoading] = useState(false);
 
 function toggleFavorite(id: number) {
-  let updatedClotheItems = clotheItems.map(c => (c.id === id ? { ...c, isFavorited: !c.isFavorited } : c));
+  let updatedClotheItems = clotheItems.map((c) => (c.id === id ? { ...c, isFavorited: !c.isFavorited } : c));
   setClotheItems(updatedClotheItems);
 }
 

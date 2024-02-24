@@ -9,7 +9,7 @@ type Props = {
 const Image: FunctionComponent<Props> = ({ fileName }) => {
   const { allFile } = useStaticQuery<Queries.AllImagesQuery>(queryForAllImages);
 
-  const imageEdge = allFile.edges.find(edge => {
+  const imageEdge = allFile.edges.find((edge) => {
     return edge.node.relativePath.toLowerCase().includes(fileName.toLowerCase().trim());
   });
 

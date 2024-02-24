@@ -9,19 +9,17 @@ type Props = {
 };
 
 const SEO: FunctionComponent<Props> = ({ description, lang = 'en', title }) => {
-  const result = useStaticQuery<Queries.SeoQuery>(
-    graphql`
-      query Seo {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+  const result = useStaticQuery<Queries.SeoQuery>(graphql`
+    query Seo {
+      site {
+        siteMetadata {
+          title
+          description
+          author
         }
       }
-    `
-  );
+    }
+  `);
 
   const siteMetadata = result.site?.siteMetadata;
 

@@ -24,8 +24,8 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions }) => {
 export const createPages: GatsbyNode['createPages'] = async (createPagesArgs: CreatePagesArgs) => {
   const markdownContent = await getMarkdownContent(createPagesArgs);
   if (!markdownContent) return;
-  const blogPostSlugs = markdownContent.postsRemark.edges.map(x => x.node?.fields?.slug ?? '');
-  const tagSlugs = markdownContent.tagsGroup.group.map(x => x.fieldValue ?? '');
+  const blogPostSlugs = markdownContent.postsRemark.edges.map((x) => x.node?.fields?.slug ?? '');
+  const tagSlugs = markdownContent.tagsGroup.group.map((x) => x.fieldValue ?? '');
   createBlogPostPages(blogPostSlugs, createPagesArgs.actions);
   createSelectedTagArticlePages(tagSlugs, createPagesArgs.actions);
 };
