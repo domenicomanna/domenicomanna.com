@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 
@@ -6,7 +6,7 @@ type Props = {
   fileName: string;
 };
 
-const Image: FunctionComponent<Props> = ({ fileName }) => {
+const Image: FC<Props> = ({ fileName }) => {
   const { allFile } = useStaticQuery<Queries.AllImagesQuery>(queryForAllImages);
 
   const imageEdge = allFile.edges.find((edge) => {

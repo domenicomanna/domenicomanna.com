@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import * as styles from './backdrop.module.css';
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
   toggleBackdrop: () => void;
 };
 
-const Backdrop: FunctionComponent<Props> = ({ backdropShouldShow, toggleBackdrop }) => {
+const Backdrop: FC<Props> = ({ backdropShouldShow, toggleBackdrop }) => {
   const backdropClass = backdropShouldShow ? styles.backdrop : undefined;
 
   return <div onClick={toggleBackdrop} className={backdropClass}></div>;

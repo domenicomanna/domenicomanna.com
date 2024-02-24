@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as styles from './blogPostHighlightListItem.module.css';
@@ -16,7 +16,7 @@ type Props = {
   blogPostHighlight: BlogPostHighlight;
 };
 
-const BlogPostHighlightListItem: FunctionComponent<Props> = ({ blogPostHighlight }) => {
+const BlogPostHighlightListItem: FC<Props> = ({ blogPostHighlight }) => {
   const { title, date, fluidImage, slug } = blogPostHighlight;
 
   return (

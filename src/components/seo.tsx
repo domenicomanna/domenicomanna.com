@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -8,7 +8,7 @@ type Props = {
   title: string;
 };
 
-const SEO: FunctionComponent<Props> = ({ description, lang = 'en', title }) => {
+const SEO: FC<Props> = ({ description, lang = 'en', title }) => {
   const result = useStaticQuery<Queries.SeoQuery>(graphql`
     query Seo {
       site {

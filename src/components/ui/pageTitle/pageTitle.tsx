@@ -1,11 +1,11 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import * as styles from './pageTitle.module.css';
 
 type Props = {
   children: ReactNode;
 };
 
-const PageTitle: FunctionComponent<Props> = ({ children }) => {
+const PageTitle: FC<Props> = ({ children }) => {
   return <h1 className={styles.title}>{children}</h1>;
 };
 

@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import * as styles from './button.module.css';
 
 const buttonTypes = {
@@ -10,7 +10,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Button: FunctionComponent<Props> = ({ children, type }) => {
+const Button: FC<Props> = ({ children, type }) => {
   return <button className={`${styles.button} ${type}`}>{children}</button>;
 };
 

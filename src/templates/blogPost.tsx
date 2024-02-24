@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import SEO from '../components/seo';
@@ -11,7 +11,7 @@ type Props = {
   data: Queries.BlogPostQuery;
 };
 
-const BlogPost: FunctionComponent<Props> = ({ data }) => {
+const BlogPost: FC<Props> = ({ data }) => {
   const post = data.markdownRemark;
   const frontmatter = post?.frontmatter;
   const tags = frontmatter?.tags ?? [];

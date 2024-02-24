@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
@@ -17,7 +17,7 @@ type Props = {
   data: Queries.SelectedTagArticlesQuery;
 };
 
-const SelectedTagArticles: FunctionComponent<Props> = ({ pageContext, data }) => {
+const SelectedTagArticles: FC<Props> = ({ pageContext, data }) => {
   const { tag } = pageContext;
   return (
     <Layout>

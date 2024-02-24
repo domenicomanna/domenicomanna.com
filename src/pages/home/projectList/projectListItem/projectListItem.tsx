@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import Image from '../../../../components/ui/image';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import * as styles from './projectListItem.module.css';
@@ -9,7 +9,7 @@ type Props = {
   project: Project;
 };
 
-const ProjectListItem: FunctionComponent<Props> = ({ project }) => {
+const ProjectListItem: FC<Props> = ({ project }) => {
   const { imageFileName, title, description, technologiesUsed, websiteLink, repositoryLink } = project;
 
   return (

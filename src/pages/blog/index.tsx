@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
@@ -12,7 +12,7 @@ type Props = {
   data: Queries.BlogQuery;
 };
 
-const Blog: FunctionComponent<Props> = ({ data }) => {
+const Blog: FC<Props> = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />

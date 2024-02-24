@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import kebabCase from 'lodash/kebabCase';
 import { graphql, Link } from 'gatsby';
 import SEO from '../../components/seo';
@@ -16,7 +16,7 @@ type Props = {
   data: Queries.TagsQuery;
 };
 
-const Tags: FunctionComponent<Props> = ({ data }) => {
+const Tags: FC<Props> = ({ data }) => {
   const tagGroupItems = data.allMarkdownRemark.group as TagGroupItem[];
 
   // sort tags in descending order by the total amount of times a tag appears in a post

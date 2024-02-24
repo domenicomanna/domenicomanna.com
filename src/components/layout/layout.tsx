@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import Header from './header/header';
 import Footer from './footer/footer';
 import Container from '../ui/container/container';
@@ -8,7 +8,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Layout: FunctionComponent<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children }) => {
   const [hamburgerLinksShouldShow, setHamburgerLinksShouldShow] = useState(false);
 
   return (

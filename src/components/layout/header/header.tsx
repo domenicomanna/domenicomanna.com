@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { Link } from 'gatsby';
 import Container from '../../ui/container/container';
 import Backdrop from '../../ui/backdrop/backdrop';
@@ -11,7 +11,7 @@ type Props = {
   toggleHamburgerLinks: () => void;
 };
 
-const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamburgerLinks }) => {
+const Header: FC<Props> = ({ hamburgerLinksShouldShow, toggleHamburgerLinks }) => {
   const classesForListOfLinks = [styles.listOfLinks];
   if (hamburgerLinksShouldShow) classesForListOfLinks.push(styles.hamburgerLinks);
 
