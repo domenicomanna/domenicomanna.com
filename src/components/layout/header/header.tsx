@@ -2,8 +2,7 @@ import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import Container from '../../ui/container/container';
 import Backdrop from '../../ui/backdrop/backdrop';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FaBars } from "react-icons/fa";
 import * as styles from './header.module.css';
 import { routes } from '../../../constants/routes';
 
@@ -35,7 +34,7 @@ const Header: FunctionComponent<Props> = ({ hamburgerLinksShouldShow, toggleHamb
                 Contact
               </Link>
             </ul>
-            <FontAwesomeIcon className={styles.hamburger} icon={faBars} onClick={toggleHamburgerLinks} />
+            <FaBars className={styles.hamburger} onClick={toggleHamburgerLinks}/>
           </nav>
         </Container>
       </header>

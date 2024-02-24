@@ -1,10 +1,9 @@
 import { FunctionComponent, ReactNode } from 'react';
 import Image from '../../../../components/ui/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import * as styles from './projectListItem.module.css';
 import { Project } from '../../../../constants/projects';
+import { IconType } from 'react-icons';
 
 type Props = {
   project: Project;
@@ -22,25 +21,25 @@ const ProjectListItem: FunctionComponent<Props> = ({ project }) => {
         <h2 className={styles.projectTitle}>{title}</h2>
         <p className={styles.projectDescription} dangerouslySetInnerHTML={{ __html: description }} />
         <ul className={styles.projectTechnologies}>
-          {technologiesUsed.map(technology => (
+          {technologiesUsed.map((technology) => (
             <li key={technology} className={styles.projectTechnology}>
               {technology}
             </li>
           ))}
         </ul>
         <div className={styles.viewProjectLinkGroup}>
-          {createLinkForProject(websiteLink, 'View Site', faExternalLinkAlt)}
-          {createLinkForProject(repositoryLink, 'View Source', faGithub)}
+          {createLinkForProject(websiteLink, 'View Site', FaExternalLinkAlt)}
+          {createLinkForProject(repositoryLink, 'View Source', FaGithub)}
         </div>
       </div>
     </li>
   );
 };
 
-const createLinkForProject = (link: string, children: ReactNode, icon: IconDefinition) => (
+const createLinkForProject = (link: string, children: ReactNode, Icon: IconType) => (
   <a className={`${styles.link} ${styles.viewProjectLink}`} target="_blank" href={link} rel="noopener noreferrer">
     {children}
-    <FontAwesomeIcon icon={icon} className={styles.viewProjectIcon} />
+    <Icon className={styles.viewProjectIcon} />
   </a>
 );
 

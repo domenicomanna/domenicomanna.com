@@ -21,8 +21,9 @@
 }
 
 .icon {
-  padding-left: 0.5rem;
+  padding-left: 0.3rem;
   transition: var(--transition-short);
+  vertical-align: text-top;
 }
 
 @media (any-hover: hover) {

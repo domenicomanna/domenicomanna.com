@@ -1,6 +1,5 @@
 import { Link } from 'react-scroll';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FaArrowDown } from 'react-icons/fa6';
 import * as styles from './summary.module.css';
 import Button, { buttonTypes } from '../../../components/ui/button/button';
 import { projectsSectionId } from '../projectList/projectList';
@@ -16,7 +15,7 @@ const Summary = () => {
         <Link to={projectsSectionId} smooth={true} offset={-115}>
           <Button type={buttonTypes.primary}>
             Checkout my projects
-            <FontAwesomeIcon className={styles.icon} icon={faArrowDown} />
+            <FaArrowDown className={styles.icon} size={22} />
           </Button>
         </Link>
       </div>
