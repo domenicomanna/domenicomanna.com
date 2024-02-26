@@ -3,13 +3,11 @@ import Container from '../../ui/container/container';
 import * as styles from './footer.module.css';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
   const EmailIcon = email.Icon;
   return (
     <footer>
       <Container>
         <div className={styles.footer}>
-          <span className={styles.copyright}>&copy; {currentYear} Domenico Manna</span>
           <ul className={styles.footerLinks}>
             <li className={styles.linkItem}>
               <a className={styles.link} href={`mailto: ${email.address}`}>

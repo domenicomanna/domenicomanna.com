@@ -1,13 +1,7 @@
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* font-size: 1.2rem; */
+  justify-content: flex-end;
   padding: 1.6rem 0;
-}
-
-.copyright {
-  margin-bottom: 0.8rem;
 }
 
 .footerLinks {
@@ -31,16 +25,5 @@
 @media (any-hover: hover) {
   .link:hover {
     color: var(--blue-500);
-  }
-}
-
-@media (min-width: 450px) {
-  .footer {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .copyright {
-    margin-bottom: 0;
   }
 }
