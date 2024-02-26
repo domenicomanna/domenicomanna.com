@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo';
 import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
 import PageTitle from '../components/ui/pageTitle/pageTitle';
-import { FluidObject } from 'gatsby-image';
 import { BlogPostHighlight } from '../components/blogPostHighlightList/blogPostHighlightListItem/blogPostHighlightListItem';
 import { routes } from '../constants/routes';
 
@@ -30,16 +29,12 @@ const SelectedTagArticles: FC<Props> = ({ pageContext, data }) => {
       <BlogPostHighlightList
         blogPostHighlights={data.allMarkdownRemark.edges.map((x): BlogPostHighlight => {
           const node = x.node;
-          const fluidImage = node.frontmatter?.featuredImage
-            ? (node.frontmatter.featuredImage.childImageSharp?.fluid as FluidObject)
-            : null;
           return {
             id: node.id,
             title: node.frontmatter?.title ?? '',
             excerpt: '',
             date: node.frontmatter?.date ?? '',
             slug: node.fields?.slug ?? '',
-            fluidImage,
           };
         })}
       />
@@ -63,14 +58,7 @@ export const allPostsWithSelectedTagQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            date(formatString: "DD MMM, YYYY")
           }
         }
       }

@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Link } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
 import * as styles from './blogPostHighlightListItem.module.css';
 
 export type BlogPostHighlight = {
@@ -8,7 +7,6 @@ export type BlogPostHighlight = {
   title: string;
   date: string;
   excerpt: string;
-  fluidImage: FluidObject | null;
   slug: string;
 };
 
@@ -17,13 +15,12 @@ type Props = {
 };
 
 const BlogPostHighlightListItem: FC<Props> = ({ blogPostHighlight }) => {
-  const { title, date, fluidImage, slug } = blogPostHighlight;
+  const { title, date, slug } = blogPostHighlight;
 
   return (
     <Link to={slug} className={styles.postHighlightLink}>
-      {fluidImage && <Img className={styles.featuredImage} fluid={fluidImage} />}
       <div className={styles.postContent}>
-        <h2 className={styles.postTitle}>{title}</h2>
+        <h3 className={styles.postTitle}>{title}</h3>
         <span className={styles.postDate}>{date}</span>
       </div>
     </Link>

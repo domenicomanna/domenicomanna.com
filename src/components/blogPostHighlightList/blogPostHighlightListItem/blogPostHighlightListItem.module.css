@@ -2,14 +2,7 @@
   text-decoration: none;
   color: inherit;
   display: flex;
-  padding: 2rem 2rem;
-}
-
-.featuredImage {
-  flex: 0.13;
-  margin-right: 3rem;
-  align-self: center;
-  display: none;
+  padding: 1.15rem 1rem;
 }
 
 .postContent {
@@ -22,8 +15,7 @@
 
 .postDate {
   display: inline-block;
-  font-size: 1.1rem;
-  margin-bottom: 1.1rem;
+  font-size: 1rem;
 }
 
 @media (min-width: 700px) {
@@ -32,8 +24,14 @@
   }
 }
 
-@media (min-width: 800px) {
-  .featuredImage {
-    display: block;
+@media (min-width: 900px) {
+  .postContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .postTitle {
+    margin-bottom: 0;
   }
 }

@@ -4,6 +4,7 @@
 
 .imageWrapper {
   display: none;
+  margin-top: 0.85rem;
 }
 
 .projectContent {
@@ -11,7 +12,7 @@
 }
 
 .projectTitle {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .link {
@@ -20,14 +21,14 @@
 }
 
 .projectDescription {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .projectTechnologies {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 0rem 0;
 }
 
 .projectTechnologies > * {
