@@ -1,3 +1,5 @@
+import path from 'path';
+
 export default {
   graphqlTypegen: true,
   siteMetadata: {
@@ -10,6 +12,12 @@ export default {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: path.resolve('./src/components/layout/layout.tsx'),
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

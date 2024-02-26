@@ -7,6 +7,7 @@
     "gatsby": "^5.13.3",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^5.13.1",
+    "gatsby-plugin-layout": "^4.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-offline": "^6.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
