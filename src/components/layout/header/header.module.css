@@ -12,10 +12,6 @@
   font-size: 1.1rem;
 }
 
-.name {
-  margin: 0;
-}
-
 .listOfLinks {
   height: 0;
   overflow: hidden;
@@ -34,14 +30,6 @@
   cursor: pointer;
   color: inherit;
   transition: 0.4s;
-}
-
-.nameLink {
-  /* hide title link but allow it to occupy space so the header does not collapse. */
-  visibility: hidden;
-
-  /* undo padding set from the link class. The extra padding makes the header too big for just the hamburger menu */
-  padding: 0;
 }
 
 .active {
@@ -75,11 +63,6 @@
   .nav {
     display: flex;
     justify-content: center;
-  }
-
-  .nameLink {
-    /* remove the title link and show all other nav links instead */
-    display: none;
   }
 
   .listOfLinks {
