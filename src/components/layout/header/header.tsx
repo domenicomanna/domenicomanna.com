@@ -20,9 +20,6 @@ const Header: FC<Props> = ({ hamburgerLinksShouldShow, toggleHamburgerLinks }) =
       <header className={styles.header}>
         <Container>
           <nav className={styles.nav}>
-            <Link className={`${styles.link} ${styles.nameLink}`} to={routes.home}>
-              <h2 className={styles.name}>Domenico Manna</h2>
-            </Link>
             <ul className={classesForListOfLinks.join(' ')}>
               <Link className={styles.link} activeClassName={styles.active} to={routes.home}>
                 Home
