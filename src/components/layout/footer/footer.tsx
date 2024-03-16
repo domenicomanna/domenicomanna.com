@@ -19,14 +19,20 @@ const Footer: FC<Props> = ({ maxWidth }) => {
               const Icon = socialNetwork.Icon;
               return (
                 <li className={styles.linkItem} key={index}>
-                  <a className={styles.link} href={socialNetwork.url} target="_blank" rel="noopener noreferrer">
+                  <a
+                    className={styles.link}
+                    href={socialNetwork.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Social media profile"
+                  >
                     <Icon />
                   </a>
                 </li>
               );
             })}
             <li className={styles.linkItem}>
-              <a className={styles.link} href={`mailto: ${email.address}`}>
+              <a className={styles.link} href={`mailto: ${email.address}`} aria-label="Email address">
                 <EmailIcon />
               </a>
             </li>

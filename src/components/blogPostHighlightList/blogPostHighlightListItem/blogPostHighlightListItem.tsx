@@ -16,7 +16,7 @@ const BlogPostHighlightListItem: FC<Props> = ({ blogPostHighlight }) => {
   return (
     <a href={slug} className={styles.postHighlightLink}>
       <div className={styles.postContent}>
-        <h3 className={styles.postTitle}>{title}</h3>
+        <h2 className={styles.postTitle}>{title}</h2>
         <span className={styles.postDate}>
           {date.toLocaleDateString(undefined, {
             month: 'long',

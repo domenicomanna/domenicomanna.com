@@ -30,9 +30,11 @@ const Header: FC<Props> = ({ currentPath, maxWidth }) => {
                 const isActive = currentPath === link.to;
                 const classNames = [styles.link, ...(isActive ? [styles.active] : [])];
                 return (
-                  <a key={link.to} className={classNames.join(' ')} href={link.to}>
-                    {link.displayName}
-                  </a>
+                  <li key={link.to}>
+                    <a className={classNames.join(' ')} href={link.to}>
+                      {link.displayName}
+                    </a>
+                  </li>
                 );
               })}
             </ul>

@@ -17,11 +17,6 @@
   transition: 0.3s;
 }
 
-/* ul > last li > any */
-.footerLinks > li:last-child > * {
-  padding-right: 0;
-}
-
 @media (any-hover: hover) {
   .link:hover {
     color: var(--blue-500);
