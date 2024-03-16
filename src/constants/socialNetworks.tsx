@@ -1,5 +1,5 @@
-import { IconType } from 'react-icons';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export type SocialNetwork = {
   network: string;
@@ -8,7 +8,7 @@ export type SocialNetwork = {
   Icon: IconType;
 };
 
-const socialNetworks: SocialNetwork[] = [
+export const socialNetworks: SocialNetwork[] = [
   {
     network: 'Github',
     url: 'https://github.com/domenicomanna',
@@ -22,10 +22,3 @@ const socialNetworks: SocialNetwork[] = [
     Icon: FaLinkedin,
   },
 ];
-
-const email = {
-  address: 'dom@domenicomanna.com',
-  Icon: FaEnvelope,
-};
-
-export { socialNetworks, email };

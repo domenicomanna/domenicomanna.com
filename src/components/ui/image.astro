@@ -1,0 +1,19 @@
+---
+import { Image as AstroImage } from 'astro:assets';
+
+type Props = {
+  path: string;
+  alt: string;
+  width?: `${number}` | number | undefined;
+  height?: `${number}` | number | undefined;
+};
+
+const { path, alt, width, height } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+if (!images[path]) {
+  throw new Error(`"${path}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+}
+---
+
+<AstroImage src={images[path]!()} alt={alt} width={width} height={height} />

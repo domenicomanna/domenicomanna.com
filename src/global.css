@@ -2,9 +2,12 @@
   --grey-100: #f7fafc;
   --grey-200: #f6f9fc;
   --grey-300: #ebeded;
+  --grey-300: #ebeded;
+  --grey-400: #dddfdf;
   --grey-500: #acafb0;
 
   --blue-500: #2b7098;
+  --blue-700: #1e4e6a;
 
   --green-500: #649647;
   --green-600: #3f5e2c;
@@ -18,7 +21,7 @@ body {
   margin: 0;
   font-size: 1.2rem;
   line-height: 1.9;
-  font-family: 'lato', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   background: var(--grey-100);
   color: var(--black-500);
 }
@@ -50,6 +53,8 @@ summary {
 
 img {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 h1,
@@ -61,7 +66,8 @@ h6,
 p,
 ol,
 ul,
-img {
+img,
+.expressive-code {
   padding: 0;
   margin: 0 0 1.45rem 0;
 }
@@ -76,7 +82,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.6;
+  line-height: 1.3;
 }
 
 h1 {
@@ -103,44 +109,4 @@ h3 {
   h3 {
     font-size: 1.35rem;
   }
-}
-
-/***************************************** override prism code block styles *****************************************/
-
-/* Styling for inline code snippets. For example ``` app.js ``` */
-:not(pre) > code[class*='language-'] {
-  background: #fbf2e9 !important;
-  padding: 0.2rem 0.4rem;
-  border-radius: 2px;
-  color: inherit !important;
-}
-
-/* changes the color of the text in the code blocks and removes margin from top of code block */
-code[class*='language-'],
-pre[class*='language-'] {
-  color: #e5e5e5;
-  margin-top: 0;
-}
-
-/* Styling for code blocks */
-.gatsby-highlight {
-  background-color: #282c34;
-  border-radius: 0.3rem;
-  margin: 0 0 1.45rem 0;
-  /* overflow: auto; */
-  font-size: 1.1rem;
-}
-
-/* Highlight line styling */
-.gatsby-highlight pre[class*='language-'] {
-  background-color: transparent;
-}
-
-.gatsby-highlight-code-line {
-  background-color: rgb(64, 69, 78);
-  display: block;
-  margin-right: -1em;
-  margin-left: -1em;
-  padding-right: 1em;
-  padding-left: 1em;
 }

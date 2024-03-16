@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../components/layout/layout.astro';
+import BlogPostHighlightList from '../components/blogPostHighlightList/blogPostHighlightList';
+import type { BlogPostHighlight } from '../components/blogPostHighlightList/blogPostHighlightListItem/blogPostHighlightListItem';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .map(
+    (x): BlogPostHighlight => ({
+      title: x.data.title,
+      date: x.data.date,
+      slug: `/blog/${x.slug}`,
+    })
+  );
+---
+
+<Layout title="Blog">
+  <BlogPostHighlightList blogPostHighlights={posts} />
+</Layout>

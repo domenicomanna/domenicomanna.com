@@ -1,35 +1,40 @@
-import { FC } from 'react';
-import { Link } from 'gatsby';
+import { useState, type FC } from 'react';
 import Container from '../../ui/container/container';
 import Backdrop from '../../ui/backdrop/backdrop';
 import { FaBars } from 'react-icons/fa';
-import * as styles from './header.module.css';
+import styles from './header.module.css';
 import { routes } from '../../../constants/routes';
 
 type Props = {
-  hamburgerLinksShouldShow: boolean;
-  toggleHamburgerLinks: () => void;
+  currentPath: string;
+  maxWidth?: string;
 };
 
-const Header: FC<Props> = ({ hamburgerLinksShouldShow, toggleHamburgerLinks }) => {
+const Header: FC<Props> = ({ currentPath, maxWidth }) => {
+  const [hamburgerLinksShouldShow, setHamburgerLinksShouldShow] = useState(false);
+
+  const toggleHamburgerLinks = () => setHamburgerLinksShouldShow((currentValue) => !currentValue);
+
   const classesForListOfLinks = [styles.listOfLinks];
   if (hamburgerLinksShouldShow) classesForListOfLinks.push(styles.hamburgerLinks);
+
+  const navLinks = [routes.home, routes.blog, routes.contact];
 
   return (
     <>
       <header className={styles.header}>
-        <Container>
+        <Container maxWidth={maxWidth}>
           <nav className={styles.nav}>
             <ul className={classesForListOfLinks.join(' ')}>
-              <Link className={styles.link} activeClassName={styles.active} to={routes.home}>
-                Home
-              </Link>
-              <Link className={styles.link} activeClassName={styles.active} to={routes.blog}>
-                Blog
-              </Link>
-              <Link className={styles.link} activeClassName={styles.active} to={routes.contact}>
-                Contact
-              </Link>
+              {navLinks.map((link) => {
+                const isActive = currentPath === link.to;
+                const classNames = [styles.link, ...(isActive ? [styles.active] : [])];
+                return (
+                  <a key={link.to} className={classNames.join(' ')} href={link.to}>
+                    {link.displayName}
+                  </a>
+                );
+              })}
             </ul>
             <FaBars className={styles.hamburger} onClick={toggleHamburgerLinks} />
           </nav>

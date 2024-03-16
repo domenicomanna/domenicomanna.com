@@ -1,3 +1,3 @@
-# domenicomanna.com
+# [domenicomanna.com](https://domenicomanna.com/)
 
-Personal site built with Gatsby and React
+Personal site built with [Astro](https://astro.build/)

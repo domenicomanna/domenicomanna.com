@@ -1,0 +1,37 @@
+---
+import '../../global.css';
+import Header from './header/header';
+import Footer from './footer/footer';
+import Container from '../ui/container/container';
+type Props = {
+  title?: string;
+  documentTitle?: string;
+  maxWidth?: string;
+  children: any;
+};
+
+const { title, maxWidth } = Astro.props;
+const documentTitle = `${Astro.props.documentTitle ?? title} | Domenico Manna`;
+const currentPath = Astro.url.pathname;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Personal website + blog" />
+    <title>{documentTitle}</title>
+  </head>
+  <body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <Header currentPath={currentPath} maxWidth={maxWidth} client:load />
+    <main style="margin: .25rem 0; flex: 1">
+      <Container maxWidth={maxWidth}>
+        {title && <h1 style="text-align: center; margin-bottom: .5rem;">{title}</h1>}
+        <slot />
+      </Container>
+    </main>
+    <Footer maxWidth={maxWidth} />
+  </body>
+</html>

@@ -1,19 +1,23 @@
-import { FC, ReactNode } from 'react';
-import * as styles from './button.module.css';
+import { type FC, type ReactNode } from 'react';
+import styles from './button.module.css';
 
-const buttonTypes = {
-  primary: styles.primary,
+const buttonTypes: { [key: string]: string } = {
+  primary: styles.primary ?? '',
 };
 
 type Props = {
-  type: string;
+  type: 'primary';
   children: ReactNode;
+  id?: string;
+  onClick?: () => void;
 };
 
-const Button: FC<Props> = ({ children, type }) => {
-  return <button className={`${styles.button} ${type}`}>{children}</button>;
+const Button: FC<Props> = ({ children, type, onClick, id }) => {
+  return (
+    <button id={id} className={`${styles.button} ${buttonTypes[type]}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
-
-export { buttonTypes };
 
 export default Button;

@@ -1,0 +1,32 @@
+.post {
+  max-width: 730px;
+  margin: auto;
+}
+
+.postTitle {
+  margin-bottom: 0.4rem;
+}
+
+.postMetadata {
+  margin-bottom: 0.5rem;
+}
+
+.postDate {
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+
+.postMainContent h2 {
+  margin: 2rem 0 0.7rem 0;
+}
+
+.postMainContent ul > * {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .postTitle {
+    font-size: 2.4rem;
+    line-height: 1.45;
+  }
+}

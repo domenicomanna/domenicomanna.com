@@ -1,0 +1,25 @@
+---
+import Layout from '../components/layout/layout.astro';
+import { email } from '../constants/email';
+import { socialNetworks } from '../constants/socialNetworks';
+---
+
+<Layout title="Contact">
+  <p>
+    {' '}
+    Email me anytime: <a href={`mailto: ${email.address}`}>{email.address} </a>
+  </p>
+  <p style="margin-bottom: 1.1rem;">You can also find me at:</p>
+  <ul>
+    {
+      socialNetworks.map((socialNetwork) => (
+        <li style="margin-bottom: .5rem;">
+          <span>{socialNetwork.network}: </span>
+          <a target="_blank" href={socialNetwork.url} rel="noreferrer">
+            {socialNetwork.username}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

@@ -1,12 +1,22 @@
-import { FC, ReactNode } from 'react';
-import * as styles from './container.module.css';
+import type { FC, ReactNode } from 'react';
+import styles from './container.module.css';
 
 type Props = {
   children: ReactNode;
+  maxWidth?: string;
 };
 
-const Container: FC<Props> = ({ children }) => {
-  return <div className={styles.container}>{children}</div>;
+const Container: FC<Props> = ({ children, maxWidth }) => {
+  return (
+    <div
+      className={styles.container}
+      style={{
+        maxWidth,
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Container;

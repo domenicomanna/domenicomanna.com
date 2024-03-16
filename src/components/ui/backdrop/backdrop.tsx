@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import * as styles from './backdrop.module.css';
+import type { FC } from 'react';
+import styles from './backdrop.module.css';
 
 type Props = {
   backdropShouldShow: boolean;

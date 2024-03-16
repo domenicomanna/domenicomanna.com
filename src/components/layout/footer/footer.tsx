@@ -1,19 +1,20 @@
-import { socialNetworks, email } from '../../../constants/socialNetworks';
+import type { FC } from 'react';
+import { email } from '../../../constants/email';
+import { socialNetworks } from '../../../constants/socialNetworks';
 import Container from '../../ui/container/container';
-import * as styles from './footer.module.css';
+import styles from './footer.module.css';
 
-const Footer = () => {
+type Props = {
+  maxWidth?: string;
+};
+
+const Footer: FC<Props> = ({ maxWidth }) => {
   const EmailIcon = email.Icon;
   return (
     <footer>
-      <Container>
+      <Container maxWidth={maxWidth}>
         <div className={styles.footer}>
           <ul className={styles.footerLinks}>
-            <li className={styles.linkItem}>
-              <a className={styles.link} href={`mailto: ${email.address}`}>
-                <EmailIcon />
-              </a>
-            </li>
             {socialNetworks.map((socialNetwork, index) => {
               const Icon = socialNetwork.Icon;
               return (
@@ -24,6 +25,11 @@ const Footer = () => {
                 </li>
               );
             })}
+            <li className={styles.linkItem}>
+              <a className={styles.link} href={`mailto: ${email.address}`}>
+                <EmailIcon />
+              </a>
+            </li>
           </ul>
         </div>
       </Container>

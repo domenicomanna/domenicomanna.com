@@ -1,0 +1,35 @@
+---
+import type { Project } from '../../../constants/projects';
+import styles from './projectsListItem.module.css';
+import Image from '../../../components/ui/image.astro';
+import ButtonLink from '../../ui/buttonLink/buttonLink';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+
+type Props = {
+  project: Project;
+};
+const { project } = Astro.props;
+---
+
+<li class={styles.project}>
+  <div class={styles.imageWrapper}>
+    <Image path={project.imagePath} alt={project.imageAlt} />
+  </div>
+  <div class={styles.projectContent}>
+    <h2 class={styles.projectTitle}>{project.title}</h2>
+    <p class={styles.projectDescription} set:html={project.description} />
+    <ul class={styles.projectTechnologies}>
+      {project.technologiesUsed.map((technology) => <li class={styles.projectTechnology}>{technology}</li>)}
+    </ul>
+    <div class={styles.viewProjectLinkGroup}>
+      <ButtonLink href={project.websiteLink}>
+        View Site
+        <FaExternalLinkAlt className={styles.viewProjectIcon} />
+      </ButtonLink>
+      <ButtonLink href={project.repositoryLink}>
+        View Source
+        <FaGithub className={styles.viewProjectIcon} />
+      </ButtonLink>
+    </div>
+  </div>
+</li>

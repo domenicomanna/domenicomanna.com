@@ -1,0 +1,14 @@
+---
+import type { Project } from '../../constants/projects';
+import styles from './projectsList.module.css';
+import ProjectListItem from './projectsListItem/projectsListItem.astro';
+type Props = {
+  projects: Project[];
+  id?: string;
+};
+const { projects, id } = Astro.props;
+---
+
+<ul id={id} class={styles.projects}>
+  {projects.map((project) => <ProjectListItem project={project} />)}
+</ul>

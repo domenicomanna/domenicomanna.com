@@ -1,0 +1,49 @@
+---
+import { FaArrowDown } from 'react-icons/fa';
+import Layout from '../components/layout/layout.astro';
+import Button from '../components/ui/button/button';
+import ProjectsList from '../components/projectsList/projectsList.astro';
+import projects from '../constants/projects';
+
+const viewProjectsButtonId = 'viewProjects';
+const projectsListId = 'projects';
+---
+
+<Layout title="Hi I'm Domenico" documentTitle="Home">
+  <p style="max-width: 600px; margin: 0 auto 1.25rem auto; font-size: 1.3rem;">
+    {"I'm a software developer, and studied computer science at the University of Bridgeport"}
+  </p>
+  <div style="display: flex; justify-content: center; margin-bottom: 4rem;">
+    <Button
+      id={viewProjectsButtonId}
+      type="primary"
+      onClick={() => {
+        console.log('hi');
+      }}
+      client:load
+    >
+      Checkout my projects
+      <FaArrowDown
+        style={{
+          verticalAlign: 'text-top',
+        }}
+        size={20}
+      />
+    </Button>
+  </div>
+  <div>
+    <ProjectsList id={projectsListId} projects={projects} />
+  </div>
+</Layout>
+
+<script is:inline define:vars={{ viewProjectsButtonId, projectsListId }}>
+  const viewProjectsButton = document.getElementById(viewProjectsButtonId);
+  if (viewProjectsButton) {
+    viewProjectsButton.onclick = () => {
+      const projectsSection = document.getElementById(projectsListId);
+      const offset = -85;
+      const targetSrollPosition = projectsSection.getBoundingClientRect().top + window.scrollY + offset;
+      window.scrollTo({ top: targetSrollPosition, behavior: 'smooth' });
+    };
+  }
+</script>

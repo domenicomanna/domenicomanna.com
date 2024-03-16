@@ -1,12 +1,8 @@
-import { FC } from 'react';
-import { Link } from 'gatsby';
-import * as styles from './blogPostHighlightListItem.module.css';
-
+import type { FC } from 'react';
+import styles from './blogPostHighlightListItem.module.css';
 export type BlogPostHighlight = {
-  id: string;
   title: string;
-  date: string;
-  excerpt: string;
+  date: Date;
   slug: string;
 };
 
@@ -18,12 +14,19 @@ const BlogPostHighlightListItem: FC<Props> = ({ blogPostHighlight }) => {
   const { title, date, slug } = blogPostHighlight;
 
   return (
-    <Link to={slug} className={styles.postHighlightLink}>
+    <a href={slug} className={styles.postHighlightLink}>
       <div className={styles.postContent}>
         <h3 className={styles.postTitle}>{title}</h3>
-        <span className={styles.postDate}>{date}</span>
+        <span className={styles.postDate}>
+          {date.toLocaleDateString(undefined, {
+            month: 'long',
+            day: '2-digit',
+            year: 'numeric',
+            timeZone: 'utc',
+          })}
+        </span>
       </div>
-    </Link>
+    </a>
   );
 };
 
