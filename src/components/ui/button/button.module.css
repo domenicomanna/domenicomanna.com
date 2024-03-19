@@ -6,16 +6,15 @@
   cursor: pointer;
   font-size: inherit;
   border-radius: 5px;
-  transition: var(--transition-short);
 }
 
 .primary {
-  background: var(--blue-500);
+  background-color: var(--blue-500);
   color: var(--grey-100);
 }
 
 @media (any-hover: hover) {
   .primary:hover {
-    background: var(--blue-700);
+    background-color: var(--blue-700);
   }
 }

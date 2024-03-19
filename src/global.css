@@ -1,7 +1,6 @@
-:root {
+html {
   --grey-100: #f7fafc;
   --grey-200: #f6f9fc;
-  --grey-300: #ebeded;
   --grey-300: #ebeded;
   --grey-400: #dddfdf;
   --grey-500: #acafb0;
@@ -13,8 +12,15 @@
   --green-600: #3f5e2c;
 
   --black-500: #313132;
+  --black-700: #1b1d1e;
 
-  --transition-short: 0.3s;
+  --main-text-color: var(--black-500);
+  --link-color: var(--blue-500);
+}
+
+html.dark {
+  --main-text-color: var(--grey-400);
+  --link-color: #6dafd6;
 }
 
 body {
@@ -22,14 +28,17 @@ body {
   font-size: 1.2rem;
   line-height: 1.9;
   font-family: 'Roboto Flex', sans-serif;
-  background: var(--grey-100);
-  color: var(--black-500);
+  background-color: var(--grey-100);
+  color: var(--main-text-color);
+}
+
+.dark body {
+  background-color: var(--black-700);
 }
 
 a {
   text-underline-position: under;
-  color: var(--blue-500);
-  transition: 0.4s;
+  color: var(--link-color);
 }
 
 a:hover {

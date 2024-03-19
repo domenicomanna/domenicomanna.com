@@ -1,0 +1,21 @@
+.themeToggle {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.sun {
+  fill: var(--main-text-color);
+}
+
+.moon {
+  fill: transparent;
+}
+
+:global(.dark) .sun {
+  fill: transparent;
+}
+
+:global(.dark) .moon {
+  fill: var(--main-text-color);
+}

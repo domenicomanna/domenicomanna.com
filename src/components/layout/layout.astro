@@ -3,6 +3,13 @@ import '../../global.css';
 import Header from './header/header';
 import Footer from './footer/footer';
 import Container from '../ui/container/container';
+import {
+  localStorageThemeKey,
+  Theme,
+  syntaxHighlightingThemeMap,
+  syntaxHighlightingThemeHtmlAttribute,
+} from '../../constants/theme';
+
 type Props = {
   title?: string;
   documentTitle?: string;
@@ -14,6 +21,35 @@ const { title, maxWidth } = Astro.props;
 const documentTitle = `${Astro.props.documentTitle ?? title} | Domenico Manna`;
 const currentPath = Astro.url.pathname;
 ---
+
+<script
+  is:inline
+  define:vars={{
+    localStorageThemeKey,
+    Theme,
+    syntaxHighlightingThemeMap,
+    syntaxHighlightingThemeHtmlAttribute,
+  }}
+>
+  const getTheme = () => {
+    if (localStorage.getItem(localStorageThemeKey)) {
+      return localStorage.getItem(localStorageThemeKey);
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? Theme.Dark : Theme.Light;
+  };
+
+  const theme = getTheme();
+
+  const documentElement = window.document.documentElement;
+  const syntaxHighlightingTheme = syntaxHighlightingThemeMap[theme];
+  documentElement.setAttribute(syntaxHighlightingThemeHtmlAttribute, syntaxHighlightingTheme);
+
+  if (theme === Theme.Dark) {
+    documentElement.classList.add(Theme.Dark);
+  } else {
+    documentElement.classList.remove(Theme.Dark);
+  }
+</script>
 
 <html lang="en">
   <head>

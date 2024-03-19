@@ -1,6 +1,5 @@
 .posts > * {
   border-top: 1px solid var(--grey-500);
-  transition: 0.35s;
 }
 
 .posts > *:first-child {
@@ -8,14 +7,22 @@
 }
 
 @media (any-hover: hover) {
+  .posts {
+    --hover-color: var(--grey-300);
+  }
+
+  :global(.dark) .posts {
+    --hover-color: var(--black-500);
+  }
+
   /* Make border of the hovered element and the element directly after it blend in with the hovered background color */
   .posts > *:hover,
   .posts > *:hover + * {
-    border-color: var(--grey-300);
+    border-color: var(--hover-color);
   }
 
   .posts > *:hover {
-    background: var(--grey-300);
+    background-color: var(--hover-color);
     border-radius: 5px;
   }
 }

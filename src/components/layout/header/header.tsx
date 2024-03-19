@@ -4,6 +4,7 @@ import Backdrop from '../../ui/backdrop/backdrop';
 import { FaBars } from 'react-icons/fa';
 import styles from './header.module.css';
 import { routes } from '../../../constants/routes';
+import ThemeToggle from './themeToggle/themeToggle';
 
 type Props = {
   currentPath: string;
@@ -19,27 +20,32 @@ const Header: FC<Props> = ({ currentPath, maxWidth }) => {
   if (hamburgerLinksShouldShow) classesForListOfLinks.push(styles.hamburgerLinks);
 
   const navLinks = [routes.home, routes.blog, routes.contact];
-
   return (
     <>
       <header className={styles.header}>
         <Container maxWidth={maxWidth}>
-          <nav className={styles.nav}>
-            <ul className={classesForListOfLinks.join(' ')}>
-              {navLinks.map((link) => {
-                const isActive = currentPath === link.to;
-                const classNames = [styles.link, ...(isActive ? [styles.active] : [])];
-                return (
-                  <li key={link.to}>
-                    <a className={classNames.join(' ')} href={link.to}>
-                      {link.displayName}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-            <FaBars className={styles.hamburger} onClick={toggleHamburgerLinks} />
-          </nav>
+          <div className={styles.wrapper}>
+            <div className={styles.empty}></div> {/* empty div used to center the nav links when the screen is small */}
+            <nav className={styles.nav}>
+              <ul className={classesForListOfLinks.join(' ')}>
+                {navLinks.map((link) => {
+                  const isActive = currentPath === link.to;
+                  const classNames = [styles.link, ...(isActive ? [styles.active] : [])];
+                  return (
+                    <li key={link.to}>
+                      <a className={classNames.join(' ')} href={link.to}>
+                        {link.displayName}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+            <div className={styles.actionButtons}>
+              <ThemeToggle />
+              <FaBars className={styles.hamburger} onClick={toggleHamburgerLinks} />
+            </div>
+          </div>
         </Container>
       </header>
       <Backdrop backdropShouldShow={hamburgerLinksShouldShow} toggleBackdrop={toggleHamburgerLinks} />

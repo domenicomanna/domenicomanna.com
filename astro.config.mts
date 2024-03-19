@@ -6,7 +6,8 @@ export default defineConfig({
   integrations: [
     react(),
     expressiveCode({
-      themes: ['github-light'],
+      themes: ['github-light', 'dracula'],
+      useDarkModeMediaQuery: false,
     }),
   ],
 });
