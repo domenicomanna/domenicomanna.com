@@ -1,7 +1,7 @@
 html {
   --grey-100: #f7fafc;
   --grey-200: #f6f9fc;
-  --grey-300: #ebeded;
+  --grey-300: #eaebeb;
   --grey-400: #dddfdf;
   --grey-500: #acafb0;
 
@@ -16,11 +16,13 @@ html {
 
   --main-text-color: var(--black-500);
   --link-color: var(--blue-500);
+  --inline-code-background-color: var(--grey-300);
 }
 
 html.dark {
   --main-text-color: var(--grey-400);
   --link-color: #6dafd6;
+  --inline-code-background-color: #373839;
 }
 
 body {
@@ -118,4 +120,11 @@ h3 {
   h3 {
     font-size: 1.35rem;
   }
+}
+
+/* styling for inline code snippets */
+code:not(pre code) {
+  background-color: var(--inline-code-background-color);
+  padding: 0.1rem 0.3rem;
+  font-size: 0.9rem;
 }
