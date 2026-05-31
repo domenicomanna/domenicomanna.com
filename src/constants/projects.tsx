@@ -17,7 +17,7 @@ const projects: Project[] = [
       'A website powered by a REST API that allows users to track their body measurements and body fat percentage.',
     technologiesUsed: ['.Net Core', 'Entity Framework Core', 'Postgres', 'Docker', 'React', 'Typescript', 'CSS'],
     websiteLink: 'https://body-fit-tracker-client.hobby-projects.com/',
-    repositoryLink: 'https://github.com/domenicomanna/bodyFitTracker',
+    repositoryLink: 'https://github.com/domenicomanna/bodyMeasurementsTracker',
   },
   {
     imagePath: '/src/assets/beerHub.jpg',
