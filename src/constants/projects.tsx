@@ -12,7 +12,7 @@ const projects: Project[] = [
   {
     imagePath: '/src/assets/bodyFitnessTracker.jpg',
     imageAlt: "Dashboard showing a user's body measurements",
-    title: 'Body Fitness Tracker',
+    title: 'Body Measurements Tracker',
     description:
       'A website powered by a REST API that allows users to track their body measurements and body fat percentage.',
     technologiesUsed: ['.Net Core', 'Entity Framework Core', 'Postgres', 'Docker', 'React', 'Typescript', 'CSS'],
