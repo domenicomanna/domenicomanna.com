@@ -14,7 +14,7 @@ const projects: Project[] = [
     imageAlt: "Dashboard showing a user's body measurements",
     title: 'Body Measurements Tracker',
     description:
-      'A website powered by a REST API that allows users to track their body measurements and body fat percentage.',
+      'An application powered by a REST API that allows users to track their body measurements and body fat percentage.',
     technologiesUsed: ['.Net Core', 'Entity Framework Core', 'Postgres', 'Docker', 'React', 'Typescript', 'CSS'],
     websiteLink: 'https://body-fit-tracker-client.hobby-projects.com/',
     repositoryLink: 'https://github.com/domenicomanna/bodyMeasurementsTracker',
@@ -23,7 +23,7 @@ const projects: Project[] = [
     imagePath: '/src/assets/beerHub.jpg',
     imageAlt: 'Dashboard showing the name and description of several beers',
     title: 'BeerHub',
-    description: `A React app that utilizes the <a href = "https://punkapi.com/" target = "_blank" rel="noopener noreferrer">Punk API</a> to retrieve information about BrewDog's massive beer catalog. This app enables users to search for any BrewDog beer, and save their favorite ones.`,
+    description: `A React app that utilizes the <a href = "https://github.com/alxiw/punkapi" target = "_blank" rel="noopener noreferrer">Punk API</a> to browse BrewDog's beer catalog. This app enables users to search for BrewDog beers, and save their favorite ones.`,
     technologiesUsed: ['React', 'CSS'],
     websiteLink: 'https://domenicomanna.github.io/beerHub/',
     repositoryLink: 'https://github.com/domenicomanna/beerHub',
