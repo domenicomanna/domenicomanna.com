@@ -14,14 +14,7 @@ const projectsListId = 'projects';
     {"I'm a software developer, and studied computer science at the University of Bridgeport"}
   </p>
   <div style="display: flex; justify-content: center; margin-bottom: 4rem;">
-    <Button
-      id={viewProjectsButtonId}
-      type="primary"
-      onClick={() => {
-        console.log('hi');
-      }}
-      client:load
-    >
+    <Button id={viewProjectsButtonId} type="primary" client:load>
       Checkout my projects
       <FaArrowDown
         style={{
