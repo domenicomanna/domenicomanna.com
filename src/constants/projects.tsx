@@ -10,7 +10,7 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    imagePath: '/src/assets/bodyFitnessTracker.jpg',
+    imagePath: '/src/assets/bodyMeasurementsTracker.jpg',
     imageAlt: "Dashboard showing a user's body measurements",
     title: 'Body Measurements Tracker',
     description:
